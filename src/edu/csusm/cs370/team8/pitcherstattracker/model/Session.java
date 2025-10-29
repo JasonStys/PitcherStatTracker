@@ -1,4 +1,4 @@
-package edu.csusm.cs370.team8.pitcherstattracker.data;
+package edu.csusm.cs370.team8.pitcherstattracker.model;
 
 /* This represents a single "Game" or "Period of training", usually 1-2 hours.
  * THIS CLASS IS WHAT HAS ALL THE STAT FIELDS.

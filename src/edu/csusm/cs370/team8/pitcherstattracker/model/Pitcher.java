@@ -1,4 +1,4 @@
-package edu.csusm.cs370.team8.pitcherstattracker.data;
+package edu.csusm.cs370.team8.pitcherstattracker.model;
 
 import java.util.ArrayList;
 
