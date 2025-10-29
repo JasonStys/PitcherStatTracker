@@ -7,10 +7,10 @@ pitcher_id, game_date, innings_pitched, batters_faced,
 strikeouts, walks, home_runs, hits, earned_runs, pitches
 
 For each throw we are tracking the throw, if it was a hit, ball, or strike,
-the zone, speed of the pitch,
+the zone, speed of the pitch, type of thrown ball
 
 From there the different throws at determined if there is a strikeout, a walk,
-or a hit that led to play
+a hit that led to play, or a foul
 
 For the game tracking it would have the summarization of the per throw stats
 along with the pitcher id, game's date, innings pitched, batters faced, and
@@ -18,3 +18,6 @@ earned runs
 
 Talked more about the structure of the code. In terms of a database we
 are going with json files to store our code
+
+Talked about the class and things that go into being a pitcher and coach.
+The account name, team member id, Date of birth, team name,
