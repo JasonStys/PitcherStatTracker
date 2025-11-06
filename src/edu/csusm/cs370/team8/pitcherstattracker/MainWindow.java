@@ -1,5 +1,8 @@
 package edu.csusm.cs370.team8.pitcherstattracker;
 
+import javax.swing.*;
+import java.awt.event.*;
+
 import edu.csusm.cs370.team8.pitcherstattracker.model.*;
 import edu.csusm.cs370.team8.pitcherstattracker.controller.*;
 import edu.csusm.cs370.team8.pitcherstattracker.view.*;
@@ -9,23 +12,27 @@ import edu.csusm.cs370.team8.pitcherstattracker.view.*;
  */
 
 public class MainWindow {
-    Pitcher pitcher; // Ignore this, just testing the package stuff.
-    Session session1;
+    private static JFrame window = new JFrame("Perfect Pitch");
+    private static JPanel currPanel; // Current menu in the window
+    private static JPanel prevPanel; // Stores previous menu in case user backtracks
 
-    // Constructor for MainWindow
-    public MainWindow() {
-        session1 = new Session(101);
+    public static void main(String[] args) {
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Create and add new Pitch objects to this session
-        session1.addPitch(Pitch.Type.Fastball, Pitch.Result.CalledStrike, true, 96.4);
-        session1.addPitch(Pitch.Type.Curveball, Pitch.Result.Foul, false, 79.2);
+        InputPanel input = new InputPanel();
+        switchPanel(input);
 
-        // View all pitches in the session
-        session1.showPitches();
+        window.setVisible(true);
     }
 
-    // main method to actually run it
-    public static void main(String[] args) {
-        new MainWindow();  // creates and runs a new MainWindow
+    public static void switchPanel(JPanel newPanel) {
+        prevPanel = currPanel;
+        if (currPanel != null) {
+            window.remove(currPanel);
+        }
+        currPanel = newPanel;
+        window.add(newPanel);
+        window.pack();
+        //window.setSize(800, 600);
     }
 }
