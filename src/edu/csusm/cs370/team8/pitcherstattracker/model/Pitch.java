@@ -16,6 +16,15 @@ public class Pitch {
         public int toInt() {
             return value;
         }
+
+        public static Result fromInt(int input) {
+            for (Result r : Result.values()) {
+                if (r.value == input) {
+                    return r;
+                }
+            }
+            throw new IllegalArgumentException("No Result enum constant with code " + input);
+        }
     }
 
     private Result result;
