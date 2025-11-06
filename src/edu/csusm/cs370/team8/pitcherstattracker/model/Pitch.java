@@ -33,7 +33,9 @@ public class Pitch {
         this.inZone = inZone;
         this.speed = speed;
     }
-
+    public Result getResult() { return result;}
+    public int getBases() { return bases;}
+    public void setBases(int bases) { this.bases = bases;}
 
     public String toString() {
         return "Pitch{" +
