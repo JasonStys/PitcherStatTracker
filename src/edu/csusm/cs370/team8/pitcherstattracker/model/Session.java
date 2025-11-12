@@ -13,7 +13,7 @@ public class Session {
     private String gameId;  // NULL for training
     private String pitcherId;
 
-    private List<Pitch> pitches =  new ArrayList<Pitch>();
+    private ArrayList<Pitch> pitches =  new ArrayList<Pitch>();
 
     // Box score tallies non-bip (ball in play)
     private int outsRecorded = 0;
@@ -26,6 +26,10 @@ public class Session {
     private enum BIPResult {OUT, SINGLE, DOUBLE, TRIPLE, HOME_RUN, REACHED_ERROR}
     private final EnumMap<BIPResult, Integer> bipCounts = new EnumMap<>(BIPResult.class);
 
+    public Session() {
+        // Empty constructor for when we're making a new session
+        for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
+    }
     public Session(int sessionId, String gameId, String pitcherId) {
         this.sessionId = sessionId;
         this.gameId = gameId;
@@ -50,6 +54,7 @@ public class Session {
         // For CalledStrike/Ball/Foul we do nothing; not terminal by themselves
         // until count logic is added to Pitch.
     }
+    /*
     public void addPitch(Pitch.Type type, Pitch.Result result, boolean inZone, double speed) {
         Pitch p = new Pitch(type, result, inZone, speed);
         // If result==Hit and no bases provided, assume 1 (single)
@@ -59,6 +64,7 @@ public class Session {
         addPitch(p);
         System.out.println("Added: " + p);
     }
+     */
     public void showPitches() {
         System.out.println("Session " + sessionId + " Pitch Log:");
         for (Pitch p : pitches) {
@@ -67,6 +73,7 @@ public class Session {
     }
 
     // getters
+    public ArrayList<Pitch> getPitches() {return pitches;}
     public int singles() { return bipCounts.get(BIPResult.SINGLE); }
     public int doubles() { return bipCounts.get(BIPResult.DOUBLE); }
     public int triples() { return bipCounts.get(BIPResult.TRIPLE); }
