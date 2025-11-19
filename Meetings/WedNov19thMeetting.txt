@@ -1,0 +1,13 @@
+Wednesday 11/19/25 meeting notes
+
+In the code we need work on completing a session
+and storing it properly
+
+How to pull pitchers from MLB database, some
+code with how to do that
+
+Make a functional login without encryption
+
+
+
+
