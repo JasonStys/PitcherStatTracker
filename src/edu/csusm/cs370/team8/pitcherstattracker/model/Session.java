@@ -13,7 +13,7 @@ public class Session {
     private String gameId;  // NULL for training
     private String pitcherId;
 
-    private ArrayList<Pitch> pitches =  new ArrayList<Pitch>();
+    private final List<Pitch> pitches = new ArrayList<>();
 
     // Box score tallies non-bip (ball in play)
     private int outsRecorded = 0;
@@ -24,35 +24,72 @@ public class Session {
 
     // bip buckets: truth for hits by type
     private enum BIPResult {OUT, SINGLE, DOUBLE, TRIPLE, HOME_RUN, REACHED_ERROR}
+
     private final EnumMap<BIPResult, Integer> bipCounts = new EnumMap<>(BIPResult.class);
 
     public Session() {
         // Empty constructor for when we're making a new session
         for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
     }
+
     public Session(int sessionId, String gameId, String pitcherId) {
         this.sessionId = sessionId;
         this.gameId = gameId;
         this.pitcherId = pitcherId;
         for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
     }
+    public Session(int sessionId, String pitcherId) {
+        this(sessionId, null, pitcherId);
+    }
 
     public void addPitch(Pitch p) {
         pitches.add(p);
-        // Derive hit buckets if this pitch produced a hit
-        if (p.getResult() == Pitch.Result.Hit) {
-            int bases = p.getBases(); // expected 1,2,3,4
-            switch (bases) {
-                case 1 -> incrementBip(BIPResult.SINGLE);
-                case 2 -> incrementBip(BIPResult.DOUBLE);
-                case 3 -> incrementBip(BIPResult.TRIPLE);
-                case 4 -> incrementBip(BIPResult.HOME_RUN);
-                default -> incrementBip(BIPResult.SINGLE); // if bases not set or invalid
+
+
+        switch (p.getResult()) {
+            case Hit -> {
+                switch (p.getBases()) {
+                    case 1 -> incrementBip(BIPResult.SINGLE);
+                    case 2 -> incrementBip(BIPResult.DOUBLE);
+                    case 3 -> incrementBip(BIPResult.TRIPLE);
+                    case 4 -> incrementBip(BIPResult.HOME_RUN);
+                    default -> incrementBip(BIPResult.SINGLE); // if bases not set or invalid
+                }
+                battersFaced++; // end of PA (Plate Appearance)
             }
-            battersFaced++; // end of PA (Plate Appearance)
+            case BallInPlayOut -> {
+                incrementBip(BIPResult.OUT);
+                outsRecorded++;
+                battersFaced++;
+                //reset count
+            }
+            case ReachOnError -> {
+                incrementBip(BIPResult.REACHED_ERROR);
+                battersFaced++;
+                //reset count
+            }
+            case Walk -> {
+                walks++;
+                battersFaced++;
+                //reset count
+            }
+            case Strikeout -> {
+                strikeouts++;
+                outsRecorded++;
+                battersFaced++;
+                //reset count
+            }
+            case HitByPitch -> {
+                hitByPitch++;
+                battersFaced++;
+                //reset count
+            }
+            case Strike, Ball, Foul -> {
+                //Nothing for now gonna be important for calculating the count
+                //ex. if there has been 3 balls and 2 strikes its a 3-2 count
+
+            }
         }
-        // For CalledStrike/Ball/Foul we do nothing; not terminal by themselves
-        // until count logic is added to Pitch.
     }
     /*
     public void addPitch(Pitch.Type type, Pitch.Result result, boolean inZone, double speed) {
@@ -65,6 +102,9 @@ public class Session {
         System.out.println("Added: " + p);
     }
      */
+    private void incrementBip(BIPResult r) {
+        bipCounts.put(r, bipCounts.get(r) + 1);
+    }
     public void showPitches() {
         System.out.println("Session " + sessionId + " Pitch Log:");
         for (Pitch p : pitches) {
@@ -73,7 +113,7 @@ public class Session {
     }
 
     // getters
-    public ArrayList<Pitch> getPitches() {return pitches;}
+    public List<Pitch> getPitches() {return pitches;}
     public int singles() { return bipCounts.get(BIPResult.SINGLE); }
     public int doubles() { return bipCounts.get(BIPResult.DOUBLE); }
     public int triples() { return bipCounts.get(BIPResult.TRIPLE); }
@@ -97,5 +137,5 @@ public class Session {
         int rem = outs % 3;
         return full + "." + rem;
     }
-    private void incrementBip(BIPResult r) { bipCounts.put(r, bipCounts.get(r) + 1); }
+
 }

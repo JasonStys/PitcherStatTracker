@@ -9,30 +9,55 @@ public class Pitch {
     public static final double MIN_SPEED = 0.000;
 
     public enum Type {
-        Curveball(0), Fastball(1), Knuckleball(2);
+        Fastball(0),
+        Curveball(1),
+        Slider(2),
+        Changeup(3);
         private final int value;
 
-        Type(int input) { this.value = input; }
+        Type(int input) {
+            this.value = input;
+        }
+
         public int toInt() { return value; }
 
         public static Type fromInt(int input) {
             for (Type t : Type.values()) {
-                if (t.value == input) { return t; }
+                if (t.value == input) {
+                    return t;
+                }
             }
             throw new IllegalArgumentException("No Type enum constant with code " + input);
         }
     }
 
     public enum Result {
-        CalledStrike(0), Ball(1), Foul(2), Hit(3);
+        //Non-terminal
+        Strike(0),
+        Ball(1),
+        Foul(2),
+        //Terminal
+        Hit(3),
+        BallInPlayOut(4),
+        ReachOnError(5),
+        Walk(6),
+        Strikeout(7),
+        HitByPitch(8);
         private final int value;
 
-        Result(int input) { this.value = input; }
-        public int toInt() { return value; }
+        Result(int input) {
+            this.value = input;
+        }
+
+        public int toInt() {
+            return value;
+        }
 
         public static Result fromInt(int input) {
             for (Result r : Result.values()) {
-                if (r.value == input) { return r; }
+                if (r.value == input) {
+                    return r;
+                }
             }
             throw new IllegalArgumentException("No Result enum constant with code " + input);
         }
@@ -47,7 +72,13 @@ public class Pitch {
     private double speed;
     private boolean wasSwungAt;
 
-    public Pitch(Type ballType, Result pitchResult, int bases, boolean inZone, double speed, boolean wasSwungAt) {
+    public Pitch(Type ballType,
+                 Result pitchResult,
+                 int bases,
+                 boolean inZone,
+                 double speed,
+                 boolean wasSwungAt) {
+
         this.type = ballType;
         this.result = pitchResult;
         this.bases = bases;
@@ -55,9 +86,27 @@ public class Pitch {
         this.speed = speed;
         this.wasSwungAt = wasSwungAt;
     }
+    // Getters and Setters
     public Result getResult() { return result; }
+    public void setResult(Result result) { this.result = result; }
+
+    public Type getType() { return type; }
+    public void setType(Type type) { this.type = type; }
+
     public int getBases() { return bases; }
     public void setBases(int bases) { this.bases = bases; }
+
+    public boolean isInZone() { return inZone; }
+    public void setInZone(boolean inZone) { this.inZone = inZone; }
+
+    public double getSpeed() { return speed; }
+    public void setSpeed(double speed) { this.speed = speed; }
+
+    public boolean wasSwungAt() { return wasSwungAt; }
+    public void setWasSwungAt(boolean wasSwungAt) { this.wasSwungAt = wasSwungAt; }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
     @Override
     public String toString() {
