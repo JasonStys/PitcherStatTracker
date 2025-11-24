@@ -21,6 +21,10 @@ public class Session {
     private int walks = 0;
     private int hitByPitch = 0;
     private int battersFaced = 0;
+    private int nextID = 0;
+    public int getNextID() {
+        return nextID++;
+    }
 
     // bip buckets: truth for hits by type
     private enum BIPResult {OUT, SINGLE, DOUBLE, TRIPLE, HOME_RUN, REACHED_ERROR}
@@ -43,6 +47,10 @@ public class Session {
     }
 
     public void addPitch(Pitch p) {
+        // Give each added pitch an incremental ID. These may differ from the ID's used in SessionEditPanel, but will still be unique.
+        if (p.getID() == -1) {
+            p.setID(getNextID());
+        }
         pitches.add(p);
 
 

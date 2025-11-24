@@ -35,12 +35,29 @@ public class SessionEditPanel extends JPanel implements HostPanel {
         this.setVisible(true);
     }
 
+    // ran when InputPanel popup gives back a pitch object to this panel.
     @Override
     public void receiveObject(Object obj) {
         if (obj instanceof Pitch pitchObj) {
             // pitchObj is the newly added Pitch
-            pitchListModel.addElement(pitchObj);
-        }
+            int idMatch =  pitchObj.getID();
+            if (idMatch == -1) { // If this is a new pitch and not an edit of one already created
+                pitchObj.setID(ourSession.getNextID()); // Get the next unused (incremented) ID from session
+                pitchListModel.addElement(pitchObj); // Add it at the end
+            } else { // We have an ID, so it must be editing a pitch we already have
+                if (idMatch == pitchList.getSelectedValue().getID()) {
+                    pitchListModel.set(pitchList.getSelectedIndex(), pitchObj);
+                } else { // Fallback if for some reason it's not the currently selected item. This ideally shouldn't run.
+                    MainWindow.displayError("PROGRAM ERROR","This shouldn't run.");
+                    for (int i = 0; i < pitchListModel.size(); i++) {
+                        if (pitchListModel.get(i).getID() == idMatch) {
+                            pitchListModel.set(i, pitchObj);
+                            break;
+                        }
+                    } // End for loop. Don't currently have anything checking if we somehow edited a pitch not in the list.
+                }
+            } // End id matching
+        } // End obj instanceof Pitch
         this.revalidate();
     }
 
@@ -61,6 +78,7 @@ public class SessionEditPanel extends JPanel implements HostPanel {
 
         JPanel buttonPane = new JPanel();
         buttonPane.setLayout(new GridLayout(3, 1));
+
         newButton = new JButton("Add A New Pitch");
         newButton.setActionCommand("new");
         newButton.addActionListener(this::actionPerformed);
@@ -81,14 +99,27 @@ public class SessionEditPanel extends JPanel implements HostPanel {
 
     public void actionPerformed(ActionEvent e) {
         if ("edit".equals(e.getActionCommand())) {
-            System.out.println("edit");
+            Pitch editedPitch = pitchList.getSelectedValue();
+            if (editedPitch != null) {
+                MainWindow.popupPanel(new InputPanel(editedPitch), "Edit Pitch");
+            } else {
+                MainWindow.displayError("No Selection", "Please first select a Pitch to edit");
+            }
         }
         if ("new".equals(e.getActionCommand())) {
-            System.out.println("new");
             MainWindow.popupPanel(new InputPanel(), "New Pitch");
         }
         if ("delete".equals(e.getActionCommand())) {
-            System.out.println("delete");
+            int removeIndex = pitchList.getSelectedIndex();
+            if (removeIndex >= 0) {
+                if (MainWindow.displayOkCancel("Are you sure?", "Are you sure you want to delete this pitch?")) {
+                    pitchListModel.remove(removeIndex);
+                }
+            } else {
+                MainWindow.displayError("No Selection", "Please first select a Pitch to delete");
+                // Testing displayTestNoCancel
+                //System.out.println(MainWindow.displayYesNoCancel("Title", "Message"));
+            }
         }
     }
 }

@@ -15,11 +15,33 @@ public class InputPanel extends JPanel implements PopPanel {
     private JCheckBox wasSwungAtCheckbox;
     private JCheckBox inZoneCheckbox;
     private JButton submitButton;
+    private JButton cancelButton;
     private Object pitchObj = null;
+    private int PitchID = -1; // Defaults to negative 1 unless assigned
+    private boolean isEditing = false;
 
     public InputPanel() {
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setupInputPanel(null);
+    }
+
+    public InputPanel(Pitch editedPitch) {
+        isEditing = true;
+        setupInputPanel(editedPitch);
+    }
+
+    private void setupInputPanel(Pitch editedPitch) {
+        //this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setLayout(new GridLayout(4, 2));
         initComponents();
+        if (editedPitch != null) {
+            PitchID = editedPitch.getID();
+            typeList.setSelectedItem(editedPitch.getType());
+            resultList.setSelectedItem(editedPitch.getResult());
+            basesSpinner.setValue(editedPitch.getBases());
+            speedSpinner.setValue(editedPitch.getSpeed());
+            wasSwungAtCheckbox.setSelected(editedPitch.wasSwungAt());
+            inZoneCheckbox.setSelected(editedPitch.isInZone());
+        }
         this.validate();
         this.setVisible(true);
     }
@@ -27,6 +49,15 @@ public class InputPanel extends JPanel implements PopPanel {
     @Override
     public Object sendObject() {
         return pitchObj;
+    }
+    public Boolean warnOnClose() {return true;}
+    public String getCancelTitle() {
+        if (isEditing) {return "Discard this edit?";}
+        else {return "Discard this pitch?";}
+    }
+    public String getCancelMsg() {
+        if (isEditing) {return "Would you like to discard this edit?";}
+        else {return "Would you like to discard this pitch?";}
     }
 
     //@SuppressWarnings("unchecked")
@@ -50,7 +81,7 @@ public class InputPanel extends JPanel implements PopPanel {
 
         JPanel basesPane = new JPanel();
         basesPane.setBorder(BorderFactory.createTitledBorder(
-                "How many bases were scored:"));
+                "Number of bases scored:"));
         SpinnerModel baseModel =
                 new SpinnerNumberModel(0, //initial value
                         0, //min
@@ -75,8 +106,9 @@ public class InputPanel extends JPanel implements PopPanel {
         speedPane.setPreferredSize(new Dimension(100, 50));
         this.add(speedPane);
 
-        JPanel checkboxPane = new JPanel();
-        checkboxPane.setLayout(new BoxLayout(checkboxPane, BoxLayout.Y_AXIS));
+        //JPanel checkboxPane = new JPanel();
+        //checkboxPane.setLayout(new BoxLayout(checkboxPane, BoxLayout.Y_AXIS));
+        //checkboxPane.setLayout(new GridLayout(2, 1));
         //checkboxPane.setBorder(BorderFactory.createTitledBorder("Checkboxes"));
         wasSwungAtCheckbox = new JCheckBox("Did the batter swing at this?");
         wasSwungAtCheckbox.setSelected(true);
@@ -85,31 +117,41 @@ public class InputPanel extends JPanel implements PopPanel {
         inZoneCheckbox = new JCheckBox("Was the ball in the zone?");
         inZoneCheckbox.setSelected(true);
         inZoneCheckbox.setHorizontalAlignment(JCheckBox.LEFT);
-        checkboxPane.add(wasSwungAtCheckbox);
-        checkboxPane.add(inZoneCheckbox);
+        //checkboxPane.add(wasSwungAtCheckbox);
+        //checkboxPane.add(inZoneCheckbox);
         //checkboxPane.setPreferredSize(new Dimension(150, 50));
-        this.add(checkboxPane);
+        //this.add(checkboxPane);
+        this.add(wasSwungAtCheckbox);
+        this.add(inZoneCheckbox);
 
         submitButton = new JButton("Submit");
         submitButton.setActionCommand("submit");
         submitButton.addActionListener(this::actionPerformed);
         this.add(submitButton);
+
+        cancelButton = new JButton("Cancel");
+        cancelButton.setActionCommand("cancel");
+        cancelButton.addActionListener(this::actionPerformed);
+        this.add(cancelButton);
     }
 
     public void actionPerformed(ActionEvent e) {
         if ("submit".equals(e.getActionCommand())) {
             submitButton.setEnabled(false);
             Pitch.Type type = Pitch.Type.fromInt(typeList.getSelectedIndex());
-            Pitch.Result result = Pitch.Result.fromInt(typeList.getSelectedIndex());
+            Pitch.Result result = Pitch.Result.fromInt(resultList.getSelectedIndex());
             int bases = (Integer) basesSpinner.getValue();
             boolean inZone = inZoneCheckbox.isSelected();
             double speed = (Double) speedSpinner.getValue();
             boolean wasSwungAt = wasSwungAtCheckbox.isSelected();
 
             Pitch example = new Pitch(type, result, bases, inZone, speed, wasSwungAt);
+            example.setID(PitchID); // Will either be -1 (new) or whatever the ID of the given Pitch in the constructor was.
             pitchObj = example;
             MainWindow.closePopupPanel();
             //System.out.println(example.toString());
+        } else if ("cancel".equals(e.getActionCommand())) {
+            MainWindow.cancelPopupPanel();
         }
     }
 }
