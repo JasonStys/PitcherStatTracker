@@ -6,11 +6,14 @@ import edu.csusm.cs370.team8.pitcherstattracker.model.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.net.URL;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
-public class SessionEditPanel extends JPanel implements HostPanel {
+public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
+
+    private final String TITLE = "Session Editor";
+    public String getTitle() {return TITLE;}
+
     private final Session ourSession;
     private LocalDate timestamp;
     private JSpinner monthSpinner;
@@ -213,13 +216,13 @@ public class SessionEditPanel extends JPanel implements HostPanel {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "new":
-                MainWindow.popupPanel(new InputPanel(), "New Pitch");
+                MainWindow.popupPanel(new PitchInputPanel(), "New Pitch");
                 break;
 
             case "edit":
                 Pitch editedPitch = pitchList.getSelectedValue();
                 if (editedPitch != null) {
-                    MainWindow.popupPanel(new InputPanel(editedPitch), "Edit Pitch");
+                    MainWindow.popupPanel(new PitchInputPanel(editedPitch), "Edit Pitch");
                 } else {
                     MainWindow.displayError("No Selection", "Please first select a Pitch to edit");
                 }

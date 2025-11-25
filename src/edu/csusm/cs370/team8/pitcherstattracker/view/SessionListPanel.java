@@ -7,10 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
-public class SessionListPanel extends JPanel implements HostPanel {
+public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
     private final Pitcher ourPitcher;
+
+    private final String TITLE = "Pitcher Editor";
+    public String getTitle() {return TITLE;}
 
     private JList<Session> sessionList;
     DefaultListModel<Session> sesListModel = new DefaultListModel<>();
@@ -20,6 +25,9 @@ public class SessionListPanel extends JPanel implements HostPanel {
     private JButton saveButton;
     private JButton cancelButton;
     private JButton backButton;
+    private JTextField textField;
+
+
     private boolean isEditingMode = false; // True when we are editing a session, false when adding a new one.
 
     public SessionListPanel(Pitcher p) {
@@ -47,7 +55,7 @@ public class SessionListPanel extends JPanel implements HostPanel {
     }
 
     private void initComponents() {
-        // Scrollable list of pitches
+        // Scrollable list of sessions
         JScrollPane sessionScroller = new JScrollPane();
         sessionScroller.setBorder(BorderFactory.createTitledBorder("Sessions:"));
         sesListModel.addAll(ourPitcher.getSessions());
@@ -109,6 +117,15 @@ public class SessionListPanel extends JPanel implements HostPanel {
         backButton.setActionCommand("cancel");
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
+
+        JPanel namePane = new JPanel();
+        namePane.setBorder(BorderFactory.createTitledBorder(
+                "Name:"));
+        textField = new JTextField(50);
+        textField.setText(ourPitcher.getName());
+        namePane.add(textField);
+        header.add(namePane);
+
         this.add(header, BorderLayout.NORTH);
     }
 
@@ -142,8 +159,15 @@ public class SessionListPanel extends JPanel implements HostPanel {
                 break;
 
             case "save":
-                MainWindow.displayError("PROGRAM ERROR","This button is not assigned to any code!");
-                //MainWindow.prevPanel(newSession);
+                //MainWindow.displayError("PROGRAM ERROR","This button is not assigned to any code!");
+                ourPitcher.setName(textField.getText());
+
+                // Turn the current graphical list into a Session list that can be set to the Pitcher.
+                ArrayList<Session> sessions;
+                sessions = Collections.list(sesListModel.elements());
+                ourPitcher.setSessions(sessions);
+
+                MainWindow.prevPanel(ourPitcher);
                 break;
 
             case "cancel":

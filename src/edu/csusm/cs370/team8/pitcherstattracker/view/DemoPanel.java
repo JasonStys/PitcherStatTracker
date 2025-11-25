@@ -3,18 +3,24 @@ package edu.csusm.cs370.team8.pitcherstattracker.view;
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
 import edu.csusm.cs370.team8.pitcherstattracker.model.Pitcher;
 import edu.csusm.cs370.team8.pitcherstattracker.model.Session;
+import edu.csusm.cs370.team8.pitcherstattracker.model.UserAccount;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Random;
 
-public class DemoPanel extends JPanel {
+public class DemoPanel extends JPanel implements TitledPanel {
     private JButton buttonOne;
     private JButton buttonTwo;
     private JButton buttonThree;
+    private JButton buttonFour;
+
+    private final String TITLE = "Demo Panel for Testing";
+    public String getTitle() {return TITLE;}
 
     public DemoPanel() {
-        this.setLayout(new GridLayout(2, 2));
+        this.setLayout(new GridLayout(3, 2));
         initComponents();
         this.revalidate();
         this.setVisible(true);
@@ -40,11 +46,22 @@ public class DemoPanel extends JPanel {
         buttonThree.addActionListener(this::actionPerformed);
         this.add(buttonThree);
 
-        this.setPreferredSize(new Dimension(600, 200));
+        buttonFour = new JButton("Open Coach Dashboard");
+        buttonFour.setActionCommand("four");
+        buttonFour.addActionListener(this::actionPerformed);
+        this.add(buttonFour);
+
+        buttonOne.setVisible(false);
+        buttonTwo.setVisible(false);
+        buttonThree.setVisible(false);
+
+        this.setPreferredSize(new Dimension(600, 300));
     }
 
     public void actionPerformed(ActionEvent e) {
-        Pitcher examplePitcher = Pitcher.createRandomPitcher(15,15);
+        Random random = new Random();
+        int numSessions = random.nextInt(15,91);
+        Pitcher examplePitcher = Pitcher.createRandomPitcher(numSessions);
         switch (e.getActionCommand()) {
             case "one":
                 Session exampleSession = Session.createRandomSessionData(15);
@@ -61,6 +78,12 @@ public class DemoPanel extends JPanel {
                SessionListPanel sessionListPanel = new SessionListPanel(examplePitcher);
                MainWindow.switchPanel(sessionListPanel);
                break;
+
+            case "four":
+                UserAccount account = UserAccount.generateCoach();
+                PitcherListPanel panel = new PitcherListPanel(account);
+                MainWindow.switchPanel(panel);
+                break;
 
         }
     }

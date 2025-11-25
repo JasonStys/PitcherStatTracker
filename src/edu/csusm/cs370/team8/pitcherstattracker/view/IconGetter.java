@@ -27,4 +27,7 @@ public class IconGetter {
             IconGetter.class.getResource(path + "general/Edit24.gif"));
     public static final ImageIcon CUT = new ImageIcon(
             IconGetter.class.getResource(path + "general/Cut24.gif"));
+
+    public static final ImageIcon VIEW = new ImageIcon(
+            IconGetter.class.getResource(path + "general/Search24.gif"));
 }

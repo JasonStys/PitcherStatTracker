@@ -14,7 +14,8 @@ import edu.csusm.cs370.team8.pitcherstattracker.view.*;
  */
 
 public class MainWindow {
-    private static JFrame window = new JFrame("Perfect Pitch");
+    private static final String PROGRAM_TITLE = "Perfect Pitch";
+    private static JFrame window = new JFrame(PROGRAM_TITLE);
     private static JPanel currPanel; // Current menu in the window
     private static Deque<JPanel> panelHistory = new ArrayDeque<>(); // Used as a stack, with .push() and .pop() methods.
 
@@ -42,6 +43,11 @@ public class MainWindow {
         window.setContentPane(currPanel);
         window.revalidate();
         window.pack();
+        if (currPanel instanceof TitledPanel) {
+            changeTitle(((TitledPanel) currPanel).getTitle());
+        } else {
+            window.setTitle(PROGRAM_TITLE);
+        }
         //window.setSize(800, 600);
     }
 
@@ -61,6 +67,11 @@ public class MainWindow {
         window.setContentPane(currPanel);
         window.revalidate();
         window.pack();
+        if (currPanel instanceof TitledPanel) {
+            changeTitle(((TitledPanel) currPanel).getTitle());
+        } else {
+            window.setTitle(PROGRAM_TITLE);
+        }
     }
 
     public static void popupPanel(PopPanel newPanel, String title) {
@@ -125,6 +136,10 @@ public class MainWindow {
             case 1 -> 0; // No selected, return "0" which could be interpreted as "False"
             default -> -1; // Otherwise, return "-1" meaning cancel.
         };
+    }
+
+    public static void changeTitle(String title) {
+        window.setTitle(PROGRAM_TITLE + " — " + title);
     }
 
     public static void main(String[] args) {

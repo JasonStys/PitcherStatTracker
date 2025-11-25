@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class InputPanel extends JPanel implements PopPanel {
+public class PitchInputPanel extends JPanel implements PopPanel {
     private JComboBox<Pitch.Type> typeList;
     private JComboBox<Pitch.Result> resultList;
     private JSpinner basesSpinner;
@@ -20,11 +20,11 @@ public class InputPanel extends JPanel implements PopPanel {
     private int PitchID = -1; // Defaults to negative 1 unless assigned
     private boolean isEditing = false;
 
-    public InputPanel() {
+    public PitchInputPanel() {
         setupInputPanel(null);
     }
 
-    public InputPanel(Pitch editedPitch) {
+    public PitchInputPanel(Pitch editedPitch) {
         isEditing = true;
         setupInputPanel(editedPitch);
     }

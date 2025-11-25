@@ -9,9 +9,12 @@ import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class PitcherProfilePanel extends JPanel {
+public class PitcherProfilePanel extends JPanel implements TitledPanel {
     private JButton backButton;
     private Pitcher ourPitcher;
+
+    private final String TITLE = "Pitcher Profile: ";
+    public String getTitle() {return TITLE + ourPitcher.getName();}
 
     PitcherProfilePanel(Pitcher p) {
         this.ourPitcher = p;
@@ -27,15 +30,22 @@ public class PitcherProfilePanel extends JPanel {
         this.add(table, BorderLayout.CENTER);
 
         // North Header of button
-        JPanel buttonHeader = new JPanel();
-        //buttonHeader.setLayout(new GridLayout(1, 4));
-        buttonHeader.setLayout(new BoxLayout(buttonHeader, BoxLayout.X_AXIS));
+        JPanel header = new JPanel();
+        //header.setLayout(new GridLayout(1, 4));
+        header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
         backButton = new JButton("Back", IconGetter.BACK);
         backButton.setActionCommand("cancel");
         backButton.addActionListener(this::actionPerformed);
+        header.add(backButton);
 
-        buttonHeader.add(backButton);
-        this.add(buttonHeader, BorderLayout.NORTH);
+        JPanel namePane = new JPanel();
+        namePane.setBorder(BorderFactory.createTitledBorder(
+                "Name:"));
+        JLabel nameLabel = new JLabel(ourPitcher.getName());
+        namePane.add(nameLabel);
+        header.add(namePane);
+
+        this.add(header, BorderLayout.NORTH);
     }
 
     public void actionPerformed(ActionEvent e) {
