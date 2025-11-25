@@ -149,7 +149,7 @@ public class InputPanel extends JPanel implements PopPanel {
 
             if (error != null)
             {
-                JOptionPane.showMessageDialog(this, error, "Invalid Input", JOptionPane.ERROR_MESSAGE);
+                MainWindow.displayError("Invalid Input", error);
                 return;
             }
 
