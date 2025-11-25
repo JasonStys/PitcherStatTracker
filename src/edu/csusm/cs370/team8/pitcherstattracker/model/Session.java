@@ -3,15 +3,17 @@ package edu.csusm.cs370.team8.pitcherstattracker.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.EnumMap;
+import java.time.*;
 
 /* This represents a single "Game" or "Period of training", usually 1-2 hours.
  * THIS CLASS IS WHAT HAS ALL THE STAT FIELDS.
  */
 public class Session {
-    // Identity
+    // Identity Metadata
     private int sessionId;
     private String gameId;  // NULL for training
     private String pitcherId;
+    private LocalDate timestamp;
 
     private final List<Pitch> pitches = new ArrayList<>();
 
@@ -33,6 +35,7 @@ public class Session {
 
     public Session() {
         // Empty constructor for when we're making a new session
+        timestamp = LocalDate.now();
         for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
     }
 
@@ -120,8 +123,18 @@ public class Session {
         }
     }
 
+    public void cloneMetaData(Session old) {
+        this.gameId = old.gameId;
+        this.pitcherId = old.pitcherId;
+        this.timestamp = old.timestamp;
+        this.sessionId = old.sessionId;
+    }
+
     // getters
     public List<Pitch> getPitches() {return pitches;}
+    public LocalDate getTimestamp() {return timestamp;}
+    public void setTimestamp(LocalDate date) {this.timestamp = date;}
+
     public int singles() { return bipCounts.get(BIPResult.SINGLE); }
     public int doubles() { return bipCounts.get(BIPResult.DOUBLE); }
     public int triples() { return bipCounts.get(BIPResult.TRIPLE); }
