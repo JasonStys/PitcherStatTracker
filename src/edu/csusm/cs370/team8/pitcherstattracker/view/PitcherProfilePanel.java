@@ -1,7 +1,7 @@
 package edu.csusm.cs370.team8.pitcherstattracker.view;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
-import edu.csusm.cs370.team8.pitcherstattracker.controller.StatCalculator;
+import edu.csusm.cs370.team8.pitcherstattracker.controller.PitcherStatsTable;
 import edu.csusm.cs370.team8.pitcherstattracker.model.Pitcher;
 
 import javax.swing.*;
@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 
 public class PitcherProfilePanel extends JPanel {
     private JButton backButton;
-    private StatCalculator statCalculator;
     private Pitcher ourPitcher;
 
     PitcherProfilePanel(Pitcher p) {
@@ -23,8 +22,8 @@ public class PitcherProfilePanel extends JPanel {
     }
 
     private void initComponents() {
-        statCalculator = new StatCalculator(ourPitcher);
-        TableWidget table = statCalculator.getPitcherTableWidget();
+        PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitcher);
+        TableWidget table = statsTableController.buildDefaultCareerTable();
         this.add(table, BorderLayout.CENTER);
 
         // North Header of button
