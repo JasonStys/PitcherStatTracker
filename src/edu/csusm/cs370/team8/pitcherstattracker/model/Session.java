@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.EnumMap;
 import java.time.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /* This represents a single "Game" or "Period of training", usually 1-2 hours.
  * THIS CLASS IS WHAT HAS ALL THE STAT FIELDS.
@@ -159,8 +160,29 @@ public class Session {
         return full + "." + rem;
     }
 
+    private static LocalDate randomDateLastFiveYears() {
+        int currentYear = LocalDate.now().getYear();
+
+        // Pick a random year in [currentYear - 4, currentYear]
+        int year = ThreadLocalRandom.current().nextInt(currentYear - 4, currentYear + 1);
+
+        // Rough MLB regular season window: April 1 – October 1
+        LocalDate seasonStart = LocalDate.of(year, 4, 1);
+        LocalDate seasonEnd   = LocalDate.of(year, 10, 1);
+
+        long startEpochDay = seasonStart.toEpochDay();
+        long endEpochDay   = seasonEnd.toEpochDay();
+
+        // Random day in [startEpochDay, endEpochDay]
+        long randomEpochDay = ThreadLocalRandom.current()
+                .nextLong(startEpochDay, endEpochDay + 1);
+
+        return LocalDate.ofEpochDay(randomEpochDay);
+    }
+
     public static Session createRandomSessionData(int numPitches) {
         Session exampleSession = new Session();
+        exampleSession.timestamp = randomDateLastFiveYears();
         for (int i = 0; i < numPitches; i++) {
             exampleSession.addPitch(Pitch.randomPitch());
         }
