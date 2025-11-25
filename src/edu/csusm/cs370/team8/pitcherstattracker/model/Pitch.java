@@ -110,17 +110,69 @@ public class Pitch {
 
     // Returns a randomly generated pitch, used for testing only.
     public static Pitch randomPitch() {
-        Random random =  new Random();
+        Random random = new Random();
+
+        // 1) Pitch type (uniform among defined types should be adjusted later)
         Pitch.Type type = Pitch.Type.fromInt(random.nextInt(Pitch.Type.values().length));
-        Pitch.Result result = Pitch.Result.fromInt(random.nextInt(Pitch.Result.values().length));
-        int bases = (Integer) random.nextInt(MAX_BASES);
-        boolean inZone = random.nextBoolean();
-        double speed = random.nextDouble(MAX_SPEED);
-        // Rounds speed to 3 decimal places
+
+        // 2) Speed band by type
+        double minSpeed;
+        double maxSpeed;
+        switch (type) {
+            case Fastball -> { minSpeed = 88.0; maxSpeed = 100.0; }
+            case Slider   -> { minSpeed = 80.0; maxSpeed = 90.0; }
+            case Curveball-> { minSpeed = 72.0; maxSpeed = 82.0; }
+            case Changeup -> { minSpeed = 75.0; maxSpeed = 86.0; }
+            case Knuckleball -> { minSpeed = 60.0; maxSpeed = 75.0; }
+            case Slurve -> { minSpeed = 76.0; maxSpeed = 88.0; }
+            default       -> { minSpeed = MIN_SPEED; maxSpeed = MAX_SPEED; }
+        }
+
+        double speed = minSpeed + random.nextDouble() * (maxSpeed - minSpeed);
+        // make sure in global bounds just in case
+        if (speed < MIN_SPEED) speed = MIN_SPEED;
+        if (speed > MAX_SPEED) speed = MAX_SPEED;
+
+        // Round to 3 decimal places
         BigDecimal bd = new BigDecimal(speed).setScale(3, RoundingMode.HALF_EVEN);
         speed = bd.doubleValue();
-        boolean wasSwungAt = random.nextBoolean();
+
+        // 3) Is it in the zone?
+        boolean inZone = random.nextDouble() < 0.55;
+
+        // 4) Does the batter swing? More likely on strikes.
+        boolean wasSwungAt = random.nextDouble() < (inZone ? 0.6 : 0.25);
+
+        Pitch.Result result;
+        int bases = 0; // default: no bases unless it's a hit
+
+        if (!wasSwungAt) {
+            // Batter takes: it's either a called strike or a ball
+            result = inZone ? Pitch.Result.Strike : Pitch.Result.Ball;
+        } else {
+            // Batter swings: simple probability breakdown
+            double r = random.nextDouble();
+
+            if (r < 0.40) {
+                result = Pitch.Result.Foul;              // ~40% of swings
+            } else if (r < 0.70) {
+                result = Pitch.Result.BallInPlayOut;     // ~30%
+            } else if (r < 0.85) {
+                result = Pitch.Result.Hit;               // ~15%
+                // Bases for hits: mostly singles
+                double h = random.nextDouble();
+                if (h < 0.75)       bases = 1; // single
+                else if (h < 0.93)  bases = 2; // double
+                else if (h < 0.95)  bases = 3; // triple
+                else                bases = 4; // HR
+            } else if (r < 0.90) {
+                result = Pitch.Result.ReachOnError;      // ~5%
+            } else {
+                result = Pitch.Result.Strikeout;         // ~10% (swing-and-miss K)
+            }
+        }
 
         return new Pitch(type, result, bases, inZone, speed, wasSwungAt);
     }
+
 }
