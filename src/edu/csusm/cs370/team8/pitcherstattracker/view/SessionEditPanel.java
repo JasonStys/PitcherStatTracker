@@ -167,7 +167,9 @@ public class SessionEditPanel extends JPanel implements HostPanel {
                 break;
 
             case "cancel":
-                MainWindow.displayError("Unimplemented","The Cancel/Back button is not assigned to any code!");
+                if (MainWindow.displayOkCancel("Are you sure?", "Are you sure you want to discard everything?")) {
+                    MainWindow.prevPanel();
+                }
                 break;
 
             default:

@@ -27,10 +27,8 @@ public class MainWindow {
     public MainWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Session exampleSession = createExampleSessionData();
-        //InputPanel input = new InputPanel();
-        SessionEditPanel sesEdit = new SessionEditPanel(exampleSession);
-        switchPanel(sesEdit);
+        DemoPanel demo = new DemoPanel();
+        switchPanel(demo);
 
         window.setVisible(true);
     }
@@ -132,13 +130,5 @@ public class MainWindow {
     public static void main(String[] args) {
         // Ensure GUI updates are handled on the Event Dispatch Thread
         SwingUtilities.invokeLater(MainWindow::new);
-    }
-
-    private static Session createExampleSessionData() {
-        Session exampleSession = new Session();
-        for (int i = 0; i < 10; i++) {
-            exampleSession.addPitch(Pitch.randomPitch());
-        }
-        return exampleSession;
     }
 }

@@ -11,5 +11,15 @@ public class Pitcher {
 
     //A list of all their sessions so far. A copy so will need to be updated.
     public List<Session> getSessions() {return List.copyOf(sessions);}
+    public void addSession(Session session) {sessions.add(session);}
+
+
+    public static Pitcher createRandomPitcher(int numSessions, int numPitchesPerSession) {
+        Pitcher pitcher = new Pitcher();
+        for (int i = 0; i < numSessions; i++) {
+            pitcher.addSession(Session.createRandomSessionData(numPitchesPerSession));
+        }
+        return pitcher;
+    }
 
 }

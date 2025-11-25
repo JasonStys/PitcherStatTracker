@@ -146,4 +146,12 @@ public class Session {
         return full + "." + rem;
     }
 
+    public static Session createRandomSessionData(int numPitches) {
+        Session exampleSession = new Session();
+        for (int i = 0; i < numPitches; i++) {
+            exampleSession.addPitch(Pitch.randomPitch());
+        }
+        return exampleSession;
+    }
+
 }
