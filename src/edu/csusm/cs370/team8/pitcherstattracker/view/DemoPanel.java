@@ -11,33 +11,40 @@ import java.awt.event.ActionEvent;
 public class DemoPanel extends JPanel {
     private JButton buttonOne;
     private JButton buttonTwo;
+    private JButton buttonThree;
 
     public DemoPanel() {
-        this.setLayout(new GridLayout(3, 1));
+        this.setLayout(new GridLayout(2, 2));
         initComponents();
         this.revalidate();
         this.setVisible(true);
     }
 
     private void initComponents() {
-        JLabel labelOne = new JLabel("Demo Menu. Click a button to launch that screen");
+        JLabel labelOne = new JLabel("<html>Demo Menu.<br>Click a button to launch that screen</html>");
         labelOne.setHorizontalAlignment(SwingConstants.CENTER);
         this.add(labelOne);
 
-        buttonOne = new JButton("Open Session Editor");
+        buttonOne = new JButton("Open Session Editor with random data");
         buttonOne.setActionCommand("one");
         buttonOne.addActionListener(this::actionPerformed);
         this.add(buttonOne);
 
-        buttonTwo = new JButton("Open Table Display");
+        buttonTwo = new JButton("Open Table Display with random data");
         buttonTwo.setActionCommand("two");
         buttonTwo.addActionListener(this::actionPerformed);
         this.add(buttonTwo);
 
-        this.setPreferredSize(new Dimension(400, 200));
+        buttonThree = new JButton("Open Pitcher's list of sessions");
+        buttonThree.setActionCommand("three");
+        buttonThree.addActionListener(this::actionPerformed);
+        this.add(buttonThree);
+
+        this.setPreferredSize(new Dimension(600, 200));
     }
 
     public void actionPerformed(ActionEvent e) {
+        Pitcher examplePitcher = Pitcher.createRandomPitcher(15,15);
         switch (e.getActionCommand()) {
             case "one":
                 Session exampleSession = Session.createRandomSessionData(15);
@@ -46,10 +53,14 @@ public class DemoPanel extends JPanel {
                 break;
 
             case "two":
-                Pitcher examplePitcher = Pitcher.createRandomPitcher(15,15);
                 PitcherProfilePanel profilePanel = new PitcherProfilePanel(examplePitcher);
                 MainWindow.switchPanel(profilePanel);
                 break;
+
+            case "three":
+               SessionListPanel sessionListPanel = new SessionListPanel(examplePitcher);
+               MainWindow.switchPanel(sessionListPanel);
+               break;
 
         }
     }

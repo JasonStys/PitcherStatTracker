@@ -7,9 +7,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class SessionEditPanel extends JPanel implements HostPanel {
     private final Session ourSession;
+    private LocalDate timestamp;
+    private JSpinner monthSpinner;
+    private JSpinner daySpinner;
+    private JSpinner yearSpinner;
+    private YearMonth ym;
 
     private JList<Pitch> pitchList;
     DefaultListModel<Pitch> pitchListModel = new DefaultListModel<>();
@@ -33,6 +40,9 @@ public class SessionEditPanel extends JPanel implements HostPanel {
     }
 
     private void setupSessionPanel() {
+        timestamp = ourSession.getTimestamp();
+        ym = YearMonth.from(timestamp);
+        
         this.setLayout(new BorderLayout(2, 2));
         initComponents();
         this.revalidate();
@@ -42,7 +52,7 @@ public class SessionEditPanel extends JPanel implements HostPanel {
     // ran when InputPanel popup gives back a pitch object to this panel.
     @Override
     public void receiveObject(Object obj) {
-        if (obj instanceof Pitch pitchObj) { // If we actually recieved a pitch; if it's null or invalid then nothing happens
+        if (obj instanceof Pitch pitchObj) { // If we actually received a pitch; if it's null or invalid then nothing happens
             // pitchObj is the newly added Pitch
             int idMatch =  pitchObj.getID();
             if (idMatch == -1) { // If this is a new pitch and not an edit of one already created
@@ -109,7 +119,7 @@ public class SessionEditPanel extends JPanel implements HostPanel {
         // South Footer of buttons
         JPanel buttonFooter = new JPanel();
         buttonFooter.setLayout(new GridLayout(1, 2));
-        saveButton = new JButton("Save All and Exit", IconGetter.SAVE);
+        saveButton = new JButton("Save All and Return", IconGetter.SAVE);
         saveButton.setActionCommand("save");
         saveButton.addActionListener(this::actionPerformed);
         cancelButton = new JButton("Discard ALL Changes", IconGetter.DELETE);
@@ -120,17 +130,83 @@ public class SessionEditPanel extends JPanel implements HostPanel {
         //buttonFooter.setSize(new Dimension(50, 500));
         this.add(buttonFooter, BorderLayout.SOUTH);
 
-        // North Header of button
-        JPanel buttonHeader = new JPanel();
-        //buttonHeader.setLayout(new GridLayout(1, 4));
-        buttonHeader.setLayout(new BoxLayout(buttonHeader, BoxLayout.X_AXIS));
+        // North Header of button and spinners
+        JPanel header = new JPanel();
+        //header.setLayout(new GridLayout(1, 4));
+        header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
         backButton = new JButton("Back", IconGetter.BACK);
         backButton.setActionCommand("cancel");
         backButton.addActionListener(this::actionPerformed);
+        header.add(backButton);
 
-        buttonHeader.add(backButton);
-        this.add(buttonHeader, BorderLayout.NORTH);
+        JPanel monthPane = new JPanel();
+        monthPane.setBorder(BorderFactory.createTitledBorder(
+                "Month:"));
+        SpinnerModel monthModel =
+                new SpinnerNumberModel(timestamp.getMonthValue(), //initial value
+                        1, //min
+                        12, //max
+                        1); // steps, integers are 1 step apart
+        monthSpinner = new JSpinner(monthModel);
+        monthSpinner.setPreferredSize(new Dimension(100, 20));
+        // Updates the daySpinner so it accurately shows the num of days in the month/year
+        monthSpinner.addChangeListener(e -> {updateDaySpinner();});
+        monthPane.add(monthSpinner);
+        monthPane.setPreferredSize(new Dimension(100, 50));
+        header.add(monthPane);
 
+        JPanel dayPane = new JPanel();
+        dayPane.setBorder(BorderFactory.createTitledBorder(
+                "Day:"));
+        SpinnerModel dayModel =
+                new SpinnerNumberModel(timestamp.getDayOfMonth(), //initial value
+                        1, //min
+                        ym.lengthOfMonth(), //max
+                        1); // steps, integers are 1 step apart
+        daySpinner = new JSpinner(dayModel);
+        daySpinner.setPreferredSize(new Dimension(100, 20));
+        dayPane.add(daySpinner);
+        dayPane.setPreferredSize(new Dimension(100, 50));
+        header.add(dayPane);
+
+        JPanel yearPane = new JPanel();
+        yearPane.setBorder(BorderFactory.createTitledBorder(
+                "Year:"));
+        SpinnerModel yearModel =
+                new SpinnerNumberModel(timestamp.getYear(), //initial value
+                        1749, //min, year England has first recorded instance of the sport of "Bass-ball"
+                        99999, //max
+                        1); // steps, integers are 1 step apart
+        yearSpinner = new JSpinner(yearModel);
+        yearSpinner.setPreferredSize(new Dimension(100, 20));
+        // Updates the daySpinner so it accurately shows the num of days in the month/year. This is for leap years!
+        yearSpinner.addChangeListener(e -> {updateDaySpinner();});
+        // Removes the commas from the thousandth place, so like instead of 2,025 it's 2025
+        yearSpinner.setEditor(new JSpinner.NumberEditor(yearSpinner, "#"));
+        yearPane.add(yearSpinner);
+        yearPane.setPreferredSize(new Dimension(100, 50));
+        header.add(yearPane);
+
+        this.add(header, BorderLayout.NORTH);
+    }
+
+    private void updateDaySpinner() {
+        int month = (Integer) monthSpinner.getValue();
+        int year = (Integer) yearSpinner.getValue();
+        int day = (Integer) daySpinner.getValue();
+        ym = YearMonth.of(year, month);
+
+        // If the current day is beyond the length of the month (i.e. Feburary 31st), set to max.
+        if (day > ym.lengthOfMonth()) {day = ym.lengthOfMonth();}
+
+        SpinnerModel dayModel =
+                new SpinnerNumberModel(day, //initial value
+                        1, //min
+                        ym.lengthOfMonth(), //max
+                        1); // steps, integers are 1 step apart
+
+        daySpinner.setModel(dayModel);
+        this.revalidate();
     }
 
     // Each case in the switch statement below is when a button is pressed.
@@ -163,7 +239,18 @@ public class SessionEditPanel extends JPanel implements HostPanel {
                 break;
 
             case "save":
-                MainWindow.displayError("Unimplemented","This save button is not assigned to any code!");
+                Session newSession = new Session();
+                newSession.cloneMetaData(ourSession); // Clones all metadata from the session we were given, may be null.
+                for  (int i = 0; i < pitchListModel.getSize(); i++) {
+                    newSession.addPitch(pitchListModel.getElementAt(i)); // Add all pitches
+                }
+                int month = (Integer) monthSpinner.getValue();
+                int year = (Integer) yearSpinner.getValue();
+                int day = (Integer) daySpinner.getValue();
+                timestamp = LocalDate.of(year, month, day);
+                newSession.setTimestamp(timestamp); // Set the timestamp of the session
+
+                MainWindow.prevPanel(newSession);
                 break;
 
             case "cancel":
