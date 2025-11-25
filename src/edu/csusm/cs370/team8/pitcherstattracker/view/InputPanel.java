@@ -137,13 +137,21 @@ public class InputPanel extends JPanel implements PopPanel {
 
     public void actionPerformed(ActionEvent e) {
         if ("submit".equals(e.getActionCommand())) {
-            submitButton.setEnabled(false);
+            //submitButton.setEnabled(false);
             Pitch.Type type = Pitch.Type.fromInt(typeList.getSelectedIndex());
             Pitch.Result result = Pitch.Result.fromInt(resultList.getSelectedIndex());
             int bases = (Integer) basesSpinner.getValue();
             boolean inZone = inZoneCheckbox.isSelected();
             double speed = (Double) speedSpinner.getValue();
             boolean wasSwungAt = wasSwungAtCheckbox.isSelected();
+
+            String error = validateInput(result, bases);
+
+            if (error != null)
+            {
+                JOptionPane.showMessageDialog(this, error, "Invalid Input", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             Pitch example = new Pitch(type, result, bases, inZone, speed, wasSwungAt);
             example.setID(PitchID); // Will either be -1 (new) or whatever the ID of the given Pitch in the constructor was.
@@ -154,4 +162,33 @@ public class InputPanel extends JPanel implements PopPanel {
             MainWindow.cancelPopupPanel();
         }
     }
+
+    private String validateInput(Pitch.Result result, int bases) {
+        // Non-contact results → bases must be 0
+        switch (result) {
+            case Ball:
+            case Strike:
+            case Foul:
+            case Strikeout:
+            case BallInPlayOut:
+            case HitByPitch:
+            case Walk:
+                if (bases != 0) {
+                    return "This pitch result cannot have bases gained.";
+                }
+                break;
+
+            // Hit or error → bases must be 1–4
+            case Hit:
+            case ReachOnError:
+                if (bases < 1 || bases > 4) {
+                    return "Hits or errors must result in 1–4 bases.";
+                }
+                break;
+        }
+
+        return null; // valid
+    }
 }
+
+
