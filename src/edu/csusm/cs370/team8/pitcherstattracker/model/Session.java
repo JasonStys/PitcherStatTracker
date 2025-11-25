@@ -7,9 +7,9 @@ import java.time.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 /* This represents a single "Game" or "Period of training", usually 1-2 hours.
- * THIS CLASS IS WHAT HAS ALL THE STAT FIELDS.
+ *
  */
-public class Session {
+public class Session implements Comparable<Session> {
     // Identity Metadata
     private int sessionId;
     private String gameId;  // NULL for training
@@ -27,6 +27,12 @@ public class Session {
     private int nextID = 0;
     public int getNextID() {
         return nextID++;
+    }
+
+    // Allows sessions to be compared based on their timestamp.
+    @Override
+    public int compareTo(Session o) {
+        return timestamp.compareTo(o.timestamp);
     }
 
     // bip buckets: truth for hits by type
@@ -189,4 +195,12 @@ public class Session {
         return exampleSession;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(timestamp.toString());
+        sb.append(" : " + totalPitches() + " pitches, ");
+
+        return sb.toString();
+    }
 }

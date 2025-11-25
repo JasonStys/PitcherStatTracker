@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random; // Used for static method to create a random pitch for testing.
 
-public class Pitch {
+public class Pitch implements Comparable<Pitch>{
     public static final int MAX_BASES = 4;
     public static final int MIN_BASES = 0;
     public static final double MAX_SPEED = 130.000;
@@ -70,6 +70,13 @@ public class Pitch {
         this.speed = bd.doubleValue();
         this.wasSwungAt = wasSwungAt;
     }
+
+    // Allows pitches to be compared to each other based on ID
+    @Override
+    public int compareTo(Pitch o) {
+        return Integer.compare(id, o.id);
+    }
+
     // Basic Getters and Setters
     public Result getResult() { return result; }
     public void setResult(Result result) { this.result = result; }
