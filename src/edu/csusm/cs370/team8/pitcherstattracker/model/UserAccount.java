@@ -50,6 +50,9 @@ public class UserAccount {
             examplePitcher.setName(Pitcher.getNextName(i));
             account.addPitcher(examplePitcher);
         }
+        Pitcher emptyPitcher = new Pitcher();
+        emptyPitcher.setName("Empty Eriksson");
+        account.addPitcher(emptyPitcher);
         return account;
     };
 }

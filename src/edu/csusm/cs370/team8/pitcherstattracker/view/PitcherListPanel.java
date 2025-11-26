@@ -62,6 +62,7 @@ public class PitcherListPanel extends JPanel implements HostPanel, TitledPanel {
         pitcherList.setVisibleRowCount(-1);
         pitcherScroller.setViewportView(pitcherList);
         pitcherScroller.setPreferredSize(new Dimension(500, 425));
+        pitcherList.setSelectedIndex(0);
         this.add(pitcherScroller, BorderLayout.CENTER); // Add it to the center
 
         // East sidebar of buttons
