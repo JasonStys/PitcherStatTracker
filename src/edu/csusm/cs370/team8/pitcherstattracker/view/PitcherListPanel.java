@@ -74,7 +74,7 @@ public class PitcherListPanel extends JPanel implements HostPanel, TitledPanel {
         profileButton.setActionCommand("view");
         profileButton.addActionListener(this::actionPerformed);
 
-        editButton = new JButton("Edit Pitcher Stats", IconGetter.EDIT);
+        editButton = new JButton("View Pitcher Sessions", IconGetter.EDIT);
         editButton.setActionCommand("edit");
         editButton.addActionListener(this::actionPerformed);
         editButton.setVerticalTextPosition(AbstractButton.BOTTOM);
