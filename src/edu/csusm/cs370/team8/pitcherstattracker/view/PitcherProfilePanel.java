@@ -26,7 +26,7 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
 
     private void initComponents() {
         PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitcher);
-        TableWidget table = statsTableController.buildDefaultCareerTable();
+        TableWidget table = statsTableController.buildDefaultTable();
         this.add(table, BorderLayout.CENTER);
 
         // North Header of button

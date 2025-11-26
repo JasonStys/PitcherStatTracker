@@ -50,7 +50,7 @@ public class PitcherStatsTable {
     }
 
     //Simple default: career totals with a common set of columns.
-    public TableWidget buildDefaultCareerTable() {
+    public TableWidget buildDefaultTable() {
         List<Column> cols = List.of(
                 Column.LABEL,
                 Column.IP,
@@ -64,7 +64,7 @@ public class PitcherStatsTable {
                 Column.SLG,
                 Column.WHIP
         );
-        return buildTable(StatCalculator.Grouping.CAREER, cols);
+        return buildTable(StatCalculator.Grouping.BY_YEAR, cols);
     }
 
     /*
@@ -77,40 +77,60 @@ public class PitcherStatsTable {
     public TableWidget buildTable(StatCalculator.Grouping grouping,
                                   List<Column> columns) {
 
+        // normal buckets for requested grouping
         Map<String, StatCalculator.PitchingStats> buckets =
                 statCalculator.aggregate(grouping);
 
-        // Build column names
+        // optional career entry
+        Map.Entry<String, StatCalculator.PitchingStats> careerEntry = null;
+        if (grouping != StatCalculator.Grouping.CAREER) {
+            Map<String, StatCalculator.PitchingStats> careerMap =
+                    statCalculator.aggregate(StatCalculator.Grouping.CAREER);
+            if (!careerMap.isEmpty()) {
+                careerEntry = careerMap.entrySet().iterator().next();
+            }
+        }
+
+        // column names
         String[] columnNames = new String[columns.size()];
         for (int i = 0; i < columns.size(); i++) {
             columnNames[i] = headerFor(columns.get(i), grouping);
         }
 
-        // Sort keys for deterministic row order
+        // sorted keys for normal rows
         List<String> keys = new ArrayList<>(buckets.keySet());
         Collections.sort(keys);
 
-        Object[][] rowData = new Object[keys.size()][columns.size()];
+        int rowCount = keys.size() + (careerEntry != null ? 1 : 0);
+        Object[][] rowData = new Object[rowCount][columns.size()];
 
-        for (int row = 0; row < keys.size(); row++) {
-            String key = keys.get(row);
+        int row = 0;
+
+        // normal rows
+        for (String key : keys) {
             StatCalculator.PitchingStats stats = buckets.get(key);
-
             for (int col = 0; col < columns.size(); col++) {
-                Column c = columns.get(col);
-                rowData[row][col] = valueForColumn(c, key, stats);
+                rowData[row][col] = valueForColumn(columns.get(col), key, stats);
+            }
+            row++;
+        }
+
+        // career row at bottom, if requested
+        if (careerEntry != null) {
+            String label = careerEntry.getKey();           // e.g., "Career"
+            StatCalculator.PitchingStats stats = careerEntry.getValue();
+            for (int col = 0; col < columns.size(); col++) {
+                rowData[row][col] = valueForColumn(columns.get(col), label, stats);
             }
         }
 
         TableWidget table = new TableWidget(columnNames, rowData);
-
-        // You can tweak default widths here if you like
         for (int i = 0; i < columnNames.length; i++) {
             table.setColumnWidth(i, 60);
         }
-
         return table;
     }
+
 
     //helpers
     private String headerFor(Column c, StatCalculator.Grouping grouping) {
