@@ -34,26 +34,22 @@ public class DemoPanel extends JPanel implements TitledPanel {
         buttonOne = new JButton("Open Session Editor with random data");
         buttonOne.setActionCommand("one");
         buttonOne.addActionListener(this::actionPerformed);
-        this.add(buttonOne);
+        //this.add(buttonOne);
 
         buttonTwo = new JButton("Open Table Display with random data");
         buttonTwo.setActionCommand("two");
         buttonTwo.addActionListener(this::actionPerformed);
-        this.add(buttonTwo);
+        //this.add(buttonTwo);
 
         buttonThree = new JButton("Open Pitcher's list of sessions");
         buttonThree.setActionCommand("three");
         buttonThree.addActionListener(this::actionPerformed);
-        this.add(buttonThree);
+        //this.add(buttonThree);
 
         buttonFour = new JButton("Open Coach Dashboard");
         buttonFour.setActionCommand("four");
         buttonFour.addActionListener(this::actionPerformed);
         this.add(buttonFour);
-
-        buttonOne.setVisible(false);
-        buttonTwo.setVisible(false);
-        buttonThree.setVisible(false);
 
         this.setPreferredSize(new Dimension(600, 300));
     }
