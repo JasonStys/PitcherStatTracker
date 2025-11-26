@@ -27,7 +27,25 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
     private void initComponents() {
         PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitcher);
         TableWidget table = statsTableController.buildDefaultTable();
+        table.setPreferredSize(new Dimension(500, 150));
         this.add(table, BorderLayout.CENTER);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html>");
+        sb.append("IP = Innings Pitched").append("<br>");
+        sb.append("BF = Batters Faced").append("<br>");
+        sb.append("P = Pitches").append("<br>");
+        sb.append("H = Hits").append("<br>");
+        sb.append("BB = Walks (Base on Balls)").append("<br>");
+        sb.append("K = Strikeouts").append("<br>");
+        sb.append("AVG = Batting Average Against").append("<br>");
+        sb.append("OBP = On Base Percentage Against").append("<br>");
+        sb.append("SLG = Slugging Against").append("<br>");
+        sb.append("WHIP = Walks + Hits / Innings Pitched");
+        sb.append("</html>");
+        JLabel labels = new JLabel(sb.toString());
+        labels.setHorizontalAlignment(SwingConstants.LEFT);
+        this.add(labels, BorderLayout.SOUTH);
 
         // North Header of button
         JPanel header = new JPanel();
