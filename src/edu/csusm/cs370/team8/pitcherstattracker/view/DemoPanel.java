@@ -60,9 +60,9 @@ public class DemoPanel extends JPanel implements TitledPanel {
         Pitcher examplePitcher = Pitcher.createRandomPitcher(numSessions);
         switch (e.getActionCommand()) {
             case "one":
-                Session exampleSession = Session.createRandomSessionData(15);
-                SessionEditPanel sesEdit = new SessionEditPanel(exampleSession);
-                MainWindow.switchPanel(sesEdit);
+                //Session exampleSession = Session.createRandomSessionData(15);
+                //SessionEditPanel sesEdit = new SessionEditPanel(exampleSession);
+                //MainWindow.switchPanel(sesEdit);
                 break;
 
             case "two":

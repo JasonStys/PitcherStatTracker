@@ -2,12 +2,17 @@ package edu.csusm.cs370.team8.pitcherstattracker.view;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
 import edu.csusm.cs370.team8.pitcherstattracker.model.*;
+import edu.csusm.cs370.team8.pitcherstattracker.database.*;
+import edu.csusm.cs370.team8.pitcherstattracker.view.SessionViewTemp;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.YearMonth;
+
+import java.io.File;
+import java.io.IOException;
 
 public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
 
@@ -252,6 +257,16 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
                 int day = (Integer) daySpinner.getValue();
                 timestamp = LocalDate.of(year, month, day);
                 newSession.setTimestamp(timestamp); // Set the timestamp of the session
+
+                try {
+                    SessionDatabase.save(newSession);
+                    System.out.println("Saved!");
+                } catch (IOException err) {
+                    err.printStackTrace();
+                }
+
+                SessionViewTemp view = new SessionViewTemp();
+                view.displayAllSessions();
 
                 MainWindow.prevPanel(newSession);
                 break;

@@ -1,5 +1,6 @@
 package edu.csusm.cs370.team8.pitcherstattracker.model;
 
+import edu.csusm.cs370.team8.pitcherstattracker.model.Session;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

@@ -203,4 +203,8 @@ public class Session implements Comparable<Session> {
 
         return sb.toString();
     }
+
+    public String getPitcherId() {
+        return pitcherId;
+    }
 }
