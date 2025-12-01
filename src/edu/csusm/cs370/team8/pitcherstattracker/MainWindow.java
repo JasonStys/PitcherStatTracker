@@ -6,6 +6,10 @@ import java.awt.event.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import edu.csusm.cs370.team8.pitcherstattracker.dao.UserAccountDao;
 import edu.csusm.cs370.team8.pitcherstattracker.model.*;
 import edu.csusm.cs370.team8.pitcherstattracker.view.*;
 
@@ -25,11 +29,30 @@ public class MainWindow {
     private static JFrame errorWindow = new JFrame(); // Does not need any further setup as JOptionPanel handles it.
     // errorWindow is also used for confirmation popup windows.
 
+    // DAO / persistence fields
+    private static UserAccountDao accountDao;
+    private static UserAccount account;
+
     public MainWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // DAO + account setup
+        Path dataFile = Paths.get("data","account.json");
+        accountDao = new UserAccountDao.FileBased(dataFile);
+        account = accountDao.loadOrCreateDemo();
+
         DemoPanel demo = new DemoPanel();
         switchPanel(demo);
+
+        // save on close
+        window.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (accountDao != null && account != null) {
+                    accountDao.save(account);
+                }
+            }
+        });
 
         window.setVisible(true);
     }
