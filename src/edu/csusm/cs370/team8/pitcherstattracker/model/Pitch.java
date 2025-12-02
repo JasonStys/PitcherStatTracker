@@ -156,6 +156,10 @@ public class Pitch implements Comparable<Pitch>{
         if (!wasSwungAt) {
             // Batter takes: it's either a called strike or a ball
             result = inZone ? Pitch.Result.Strike : Pitch.Result.Ball;
+            // 2% chance a ball is a walk.
+            if (result == Pitch.Result.Ball && random.nextDouble() < 0.02) {
+                result  = Pitch.Result.Walk;
+            }
         } else {
             // Batter swings: simple probability breakdown
             double r = random.nextDouble();
