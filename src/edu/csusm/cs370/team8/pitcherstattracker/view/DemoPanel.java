@@ -6,7 +6,10 @@ import edu.csusm.cs370.team8.pitcherstattracker.model.Session;
 import edu.csusm.cs370.team8.pitcherstattracker.model.UserAccount;
 
 import javax.swing.*;
-import java.awt.*;
+
+import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.util.Random;
 
@@ -15,6 +18,8 @@ public class DemoPanel extends JPanel implements TitledPanel {
     private JButton buttonTwo;
     private JButton buttonThree;
     private JButton buttonFour;
+    private JButton buttonFive;
+    private JButton buttonSix;
 
     private final String TITLE = "Demo Panel for Testing";
     public String getTitle() {return TITLE;}
@@ -46,10 +51,20 @@ public class DemoPanel extends JPanel implements TitledPanel {
         buttonThree.addActionListener(this::actionPerformed);
         //this.add(buttonThree);
 
-        buttonFour = new JButton("Open Coach Dashboard");
+        buttonFour = new JButton("Open Coach List");
         buttonFour.setActionCommand("four");
         buttonFour.addActionListener(this::actionPerformed);
         this.add(buttonFour);
+
+        buttonFive = new JButton("Open Coach Table");
+        buttonFive.setActionCommand("five");
+        buttonFive.addActionListener(this::actionPerformed);
+        //this.add(buttonFive);
+
+        buttonSix = new JButton("Open Login");
+        buttonSix.setActionCommand("six");
+        buttonSix.addActionListener(this::actionPerformed);
+        this.add(buttonSix);
 
         this.setPreferredSize(new Dimension(600, 300));
     }
@@ -57,7 +72,8 @@ public class DemoPanel extends JPanel implements TitledPanel {
     public void actionPerformed(ActionEvent e) {
         Random random = new Random();
         int numSessions = random.nextInt(15,91);
-        Pitcher examplePitcher = Pitcher.createRandomPitcher(numSessions);
+        Pitcher examplePitcher;
+        UserAccount exampleAccount;
         switch (e.getActionCommand()) {
             case "one":
                 Session exampleSession = Session.createRandomSessionData(15);
@@ -66,19 +82,36 @@ public class DemoPanel extends JPanel implements TitledPanel {
                 break;
 
             case "two":
+                examplePitcher = Pitcher.createRandomPitcher(numSessions);
                 PitcherProfilePanel profilePanel = new PitcherProfilePanel(examplePitcher);
                 MainWindow.switchPanel(profilePanel);
                 break;
 
             case "three":
-               SessionListPanel sessionListPanel = new SessionListPanel(examplePitcher);
-               MainWindow.switchPanel(sessionListPanel);
-               break;
+                examplePitcher = Pitcher.createRandomPitcher(numSessions);
+                SessionListPanel sessionListPanel = new SessionListPanel(examplePitcher);
+                MainWindow.switchPanel(sessionListPanel);
+                break;
 
             case "four":
-                UserAccount account = UserAccount.generateCoach();
-                PitcherListPanel panel = new PitcherListPanel(account);
-                MainWindow.switchPanel(panel);
+                exampleAccount = UserAccount.generateCoach();
+                PitcherListPanel plistPanel = new PitcherListPanel(exampleAccount);
+                MainWindow.switchPanel(plistPanel);
+                break;
+
+            case "five":
+                exampleAccount = UserAccount.generateCoach();
+                List<Pitcher> examplePitchers = exampleAccount.getPitchers();
+                AllPitcherDisplayPanel coachTablePanel = new AllPitcherDisplayPanel(examplePitchers);
+                MainWindow.switchPanel(coachTablePanel);
+                break;
+
+            case "six":
+                MainWindow.switchPanel(new LoginPanel());
+                break;
+
+            default:
+                MainWindow.displayError("PROGRAM ERROR", "This button is not assigned to any code!");
                 break;
 
         }

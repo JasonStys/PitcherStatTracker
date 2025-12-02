@@ -5,19 +5,19 @@ import edu.csusm.cs370.team8.pitcherstattracker.controller.PitcherStatsTable;
 import edu.csusm.cs370.team8.pitcherstattracker.model.Pitcher;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
-public class PitcherProfilePanel extends JPanel implements TitledPanel {
+public class AllPitcherDisplayPanel extends JPanel implements TitledPanel {
     private JButton backButton;
-    private Pitcher ourPitcher;
+    private final List<Pitcher> ourPitchers;
 
-    private final String TITLE = "Pitcher Profile: ";
-    public String getTitle() {return TITLE + ourPitcher.getName();}
+    private final String TITLE = "Coach Overview";
+    public String getTitle() {return TITLE;}
 
-    public PitcherProfilePanel(Pitcher p) {
-        this.ourPitcher = p;
+    public AllPitcherDisplayPanel(List<Pitcher> ourPitchers) {
+        this.ourPitchers = ourPitchers;
         this.setLayout(new BorderLayout());
         initComponents();
         this.revalidate();
@@ -25,9 +25,10 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
     }
 
     private void initComponents() {
-        PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitcher);
-        TableWidget table = statsTableController.buildDefaultTable();
-        table.setPreferredSize(new Dimension(500, 150));
+        ourPitchers.sort(Pitcher.WhipComparator); // Sorts all pitchers based on their WHIP
+        PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitchers);
+        TableWidget table = statsTableController.buildMultiTable();
+        table.setPreferredSize(new Dimension(700, 200));
         this.add(table, BorderLayout.CENTER);
 
         JPanel labelPanel = new JPanel();
@@ -39,7 +40,7 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
         sbLeft.append("BF = Batters Faced").append("<br>");
         sbLeft.append("P = Pitches").append("<br>");
         sbLeft.append("H = Hits").append("<br>");
-        sbLeft.append("BB = Walks (Base on Balls)").append("<br>");
+        sbLeft.append("BB = Walks (Base on Balls)");
         sbLeft.append("</html>");
         JLabel labelsLeft = new JLabel(sbLeft.toString());
         labelsLeft.setHorizontalAlignment(SwingConstants.LEFT);
@@ -69,12 +70,15 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
 
-        JPanel namePane = new JPanel();
-        namePane.setBorder(BorderFactory.createTitledBorder(
-                "Name:"));
-        JLabel nameLabel = new JLabel(ourPitcher.getName());
-        namePane.add(nameLabel);
-        header.add(namePane);
+        JPanel topLabelPanel =  new JPanel();
+        StringBuilder sbTop = new StringBuilder();
+        sbTop.append("<html>");
+        sbTop.append("Sorted by WHIP: How many bases awarded per inning.").append("<br>");
+        sbTop.append("(The lower the number, the better the pitcher, approximately.)");
+        sbTop.append("</html>");
+        JLabel labelTop = new JLabel(sbTop.toString());
+        topLabelPanel.add(labelTop);
+        header.add(topLabelPanel);
 
         this.add(header, BorderLayout.NORTH);
     }
