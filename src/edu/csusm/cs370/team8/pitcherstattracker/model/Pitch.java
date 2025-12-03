@@ -99,8 +99,8 @@ public class Pitch implements Comparable<Pitch>{
     public boolean wasSwungAt() { return wasSwungAt; }
     public void setWasSwungAt(boolean wasSwungAt) { this.wasSwungAt = wasSwungAt; }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    //public int getId() { return id; }
+    //public void setId(int id) { this.id = id; }
 
     @Override
     public String toString() {

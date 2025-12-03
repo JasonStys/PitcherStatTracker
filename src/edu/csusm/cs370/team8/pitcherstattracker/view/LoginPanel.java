@@ -64,9 +64,14 @@ public class LoginPanel extends JPanel implements TitledPanel {
     private void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "login":
-                UserAccount exampleAccount = UserAccount.generateCoach();
-                PitcherListPanel plistPanel = new PitcherListPanel(exampleAccount);
-                MainWindow.switchPanel(plistPanel);
+                if (usernameField.getText().equals("coachcoacherson")
+                        && passwordField.getText().equals("supersecure")) {
+                    UserAccount exampleAccount = UserAccount.generateCoach();
+                    PitcherListPanel plistPanel = new PitcherListPanel(exampleAccount);
+                    MainWindow.switchPanel(plistPanel);
+                } else {
+                    MainWindow.displayError("Login Invalid", "Username and/or Password is incorrect.");
+                }
                 break;
 
             default:
