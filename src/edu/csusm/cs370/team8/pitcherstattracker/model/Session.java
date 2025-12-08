@@ -199,7 +199,13 @@ public class Session implements Comparable<Session> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(timestamp.toString());
-        sb.append(" : " + totalPitches() + " pitches, ");
+        sb.append(" : " + totalPitches() + " pitches: [");
+        sb.append(battersFaced() + " batters faced, ");
+        sb.append(hits() + " hits, ");
+        sb.append(outsRecorded + " outs, ");
+        sb.append(walks() + " walks]");
+
+
 
         return sb.toString();
     }

@@ -24,7 +24,8 @@ public class StatCalculator {
         CAREER,   // one bucket: all sessions combined
         BY_YEAR,  // one bucket per calendar year (key: "2024", "2025", ...)
         BY_MONTH,  // one bucket per YearMonth (key: "2024-03", "2025-11", ...)
-        BY_DAY
+        BY_DAY,
+        MULTI_PITCHER // Used for getting the career of multiple pitchers
     }
 
     /*
@@ -170,16 +171,41 @@ public class StatCalculator {
         }
     }
 
-    private final List<Session> sessions;
+    private PitchingStats myCareerStats; // Used when getting a specific career stat, not for tables.
+    private List<Session> sessions; // Used for one pitcher.
+    private List<Pitcher> pitchers; // Used for summarizing multiple pitchers.
 
     // Use this when you have a Pitcher
     public StatCalculator(Pitcher pitcher) {
         this.sessions = new ArrayList<>(pitcher.getSessions());
+        this.pitchers = null;
     }
 
-    // Or pass sessions directly (subsets, filters, etc.)
-    public StatCalculator(List<Session> sessions) {
-        this.sessions = new ArrayList<>(sessions);
+    // Or pass a list of Sessions or Pitchers directly (subsets, filters, etc.)
+    public StatCalculator(List list) {
+        if (list == null) throw new IllegalArgumentException("list in StatCalculator constructor is null");
+        if (list.get(0) instanceof Session) {
+            this.sessions = new ArrayList<Session>(list);
+            this.pitchers = null;
+            return;
+        } else if (list.get(0) instanceof Pitcher) {
+            this.sessions = null;
+            this.pitchers = new ArrayList<Pitcher>(list);
+            return;
+        }
+        throw new IllegalArgumentException("list in StatCalculator constructor is unrecognized");
+    }
+
+    // Creates a PitchingStats object which holds career stats for the pitcher given in constructor
+    public void calcStats() {
+        myCareerStats = new PitchingStats();
+        for (Session s : sessions) {
+            myCareerStats.addSession(s);
+        }
+    }
+    // Gets the WHIP stat calculated from above.
+    public Double getWhip() {
+        return myCareerStats.getWhip();
     }
 
     /*
@@ -194,6 +220,7 @@ public class StatCalculator {
             case BY_YEAR    -> aggregateByYear();
             case BY_MONTH   -> aggregateByMonth();
             case BY_DAY     -> aggregateByDay();
+            case MULTI_PITCHER -> aggregateMultiple();
         };
     }
 
@@ -207,6 +234,18 @@ public class StatCalculator {
 
         Map<String, PitchingStats> map = new LinkedHashMap<>();
         map.put("Career", stats);
+        return map;
+    }
+
+    private Map<String, PitchingStats> aggregateMultiple() {
+        Map<String, PitchingStats> map = new LinkedHashMap<>();
+        for (Pitcher pitcher : pitchers) {
+            PitchingStats tempStats = new PitchingStats();
+            for (Session s : pitcher.getSessions()) {
+                tempStats.addSession(s);
+            }
+            map.put(pitcher.getName(), tempStats);
+        }
         return map;
     }
 

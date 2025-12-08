@@ -42,7 +42,8 @@ public class MainWindow {
         accountDao = new UserAccountDao.FileBased(dataFile);
         account = accountDao.loadOrCreateDemo();
 
-        DemoPanel demo = new DemoPanel();
+        //DemoPanel demo = new DemoPanel();
+        LoginPanel demo =  new LoginPanel();
         switchPanel(demo);
 
         // save on close

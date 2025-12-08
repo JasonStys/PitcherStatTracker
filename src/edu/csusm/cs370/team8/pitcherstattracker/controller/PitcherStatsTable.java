@@ -44,6 +44,11 @@ public class PitcherStatsTable {
         this.statCalculator = new StatCalculator(pitcher);
     }
 
+    // Construct with multiple pitchers
+    public PitcherStatsTable(List<Pitcher> pitchers) {
+        this.statCalculator = new StatCalculator(pitchers);
+    }
+
     // Or pass in an existing StatCalculator if you want
     public PitcherStatsTable(StatCalculator statCalculator) {
         this.statCalculator = statCalculator;
@@ -67,6 +72,23 @@ public class PitcherStatsTable {
         return buildTable(StatCalculator.Grouping.BY_YEAR, cols);
     }
 
+    public TableWidget buildMultiTable() {
+        List<Column> cols = List.of(
+                Column.LABEL,
+                Column.IP,
+                Column.BF,
+                Column.PITCHES,
+                Column.H,
+                Column.BB,
+                Column.K,
+                Column.AVG,
+                Column.OBP,
+                Column.SLG,
+                Column.WHIP
+        );
+        return buildTable(StatCalculator.Grouping.MULTI_PITCHER, cols);
+    }
+
     /*
      Generic table builder.
 
@@ -83,7 +105,8 @@ public class PitcherStatsTable {
 
         // optional career entry
         Map.Entry<String, StatCalculator.PitchingStats> careerEntry = null;
-        if (grouping != StatCalculator.Grouping.CAREER) {
+        if ((grouping != StatCalculator.Grouping.CAREER) &&
+                (grouping != StatCalculator.Grouping.MULTI_PITCHER)) {
             Map<String, StatCalculator.PitchingStats> careerMap =
                     statCalculator.aggregate(StatCalculator.Grouping.CAREER);
             if (!careerMap.isEmpty()) {
@@ -99,7 +122,10 @@ public class PitcherStatsTable {
 
         // sorted keys for normal rows
         List<String> keys = new ArrayList<>(buckets.keySet());
-        Collections.sort(keys);
+        // Messy override if we're dealing with pitchers already sorted.
+        if (grouping != StatCalculator.Grouping.MULTI_PITCHER) {
+            Collections.sort(keys);
+        }
 
         int rowCount = keys.size() + (careerEntry != null ? 1 : 0);
         Object[][] rowData = new Object[rowCount][columns.size()];
@@ -128,6 +154,9 @@ public class PitcherStatsTable {
         for (int i = 0; i < columnNames.length; i++) {
             table.setColumnWidth(i, 60);
         }
+        if (grouping == StatCalculator.Grouping.MULTI_PITCHER) {
+            table.setColumnWidth(0, 125);
+        }
         return table;
     }
 
@@ -140,6 +169,7 @@ public class PitcherStatsTable {
                 case BY_YEAR -> "Year";
                 case BY_MONTH-> "Month";
                 case BY_DAY -> "Day";
+                case MULTI_PITCHER ->  "Pitcher";
             };
             case IP      -> "IP";
             case BF      -> "BF";
@@ -191,4 +221,7 @@ public class PitcherStatsTable {
     private String formatWhip(double v) {
         return Double.isNaN(v) ? "---" : String.format("%.2f", v);
     }
+
+
+
 }
