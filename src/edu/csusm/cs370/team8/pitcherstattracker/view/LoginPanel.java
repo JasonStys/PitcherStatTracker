@@ -29,7 +29,7 @@ public class LoginPanel extends JPanel implements TitledPanel {
         JPanel usernamePanel = new JPanel();
         usernamePanel.setLayout(new BoxLayout(usernamePanel, BoxLayout.X_AXIS));
         JLabel usernameLabel = new JLabel("Username: ");
-        usernameField = new JTextField(30);
+        usernameField = new JTextField("coachcoacherson",30);
         usernamePanel.add(usernameLabel);
         usernamePanel.add(usernameField);
         usernamePanel.setPreferredSize(new Dimension(50,30));
@@ -37,7 +37,7 @@ public class LoginPanel extends JPanel implements TitledPanel {
         JPanel passwordPanel = new JPanel();
         passwordPanel.setLayout(new BoxLayout(passwordPanel, BoxLayout.X_AXIS));
         JLabel passwordLabel = new JLabel(" Password: ");
-        passwordField = new JPasswordField(30);
+        passwordField = new JPasswordField("supersecure",30);
         passwordPanel.add(passwordLabel);
         passwordPanel.add(passwordField);
         passwordPanel.setPreferredSize(new Dimension(50,30));
