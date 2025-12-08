@@ -257,16 +257,16 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
                 int day = (Integer) daySpinner.getValue();
                 timestamp = LocalDate.of(year, month, day);
                 newSession.setTimestamp(timestamp); // Set the timestamp of the session
-
+                /*
                 try {
                     SessionDatabase.save(newSession);
                     System.out.println("Saved!");
                 } catch (IOException err) {
                     err.printStackTrace();
                 }
-
-                SessionViewTemp view = new SessionViewTemp();
-                view.displayAllSessions();
+                */
+                //SessionViewTemp view = new SessionViewTemp();
+                //view.displayAllSessions();
 
                 MainWindow.prevPanel(newSession);
                 break;

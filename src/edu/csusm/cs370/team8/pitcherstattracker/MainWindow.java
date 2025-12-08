@@ -32,6 +32,7 @@ public class MainWindow {
     // DAO / persistence fields
     private static UserAccountDao accountDao;
     private static UserAccount account;
+    public static UserAccount getUser() {return account;}
 
     public MainWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

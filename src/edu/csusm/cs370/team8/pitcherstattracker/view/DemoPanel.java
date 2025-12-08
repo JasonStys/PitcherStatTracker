@@ -76,7 +76,8 @@ public class DemoPanel extends JPanel implements TitledPanel {
                break;
 
             case "four":
-                UserAccount account = UserAccount.generateCoach();
+                //UserAccount account = UserAccount.generateCoach();
+                UserAccount account = MainWindow.getUser();
                 PitcherListPanel panel = new PitcherListPanel(account);
                 MainWindow.switchPanel(panel);
                 break;

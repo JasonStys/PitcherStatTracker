@@ -1,7 +1,7 @@
 {
   "pitchers" : [ {
     "id" : 0,
-    "name" : "Average Anthony",
+    "name" : "Average Anthony Jr",
     "sessions" : [ {
       "timestamp" : "2021-05-13",
       "pitches" : [ {
@@ -166798,6 +166798,33 @@
   }, {
     "id" : 0,
     "name" : "Empty Eriksson",
-    "sessions" : [ ]
+    "sessions" : [ {
+      "timestamp" : "1900-10-31",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 67.067,
+        "wasSwungAt" : true
+      }, {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 67.067,
+        "wasSwungAt" : true
+      } ]
+    }, {
+      "timestamp" : "2001-01-01",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 67.067,
+        "wasSwungAt" : true
+      } ]
+    } ]
   } ]
 }
