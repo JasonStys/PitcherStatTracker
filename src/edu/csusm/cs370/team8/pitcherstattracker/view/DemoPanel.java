@@ -76,9 +76,9 @@ public class DemoPanel extends JPanel implements TitledPanel {
         UserAccount exampleAccount;
         switch (e.getActionCommand()) {
             case "one":
-                Session exampleSession = Session.createRandomSessionData(15);
-                SessionEditPanel sesEdit = new SessionEditPanel(exampleSession);
-                MainWindow.switchPanel(sesEdit);
+                //Session exampleSession = Session.createRandomSessionData(15);
+                //SessionEditPanel sesEdit = new SessionEditPanel(exampleSession);
+                //MainWindow.switchPanel(sesEdit);
                 break;
 
             case "two":
@@ -94,8 +94,10 @@ public class DemoPanel extends JPanel implements TitledPanel {
                 break;
 
             case "four":
+                //UserAccount account = UserAccount.generateCoach();
+                UserAccount account = MainWindow.getUser();
                 exampleAccount = UserAccount.generateCoach();
-                PitcherListPanel plistPanel = new PitcherListPanel(exampleAccount);
+                PitcherListPanel plistPanel = new PitcherListPanel(account);
                 MainWindow.switchPanel(plistPanel);
                 break;
 

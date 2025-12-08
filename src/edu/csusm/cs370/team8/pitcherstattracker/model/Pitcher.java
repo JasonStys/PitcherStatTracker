@@ -1,5 +1,6 @@
 package edu.csusm.cs370.team8.pitcherstattracker.model;
 
+import edu.csusm.cs370.team8.pitcherstattracker.model.Session;
 import edu.csusm.cs370.team8.pitcherstattracker.controller.StatCalculator;
 import java.util.ArrayList;
 import java.util.Comparator;
