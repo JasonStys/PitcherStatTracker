@@ -28,7 +28,8 @@ public class MainWindow {
     public MainWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        DemoPanel demo = new DemoPanel();
+        //DemoPanel demo = new DemoPanel();
+        LoginPanel demo =  new LoginPanel();
         switchPanel(demo);
 
         window.setVisible(true);
