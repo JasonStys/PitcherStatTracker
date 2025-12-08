@@ -55,8 +55,10 @@ public class LoginPanel extends JPanel implements TitledPanel {
 
         this.add(centerPanel);
 
-        JLabel sticky = new JLabel(IconGetter.STICKY);
-        this.add(sticky);
+        if (IconGetter.STICKY != null) {
+            JLabel sticky = new JLabel(IconGetter.STICKY);
+            this.add(sticky);
+        }
 
         this.setPreferredSize(new Dimension(600, 300));
     }
