@@ -2,7 +2,7 @@ package edu.csusm.cs370.team8.pitcherstattracker.view;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
 import edu.csusm.cs370.team8.pitcherstattracker.model.*;
-import edu.csusm.cs370.team8.pitcherstattracker.database.*;
+//import edu.csusm.cs370.team8.pitcherstattracker.database.*;
 import edu.csusm.cs370.team8.pitcherstattracker.view.SessionViewTemp;
 
 import javax.swing.*;

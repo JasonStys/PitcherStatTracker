@@ -35,7 +35,7 @@ public class SessionViewTemp {
             try {
                 Session session = objectMapper.readValue(file, Session.class);
                 System.out.println("Loaded session from file: " + file.getName());
-                System.out.println("Pitcher ID: " + session.getPitcherId() + ", Timestamp: " + session.getTimestamp());
+                //System.out.println("Pitcher ID: " + session.getPitcherId() + ", Timestamp: " + session.getTimestamp());
                 session.showPitches();
                 System.out.println("-------------------------------");
             } catch (IOException e) {
