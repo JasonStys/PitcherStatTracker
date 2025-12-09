@@ -34,13 +34,27 @@ public class MainWindow {
     private static UserAccount account;
     public static UserAccount getUser() {return account;}
 
+    public static UserAccount loadAccount(Path file) {
+        accountDao = new UserAccountDao.FileBased(file);
+        account = accountDao.loadOrCreateDemo();
+        return account;
+    }
+    public static void loadNewAccount(Path file, UserAccount newAcc) {
+        accountDao = new UserAccountDao.FileBased(file);
+        account = newAcc;
+        if (saveUserAccount()) { // Save the username and hashPass immediately.
+            displayNotif("Account Created", "New Account Created, you can now login.");
+        }
+    }
+
     public MainWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // DAO + account setup
+        /* DAO + account setup
         Path dataFile = Paths.get("data","account.json");
         accountDao = new UserAccountDao.FileBased(dataFile);
         account = accountDao.loadOrCreateDemo();
+         */
 
         //DemoPanel demo = new DemoPanel();
         LoginPanel demo =  new LoginPanel();
@@ -50,13 +64,28 @@ public class MainWindow {
         window.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                if (accountDao != null && account != null) {
-                    accountDao.save(account);
-                }
+                saveUserAccount();
             }
         });
 
         window.setVisible(true);
+    }
+    public static boolean saveUserAccount() {
+        if (accountDao != null && account != null) {
+            accountDao.save(account);
+            StringBuilder sb = new StringBuilder();
+            sb.append("<html>").append("Your data has been saved to<br>");
+            sb.append(accountDao.getFilePath());
+            sb.append("</html>");
+            MainWindow.displayNotif("Saved", sb.toString());
+            return true;
+        }
+        if (panelHistory.isEmpty()) {
+            return true; // We are on the login screen, so save already happened.
+        } else {
+            MainWindow.displayError("Failed to Save", "Error occurred with saving UserAccount");
+            return false;
+        }
     }
 
     public static void switchPanel(JPanel newPanel) {
@@ -143,6 +172,9 @@ public class MainWindow {
 
     public static void displayError(String title, String msg) {
         JOptionPane.showMessageDialog(errorWindow, msg, title, JOptionPane.ERROR_MESSAGE);
+    }
+    public static void displayNotif(String title, String msg) {
+        JOptionPane.showMessageDialog(errorWindow, msg, title, JOptionPane.INFORMATION_MESSAGE);
     }
     public static boolean displayOkCancel(String title, String msg) {
         int choice = JOptionPane.showOptionDialog(errorWindow, msg, title,

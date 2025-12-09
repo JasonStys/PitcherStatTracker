@@ -1,0 +1,22 @@
+{
+  "pitchers" : [ {
+    "id" : 11,
+    "name" : "Santa",
+    "sessions" : [ {
+      "sessionId" : 444,
+      "timestamp" : "2025-12-25",
+      "pitches" : [ {
+        "type" : "Slurve",
+        "result" : "Hit",
+        "bases" : 4,
+        "inZone" : true,
+        "speed" : 130.0,
+        "wasSwungAt" : true,
+        "id" : 0
+      } ],
+      "nextPitchID" : 0
+    } ]
+  } ],
+  "username" : "username",
+  "hashPass" : "9ee66d360990c09a5b4d69b4fbcad32aafc4cdeb23e99a081fd95e60cb236e16"
+}

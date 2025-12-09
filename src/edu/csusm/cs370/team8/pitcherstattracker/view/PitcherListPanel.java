@@ -125,7 +125,7 @@ public class PitcherListPanel extends JPanel implements HostPanel, TitledPanel {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "add":
-                MainWindow.popupPanel(new CreatePitcherPanel(), "Name New Pitcher");
+                MainWindow.popupPanel(new CreatePitcherPopup(), "Name New Pitcher");
                 break;
 
             case "view":
@@ -152,6 +152,7 @@ public class PitcherListPanel extends JPanel implements HostPanel, TitledPanel {
                 break;
 
             case "logout":
+                MainWindow.saveUserAccount();
                 MainWindow.prevPanel();
                 break;
 

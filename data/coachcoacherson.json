@@ -518,7 +518,7 @@
         "wasSwungAt" : true,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 42,
       "timestamp" : "2021-06-02",
@@ -1211,7 +1211,7 @@
         "wasSwungAt" : true,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 33,
       "timestamp" : "2021-06-03",
@@ -1392,7 +1392,7 @@
         "wasSwungAt" : true,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 83,
       "timestamp" : "2021-06-10",
@@ -1653,7 +1653,7 @@
         "wasSwungAt" : false,
         "id" : 31
       } ],
-      "nextPitchID" : 33
+      "nextPitchID" : 34
     }, {
       "sessionId" : 55,
       "timestamp" : "2021-06-22",
@@ -1866,7 +1866,7 @@
         "wasSwungAt" : false,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 95,
       "timestamp" : "2021-06-24",
@@ -2007,7 +2007,7 @@
         "wasSwungAt" : true,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 66,
       "timestamp" : "2021-07-12",
@@ -2500,7 +2500,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 45,
       "timestamp" : "2021-07-21",
@@ -2745,7 +2745,7 @@
         "wasSwungAt" : false,
         "id" : 29
       } ],
-      "nextPitchID" : 31
+      "nextPitchID" : 32
     }, {
       "sessionId" : 98,
       "timestamp" : "2021-08-21",
@@ -3262,7 +3262,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 96,
       "timestamp" : "2021-08-24",
@@ -3867,7 +3867,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 90,
       "timestamp" : "2021-08-25",
@@ -4080,7 +4080,7 @@
         "wasSwungAt" : false,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 68,
       "timestamp" : "2021-08-29",
@@ -4741,7 +4741,7 @@
         "wasSwungAt" : false,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 44,
       "timestamp" : "2021-09-01",
@@ -5050,7 +5050,7 @@
         "wasSwungAt" : false,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 71,
       "timestamp" : "2021-09-14",
@@ -5727,7 +5727,7 @@
         "wasSwungAt" : false,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 91,
       "timestamp" : "2021-09-17",
@@ -6100,7 +6100,7 @@
         "wasSwungAt" : false,
         "id" : 45
       } ],
-      "nextPitchID" : 47
+      "nextPitchID" : 48
     }, {
       "sessionId" : 34,
       "timestamp" : "2022-04-07",
@@ -6353,7 +6353,7 @@
         "wasSwungAt" : false,
         "id" : 30
       } ],
-      "nextPitchID" : 32
+      "nextPitchID" : 33
     }, {
       "sessionId" : 94,
       "timestamp" : "2022-04-23",
@@ -6758,7 +6758,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 70,
       "timestamp" : "2022-04-28",
@@ -7419,7 +7419,7 @@
         "wasSwungAt" : true,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 67,
       "timestamp" : "2022-05-16",
@@ -7912,7 +7912,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 100,
       "timestamp" : "2022-05-22",
@@ -8085,7 +8085,7 @@
         "wasSwungAt" : false,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 88,
       "timestamp" : "2022-05-28",
@@ -8450,7 +8450,7 @@
         "wasSwungAt" : false,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 102,
       "timestamp" : "2022-05-28",
@@ -9015,7 +9015,7 @@
         "wasSwungAt" : true,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 73,
       "timestamp" : "2022-06-04",
@@ -9612,7 +9612,7 @@
         "wasSwungAt" : false,
         "id" : 73
       } ],
-      "nextPitchID" : 75
+      "nextPitchID" : 76
     }, {
       "sessionId" : 54,
       "timestamp" : "2022-06-06",
@@ -9889,7 +9889,7 @@
         "wasSwungAt" : false,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 85,
       "timestamp" : "2022-06-06",
@@ -10334,7 +10334,7 @@
         "wasSwungAt" : true,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 29,
       "timestamp" : "2022-06-10",
@@ -10571,7 +10571,7 @@
         "wasSwungAt" : false,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 80,
       "timestamp" : "2022-06-14",
@@ -10872,7 +10872,7 @@
         "wasSwungAt" : true,
         "id" : 36
       } ],
-      "nextPitchID" : 38
+      "nextPitchID" : 39
     }, {
       "sessionId" : 76,
       "timestamp" : "2022-06-26",
@@ -11341,7 +11341,7 @@
         "wasSwungAt" : false,
         "id" : 57
       } ],
-      "nextPitchID" : 59
+      "nextPitchID" : 60
     }, {
       "sessionId" : 30,
       "timestamp" : "2022-06-29",
@@ -11682,7 +11682,7 @@
         "wasSwungAt" : false,
         "id" : 41
       } ],
-      "nextPitchID" : 43
+      "nextPitchID" : 44
     }, {
       "sessionId" : 40,
       "timestamp" : "2022-08-09",
@@ -12359,7 +12359,7 @@
         "wasSwungAt" : false,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 49,
       "timestamp" : "2022-08-16",
@@ -13060,7 +13060,7 @@
         "wasSwungAt" : false,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 59,
       "timestamp" : "2022-08-23",
@@ -13593,7 +13593,7 @@
         "wasSwungAt" : true,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 53,
       "timestamp" : "2022-09-20",
@@ -13894,7 +13894,7 @@
         "wasSwungAt" : true,
         "id" : 36
       } ],
-      "nextPitchID" : 38
+      "nextPitchID" : 39
     }, {
       "sessionId" : 52,
       "timestamp" : "2023-04-12",
@@ -14155,7 +14155,7 @@
         "wasSwungAt" : true,
         "id" : 31
       } ],
-      "nextPitchID" : 33
+      "nextPitchID" : 34
     }, {
       "sessionId" : 63,
       "timestamp" : "2023-04-13",
@@ -14728,7 +14728,7 @@
         "wasSwungAt" : false,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 51,
       "timestamp" : "2023-04-27",
@@ -15421,7 +15421,7 @@
         "wasSwungAt" : true,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 47,
       "timestamp" : "2023-06-06",
@@ -15986,7 +15986,7 @@
         "wasSwungAt" : false,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 39,
       "timestamp" : "2023-06-20",
@@ -16391,7 +16391,7 @@
         "wasSwungAt" : false,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 65,
       "timestamp" : "2023-06-23",
@@ -17044,7 +17044,7 @@
         "wasSwungAt" : true,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 72,
       "timestamp" : "2023-06-29",
@@ -17497,7 +17497,7 @@
         "wasSwungAt" : false,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 104,
       "timestamp" : "2023-07-04",
@@ -18006,7 +18006,7 @@
         "wasSwungAt" : true,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 75,
       "timestamp" : "2023-08-13",
@@ -18555,7 +18555,7 @@
         "wasSwungAt" : false,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     }, {
       "sessionId" : 78,
       "timestamp" : "2023-08-15",
@@ -19056,7 +19056,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 43,
       "timestamp" : "2023-09-12",
@@ -19501,7 +19501,7 @@
         "wasSwungAt" : false,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 35,
       "timestamp" : "2023-09-17",
@@ -19962,7 +19962,7 @@
         "wasSwungAt" : true,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 56,
       "timestamp" : "2023-09-17",
@@ -20543,7 +20543,7 @@
         "wasSwungAt" : false,
         "id" : 71
       } ],
-      "nextPitchID" : 73
+      "nextPitchID" : 74
     }, {
       "sessionId" : 97,
       "timestamp" : "2023-09-17",
@@ -20868,7 +20868,7 @@
         "wasSwungAt" : false,
         "id" : 39
       } ],
-      "nextPitchID" : 41
+      "nextPitchID" : 42
     }, {
       "sessionId" : 50,
       "timestamp" : "2023-09-29",
@@ -21337,7 +21337,7 @@
         "wasSwungAt" : false,
         "id" : 57
       } ],
-      "nextPitchID" : 59
+      "nextPitchID" : 60
     }, {
       "sessionId" : 79,
       "timestamp" : "2023-09-29",
@@ -21782,7 +21782,7 @@
         "wasSwungAt" : false,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 89,
       "timestamp" : "2023-09-29",
@@ -22379,7 +22379,7 @@
         "wasSwungAt" : false,
         "id" : 73
       } ],
-      "nextPitchID" : 75
+      "nextPitchID" : 76
     }, {
       "sessionId" : 107,
       "timestamp" : "2024-04-10",
@@ -22864,7 +22864,7 @@
         "wasSwungAt" : false,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 87,
       "timestamp" : "2024-05-07",
@@ -23261,7 +23261,7 @@
         "wasSwungAt" : false,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     }, {
       "sessionId" : 86,
       "timestamp" : "2024-05-17",
@@ -23962,7 +23962,7 @@
         "wasSwungAt" : false,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 31,
       "timestamp" : "2024-06-28",
@@ -24567,7 +24567,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 36,
       "timestamp" : "2024-06-28",
@@ -24932,7 +24932,7 @@
         "wasSwungAt" : false,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 108,
       "timestamp" : "2024-06-28",
@@ -25441,7 +25441,7 @@
         "wasSwungAt" : true,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 93,
       "timestamp" : "2024-07-05",
@@ -25630,7 +25630,7 @@
         "wasSwungAt" : false,
         "id" : 22
       } ],
-      "nextPitchID" : 24
+      "nextPitchID" : 25
     }, {
       "sessionId" : 46,
       "timestamp" : "2024-07-13",
@@ -25883,7 +25883,7 @@
         "wasSwungAt" : false,
         "id" : 30
       } ],
-      "nextPitchID" : 32
+      "nextPitchID" : 33
     }, {
       "sessionId" : 92,
       "timestamp" : "2024-08-12",
@@ -26584,7 +26584,7 @@
         "wasSwungAt" : false,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 101,
       "timestamp" : "2024-08-12",
@@ -27189,7 +27189,7 @@
         "wasSwungAt" : false,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 69,
       "timestamp" : "2024-08-18",
@@ -27730,7 +27730,7 @@
         "wasSwungAt" : true,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 105,
       "timestamp" : "2024-08-29",
@@ -27855,7 +27855,7 @@
         "wasSwungAt" : false,
         "id" : 14
       } ],
-      "nextPitchID" : 16
+      "nextPitchID" : 17
     }, {
       "sessionId" : 57,
       "timestamp" : "2024-09-26",
@@ -28372,7 +28372,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 74,
       "timestamp" : "2025-04-10",
@@ -28745,7 +28745,7 @@
         "wasSwungAt" : false,
         "id" : 45
       } ],
-      "nextPitchID" : 47
+      "nextPitchID" : 48
     }, {
       "sessionId" : 32,
       "timestamp" : "2025-05-12",
@@ -28918,7 +28918,7 @@
         "wasSwungAt" : false,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 103,
       "timestamp" : "2025-05-12",
@@ -29251,7 +29251,7 @@
         "wasSwungAt" : true,
         "id" : 40
       } ],
-      "nextPitchID" : 42
+      "nextPitchID" : 43
     }, {
       "sessionId" : 77,
       "timestamp" : "2025-06-01",
@@ -29488,7 +29488,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 38,
       "timestamp" : "2025-06-06",
@@ -29637,7 +29637,7 @@
         "wasSwungAt" : false,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 84,
       "timestamp" : "2025-06-07",
@@ -29914,7 +29914,7 @@
         "wasSwungAt" : true,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 106,
       "timestamp" : "2025-06-09",
@@ -30503,7 +30503,7 @@
         "wasSwungAt" : false,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     }, {
       "sessionId" : 60,
       "timestamp" : "2025-06-20",
@@ -31028,7 +31028,7 @@
         "wasSwungAt" : false,
         "id" : 64
       } ],
-      "nextPitchID" : 66
+      "nextPitchID" : 67
     }, {
       "sessionId" : 62,
       "timestamp" : "2025-07-01",
@@ -31305,7 +31305,7 @@
         "wasSwungAt" : true,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 61,
       "timestamp" : "2025-07-04",
@@ -31782,7 +31782,7 @@
         "wasSwungAt" : true,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 37,
       "timestamp" : "2025-07-15",
@@ -31923,7 +31923,7 @@
         "wasSwungAt" : true,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 82,
       "timestamp" : "2025-08-11",
@@ -32456,7 +32456,7 @@
         "wasSwungAt" : true,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 58,
       "timestamp" : "2025-08-16",
@@ -32917,7 +32917,7 @@
         "wasSwungAt" : true,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 41,
       "timestamp" : "2025-08-23",
@@ -33058,7 +33058,7 @@
         "wasSwungAt" : false,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 48,
       "timestamp" : "2025-08-24",
@@ -33447,7 +33447,7 @@
         "wasSwungAt" : false,
         "id" : 47
       } ],
-      "nextPitchID" : 49
+      "nextPitchID" : 50
     }, {
       "sessionId" : 64,
       "timestamp" : "2025-09-08",
@@ -34020,7 +34020,7 @@
         "wasSwungAt" : true,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 99,
       "timestamp" : "2025-09-08",
@@ -34177,7 +34177,7 @@
         "wasSwungAt" : true,
         "id" : 18
       } ],
-      "nextPitchID" : 20
+      "nextPitchID" : 21
     } ]
   }, {
     "id" : 3,
@@ -34522,7 +34522,7 @@
         "wasSwungAt" : true,
         "id" : 41
       } ],
-      "nextPitchID" : 43
+      "nextPitchID" : 44
     }, {
       "sessionId" : 175,
       "timestamp" : "2021-05-24",
@@ -35215,7 +35215,7 @@
         "wasSwungAt" : false,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 169,
       "timestamp" : "2021-07-08",
@@ -35780,7 +35780,7 @@
         "wasSwungAt" : true,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 181,
       "timestamp" : "2022-06-23",
@@ -36337,7 +36337,7 @@
         "wasSwungAt" : true,
         "id" : 68
       } ],
-      "nextPitchID" : 70
+      "nextPitchID" : 71
     }, {
       "sessionId" : 179,
       "timestamp" : "2022-06-24",
@@ -36582,7 +36582,7 @@
         "wasSwungAt" : false,
         "id" : 29
       } ],
-      "nextPitchID" : 31
+      "nextPitchID" : 32
     }, {
       "sessionId" : 171,
       "timestamp" : "2022-07-02",
@@ -37267,7 +37267,7 @@
         "wasSwungAt" : false,
         "id" : 84
       } ],
-      "nextPitchID" : 86
+      "nextPitchID" : 87
     }, {
       "sessionId" : 172,
       "timestamp" : "2022-07-18",
@@ -37648,7 +37648,7 @@
         "wasSwungAt" : false,
         "id" : 46
       } ],
-      "nextPitchID" : 48
+      "nextPitchID" : 49
     }, {
       "sessionId" : 173,
       "timestamp" : "2023-04-04",
@@ -37869,7 +37869,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 182,
       "timestamp" : "2023-07-23",
@@ -38066,7 +38066,7 @@
         "wasSwungAt" : true,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 177,
       "timestamp" : "2023-09-21",
@@ -38351,7 +38351,7 @@
         "wasSwungAt" : true,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 168,
       "timestamp" : "2024-06-01",
@@ -38620,7 +38620,7 @@
         "wasSwungAt" : true,
         "id" : 32
       } ],
-      "nextPitchID" : 34
+      "nextPitchID" : 35
     }, {
       "sessionId" : 170,
       "timestamp" : "2024-07-14",
@@ -38849,7 +38849,7 @@
         "wasSwungAt" : true,
         "id" : 27
       } ],
-      "nextPitchID" : 29
+      "nextPitchID" : 30
     }, {
       "sessionId" : 178,
       "timestamp" : "2024-07-29",
@@ -38974,7 +38974,7 @@
         "wasSwungAt" : true,
         "id" : 14
       } ],
-      "nextPitchID" : 16
+      "nextPitchID" : 17
     }, {
       "sessionId" : 174,
       "timestamp" : "2024-09-07",
@@ -39211,7 +39211,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 180,
       "timestamp" : "2025-06-05",
@@ -39384,7 +39384,7 @@
         "wasSwungAt" : true,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     } ]
   }, {
     "id" : 2,
@@ -39873,7 +39873,7 @@
         "wasSwungAt" : true,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 150,
       "timestamp" : "2021-04-16",
@@ -40446,7 +40446,7 @@
         "wasSwungAt" : false,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 146,
       "timestamp" : "2021-05-09",
@@ -40739,7 +40739,7 @@
         "wasSwungAt" : true,
         "id" : 35
       } ],
-      "nextPitchID" : 37
+      "nextPitchID" : 38
     }, {
       "sessionId" : 110,
       "timestamp" : "2021-06-02",
@@ -41096,7 +41096,7 @@
         "wasSwungAt" : true,
         "id" : 43
       } ],
-      "nextPitchID" : 45
+      "nextPitchID" : 46
     }, {
       "sessionId" : 167,
       "timestamp" : "2021-06-08",
@@ -41717,7 +41717,7 @@
         "wasSwungAt" : false,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 154,
       "timestamp" : "2021-07-18",
@@ -42426,7 +42426,7 @@
         "wasSwungAt" : true,
         "id" : 87
       } ],
-      "nextPitchID" : 89
+      "nextPitchID" : 90
     }, {
       "sessionId" : 162,
       "timestamp" : "2021-08-13",
@@ -42975,7 +42975,7 @@
         "wasSwungAt" : true,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     }, {
       "sessionId" : 155,
       "timestamp" : "2021-08-17",
@@ -43196,7 +43196,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 142,
       "timestamp" : "2021-08-21",
@@ -43617,7 +43617,7 @@
         "wasSwungAt" : false,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 115,
       "timestamp" : "2021-09-05",
@@ -44334,7 +44334,7 @@
         "wasSwungAt" : true,
         "id" : 88
       } ],
-      "nextPitchID" : 90
+      "nextPitchID" : 91
     }, {
       "sessionId" : 134,
       "timestamp" : "2021-10-01",
@@ -44555,7 +44555,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 137,
       "timestamp" : "2022-04-10",
@@ -45280,7 +45280,7 @@
         "wasSwungAt" : true,
         "id" : 89
       } ],
-      "nextPitchID" : 91
+      "nextPitchID" : 92
     }, {
       "sessionId" : 130,
       "timestamp" : "2022-04-12",
@@ -45581,7 +45581,7 @@
         "wasSwungAt" : true,
         "id" : 36
       } ],
-      "nextPitchID" : 38
+      "nextPitchID" : 39
     }, {
       "sessionId" : 159,
       "timestamp" : "2022-05-08",
@@ -45930,7 +45930,7 @@
         "wasSwungAt" : false,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 128,
       "timestamp" : "2022-05-18",
@@ -46263,7 +46263,7 @@
         "wasSwungAt" : true,
         "id" : 40
       } ],
-      "nextPitchID" : 42
+      "nextPitchID" : 43
     }, {
       "sessionId" : 153,
       "timestamp" : "2022-08-20",
@@ -46780,7 +46780,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 139,
       "timestamp" : "2022-08-23",
@@ -47281,7 +47281,7 @@
         "wasSwungAt" : true,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 131,
       "timestamp" : "2022-08-24",
@@ -47662,7 +47662,7 @@
         "wasSwungAt" : false,
         "id" : 46
       } ],
-      "nextPitchID" : 48
+      "nextPitchID" : 49
     }, {
       "sessionId" : 114,
       "timestamp" : "2022-08-26",
@@ -47859,7 +47859,7 @@
         "wasSwungAt" : true,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 158,
       "timestamp" : "2022-08-31",
@@ -48312,7 +48312,7 @@
         "wasSwungAt" : true,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 149,
       "timestamp" : "2022-09-03",
@@ -48445,7 +48445,7 @@
         "wasSwungAt" : false,
         "id" : 15
       } ],
-      "nextPitchID" : 17
+      "nextPitchID" : 18
     }, {
       "sessionId" : 140,
       "timestamp" : "2022-09-05",
@@ -48898,7 +48898,7 @@
         "wasSwungAt" : true,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 160,
       "timestamp" : "2022-09-12",
@@ -49575,7 +49575,7 @@
         "wasSwungAt" : true,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 136,
       "timestamp" : "2022-09-14",
@@ -50108,7 +50108,7 @@
         "wasSwungAt" : false,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 122,
       "timestamp" : "2022-09-15",
@@ -50473,7 +50473,7 @@
         "wasSwungAt" : false,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 113,
       "timestamp" : "2022-09-20",
@@ -50614,7 +50614,7 @@
         "wasSwungAt" : false,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 129,
       "timestamp" : "2023-05-20",
@@ -51195,7 +51195,7 @@
         "wasSwungAt" : false,
         "id" : 71
       } ],
-      "nextPitchID" : 73
+      "nextPitchID" : 74
     }, {
       "sessionId" : 132,
       "timestamp" : "2023-06-07",
@@ -51664,7 +51664,7 @@
         "wasSwungAt" : false,
         "id" : 57
       } ],
-      "nextPitchID" : 59
+      "nextPitchID" : 60
     }, {
       "sessionId" : 125,
       "timestamp" : "2023-07-11",
@@ -52101,7 +52101,7 @@
         "wasSwungAt" : false,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 124,
       "timestamp" : "2023-07-16",
@@ -52258,7 +52258,7 @@
         "wasSwungAt" : false,
         "id" : 18
       } ],
-      "nextPitchID" : 20
+      "nextPitchID" : 21
     }, {
       "sessionId" : 126,
       "timestamp" : "2023-07-20",
@@ -52783,7 +52783,7 @@
         "wasSwungAt" : true,
         "id" : 64
       } ],
-      "nextPitchID" : 66
+      "nextPitchID" : 67
     }, {
       "sessionId" : 148,
       "timestamp" : "2023-07-24",
@@ -53476,7 +53476,7 @@
         "wasSwungAt" : true,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 135,
       "timestamp" : "2023-07-30",
@@ -54001,7 +54001,7 @@
         "wasSwungAt" : false,
         "id" : 64
       } ],
-      "nextPitchID" : 66
+      "nextPitchID" : 67
     }, {
       "sessionId" : 156,
       "timestamp" : "2023-08-17",
@@ -54230,7 +54230,7 @@
         "wasSwungAt" : false,
         "id" : 27
       } ],
-      "nextPitchID" : 29
+      "nextPitchID" : 30
     }, {
       "sessionId" : 133,
       "timestamp" : "2023-09-25",
@@ -54563,7 +54563,7 @@
         "wasSwungAt" : false,
         "id" : 40
       } ],
-      "nextPitchID" : 42
+      "nextPitchID" : 43
     }, {
       "sessionId" : 127,
       "timestamp" : "2023-09-27",
@@ -54808,7 +54808,7 @@
         "wasSwungAt" : false,
         "id" : 29
       } ],
-      "nextPitchID" : 31
+      "nextPitchID" : 32
     }, {
       "sessionId" : 123,
       "timestamp" : "2024-04-01",
@@ -55045,7 +55045,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 111,
       "timestamp" : "2024-05-10",
@@ -55674,7 +55674,7 @@
         "wasSwungAt" : true,
         "id" : 77
       } ],
-      "nextPitchID" : 79
+      "nextPitchID" : 80
     }, {
       "sessionId" : 157,
       "timestamp" : "2024-05-21",
@@ -56015,7 +56015,7 @@
         "wasSwungAt" : true,
         "id" : 41
       } ],
-      "nextPitchID" : 43
+      "nextPitchID" : 44
     }, {
       "sessionId" : 120,
       "timestamp" : "2024-07-23",
@@ -56212,7 +56212,7 @@
         "wasSwungAt" : false,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 143,
       "timestamp" : "2024-08-06",
@@ -56393,7 +56393,7 @@
         "wasSwungAt" : false,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 161,
       "timestamp" : "2024-08-22",
@@ -56910,7 +56910,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 116,
       "timestamp" : "2024-09-19",
@@ -57539,7 +57539,7 @@
         "wasSwungAt" : true,
         "id" : 77
       } ],
-      "nextPitchID" : 79
+      "nextPitchID" : 80
     }, {
       "sessionId" : 109,
       "timestamp" : "2025-04-25",
@@ -58040,7 +58040,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 145,
       "timestamp" : "2025-04-29",
@@ -58501,7 +58501,7 @@
         "wasSwungAt" : false,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 147,
       "timestamp" : "2025-05-20",
@@ -58698,7 +58698,7 @@
         "wasSwungAt" : true,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 118,
       "timestamp" : "2025-05-25",
@@ -59135,7 +59135,7 @@
         "wasSwungAt" : false,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 152,
       "timestamp" : "2025-05-28",
@@ -59316,7 +59316,7 @@
         "wasSwungAt" : true,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 141,
       "timestamp" : "2025-06-19",
@@ -59529,7 +59529,7 @@
         "wasSwungAt" : true,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 165,
       "timestamp" : "2025-06-24",
@@ -60246,7 +60246,7 @@
         "wasSwungAt" : true,
         "id" : 88
       } ],
-      "nextPitchID" : 90
+      "nextPitchID" : 91
     }, {
       "sessionId" : 119,
       "timestamp" : "2025-08-07",
@@ -60523,7 +60523,7 @@
         "wasSwungAt" : false,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 144,
       "timestamp" : "2025-08-11",
@@ -60896,7 +60896,7 @@
         "wasSwungAt" : true,
         "id" : 45
       } ],
-      "nextPitchID" : 47
+      "nextPitchID" : 48
     }, {
       "sessionId" : 151,
       "timestamp" : "2025-08-14",
@@ -61357,7 +61357,7 @@
         "wasSwungAt" : false,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 166,
       "timestamp" : "2025-09-03",
@@ -61786,7 +61786,7 @@
         "wasSwungAt" : false,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 138,
       "timestamp" : "2025-09-04",
@@ -62071,7 +62071,7 @@
         "wasSwungAt" : false,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 163,
       "timestamp" : "2025-09-04",
@@ -62724,7 +62724,7 @@
         "wasSwungAt" : true,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 112,
       "timestamp" : "2025-09-05",
@@ -63361,7 +63361,7 @@
         "wasSwungAt" : true,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 117,
       "timestamp" : "2025-09-07",
@@ -63966,7 +63966,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 121,
       "timestamp" : "2025-09-21",
@@ -64667,7 +64667,7 @@
         "wasSwungAt" : true,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     } ]
   }, {
     "id" : 4,
@@ -65068,7 +65068,7 @@
         "wasSwungAt" : true,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     }, {
       "sessionId" : 238,
       "timestamp" : "2021-05-11",
@@ -65489,7 +65489,7 @@
         "wasSwungAt" : true,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 190,
       "timestamp" : "2021-06-04",
@@ -65918,7 +65918,7 @@
         "wasSwungAt" : false,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 203,
       "timestamp" : "2021-06-13",
@@ -66131,7 +66131,7 @@
         "wasSwungAt" : false,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 236,
       "timestamp" : "2021-06-13",
@@ -66256,7 +66256,7 @@
         "wasSwungAt" : false,
         "id" : 14
       } ],
-      "nextPitchID" : 16
+      "nextPitchID" : 17
     }, {
       "sessionId" : 197,
       "timestamp" : "2021-06-28",
@@ -66661,7 +66661,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 215,
       "timestamp" : "2021-06-28",
@@ -67114,7 +67114,7 @@
         "wasSwungAt" : true,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 231,
       "timestamp" : "2021-07-06",
@@ -67543,7 +67543,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 225,
       "timestamp" : "2021-07-18",
@@ -68132,7 +68132,7 @@
         "wasSwungAt" : false,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     }, {
       "sessionId" : 248,
       "timestamp" : "2021-07-18",
@@ -68689,7 +68689,7 @@
         "wasSwungAt" : true,
         "id" : 68
       } ],
-      "nextPitchID" : 70
+      "nextPitchID" : 71
     }, {
       "sessionId" : 210,
       "timestamp" : "2021-08-16",
@@ -69326,7 +69326,7 @@
         "wasSwungAt" : false,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 211,
       "timestamp" : "2021-08-26",
@@ -69475,7 +69475,7 @@
         "wasSwungAt" : false,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 206,
       "timestamp" : "2021-09-03",
@@ -69736,7 +69736,7 @@
         "wasSwungAt" : false,
         "id" : 31
       } ],
-      "nextPitchID" : 33
+      "nextPitchID" : 34
     }, {
       "sessionId" : 235,
       "timestamp" : "2021-09-03",
@@ -70237,7 +70237,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 185,
       "timestamp" : "2021-09-16",
@@ -70954,7 +70954,7 @@
         "wasSwungAt" : false,
         "id" : 88
       } ],
-      "nextPitchID" : 90
+      "nextPitchID" : 91
     }, {
       "sessionId" : 186,
       "timestamp" : "2021-09-30",
@@ -71415,7 +71415,7 @@
         "wasSwungAt" : true,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 226,
       "timestamp" : "2021-09-30",
@@ -71988,7 +71988,7 @@
         "wasSwungAt" : false,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 219,
       "timestamp" : "2022-04-07",
@@ -72129,7 +72129,7 @@
         "wasSwungAt" : false,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 188,
       "timestamp" : "2022-04-08",
@@ -72518,7 +72518,7 @@
         "wasSwungAt" : false,
         "id" : 47
       } ],
-      "nextPitchID" : 49
+      "nextPitchID" : 50
     }, {
       "sessionId" : 193,
       "timestamp" : "2022-04-14",
@@ -72819,7 +72819,7 @@
         "wasSwungAt" : false,
         "id" : 36
       } ],
-      "nextPitchID" : 38
+      "nextPitchID" : 39
     }, {
       "sessionId" : 253,
       "timestamp" : "2022-04-23",
@@ -73296,7 +73296,7 @@
         "wasSwungAt" : true,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 189,
       "timestamp" : "2022-05-14",
@@ -73861,7 +73861,7 @@
         "wasSwungAt" : false,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 245,
       "timestamp" : "2022-05-16",
@@ -74082,7 +74082,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 202,
       "timestamp" : "2022-06-05",
@@ -74255,7 +74255,7 @@
         "wasSwungAt" : false,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 220,
       "timestamp" : "2022-07-17",
@@ -74564,7 +74564,7 @@
         "wasSwungAt" : true,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 232,
       "timestamp" : "2022-07-21",
@@ -75001,7 +75001,7 @@
         "wasSwungAt" : true,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 250,
       "timestamp" : "2022-07-29",
@@ -75350,7 +75350,7 @@
         "wasSwungAt" : true,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 223,
       "timestamp" : "2022-08-04",
@@ -75763,7 +75763,7 @@
         "wasSwungAt" : true,
         "id" : 50
       } ],
-      "nextPitchID" : 52
+      "nextPitchID" : 53
     }, {
       "sessionId" : 230,
       "timestamp" : "2022-08-04",
@@ -75960,7 +75960,7 @@
         "wasSwungAt" : false,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 183,
       "timestamp" : "2022-08-06",
@@ -76149,7 +76149,7 @@
         "wasSwungAt" : true,
         "id" : 22
       } ],
-      "nextPitchID" : 24
+      "nextPitchID" : 25
     }, {
       "sessionId" : 195,
       "timestamp" : "2022-08-18",
@@ -76810,7 +76810,7 @@
         "wasSwungAt" : true,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 243,
       "timestamp" : "2022-08-19",
@@ -77247,7 +77247,7 @@
         "wasSwungAt" : false,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 213,
       "timestamp" : "2022-09-30",
@@ -77676,7 +77676,7 @@
         "wasSwungAt" : false,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 209,
       "timestamp" : "2023-04-16",
@@ -78025,7 +78025,7 @@
         "wasSwungAt" : true,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 222,
       "timestamp" : "2023-04-18",
@@ -78174,7 +78174,7 @@
         "wasSwungAt" : true,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 227,
       "timestamp" : "2023-05-01",
@@ -78739,7 +78739,7 @@
         "wasSwungAt" : false,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 234,
       "timestamp" : "2023-06-14",
@@ -79168,7 +79168,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 252,
       "timestamp" : "2023-06-20",
@@ -79493,7 +79493,7 @@
         "wasSwungAt" : true,
         "id" : 39
       } ],
-      "nextPitchID" : 41
+      "nextPitchID" : 42
     }, {
       "sessionId" : 192,
       "timestamp" : "2023-07-16",
@@ -79746,7 +79746,7 @@
         "wasSwungAt" : true,
         "id" : 30
       } ],
-      "nextPitchID" : 32
+      "nextPitchID" : 33
     }, {
       "sessionId" : 221,
       "timestamp" : "2023-07-16",
@@ -80407,7 +80407,7 @@
         "wasSwungAt" : false,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 201,
       "timestamp" : "2023-08-09",
@@ -81076,7 +81076,7 @@
         "wasSwungAt" : false,
         "id" : 82
       } ],
-      "nextPitchID" : 84
+      "nextPitchID" : 85
     }, {
       "sessionId" : 247,
       "timestamp" : "2023-09-04",
@@ -81729,7 +81729,7 @@
         "wasSwungAt" : false,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 187,
       "timestamp" : "2023-09-08",
@@ -82086,7 +82086,7 @@
         "wasSwungAt" : true,
         "id" : 43
       } ],
-      "nextPitchID" : 45
+      "nextPitchID" : 46
     }, {
       "sessionId" : 199,
       "timestamp" : "2023-09-15",
@@ -82579,7 +82579,7 @@
         "wasSwungAt" : true,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 241,
       "timestamp" : "2023-09-15",
@@ -83184,7 +83184,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 194,
       "timestamp" : "2024-04-02",
@@ -83397,7 +83397,7 @@
         "wasSwungAt" : false,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 207,
       "timestamp" : "2024-04-16",
@@ -84034,7 +84034,7 @@
         "wasSwungAt" : true,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 229,
       "timestamp" : "2024-04-27",
@@ -84527,7 +84527,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 214,
       "timestamp" : "2024-05-01",
@@ -85044,7 +85044,7 @@
         "wasSwungAt" : true,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 249,
       "timestamp" : "2024-05-26",
@@ -85281,7 +85281,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 205,
       "timestamp" : "2024-06-08",
@@ -85958,7 +85958,7 @@
         "wasSwungAt" : false,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 196,
       "timestamp" : "2024-06-11",
@@ -86243,7 +86243,7 @@
         "wasSwungAt" : true,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 216,
       "timestamp" : "2024-06-24",
@@ -86520,7 +86520,7 @@
         "wasSwungAt" : true,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 224,
       "timestamp" : "2024-06-27",
@@ -86677,7 +86677,7 @@
         "wasSwungAt" : false,
         "id" : 18
       } ],
-      "nextPitchID" : 20
+      "nextPitchID" : 21
     }, {
       "sessionId" : 191,
       "timestamp" : "2024-07-20",
@@ -87082,7 +87082,7 @@
         "wasSwungAt" : false,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 228,
       "timestamp" : "2024-07-23",
@@ -87687,7 +87687,7 @@
         "wasSwungAt" : false,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 204,
       "timestamp" : "2024-08-09",
@@ -88196,7 +88196,7 @@
         "wasSwungAt" : false,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 251,
       "timestamp" : "2024-08-12",
@@ -88633,7 +88633,7 @@
         "wasSwungAt" : true,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 254,
       "timestamp" : "2024-08-15",
@@ -89062,7 +89062,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 198,
       "timestamp" : "2024-08-21",
@@ -89299,7 +89299,7 @@
         "wasSwungAt" : false,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 244,
       "timestamp" : "2025-04-11",
@@ -90016,7 +90016,7 @@
         "wasSwungAt" : true,
         "id" : 88
       } ],
-      "nextPitchID" : 90
+      "nextPitchID" : 91
     }, {
       "sessionId" : 239,
       "timestamp" : "2025-04-30",
@@ -90693,7 +90693,7 @@
         "wasSwungAt" : true,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 240,
       "timestamp" : "2025-05-13",
@@ -91098,7 +91098,7 @@
         "wasSwungAt" : false,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 242,
       "timestamp" : "2025-05-19",
@@ -91735,7 +91735,7 @@
         "wasSwungAt" : true,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 212,
       "timestamp" : "2025-05-20",
@@ -91908,7 +91908,7 @@
         "wasSwungAt" : true,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 200,
       "timestamp" : "2025-06-09",
@@ -92313,7 +92313,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 237,
       "timestamp" : "2025-06-20",
@@ -92974,7 +92974,7 @@
         "wasSwungAt" : false,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 218,
       "timestamp" : "2025-06-25",
@@ -93299,7 +93299,7 @@
         "wasSwungAt" : false,
         "id" : 39
       } ],
-      "nextPitchID" : 41
+      "nextPitchID" : 42
     }, {
       "sessionId" : 246,
       "timestamp" : "2025-07-28",
@@ -93488,7 +93488,7 @@
         "wasSwungAt" : false,
         "id" : 22
       } ],
-      "nextPitchID" : 24
+      "nextPitchID" : 25
     }, {
       "sessionId" : 233,
       "timestamp" : "2025-07-30",
@@ -94213,7 +94213,7 @@
         "wasSwungAt" : true,
         "id" : 89
       } ],
-      "nextPitchID" : 91
+      "nextPitchID" : 92
     }, {
       "sessionId" : 217,
       "timestamp" : "2025-08-02",
@@ -94834,7 +94834,7 @@
         "wasSwungAt" : true,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 184,
       "timestamp" : "2025-09-07",
@@ -95255,7 +95255,24 @@
         "wasSwungAt" : false,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
+    } ]
+  }, {
+    "id" : 31,
+    "name" : "FNAF 23",
+    "sessions" : [ {
+      "sessionId" : 444,
+      "timestamp" : "2003-01-02",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 67.067,
+        "wasSwungAt" : true,
+        "id" : 0
+      } ],
+      "nextPitchID" : 1
     } ]
   }, {
     "id" : 9,
@@ -95800,7 +95817,7 @@
         "wasSwungAt" : false,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 427,
       "timestamp" : "2021-06-17",
@@ -96493,7 +96510,7 @@
         "wasSwungAt" : false,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 436,
       "timestamp" : "2022-07-24",
@@ -97162,7 +97179,7 @@
         "wasSwungAt" : true,
         "id" : 82
       } ],
-      "nextPitchID" : 84
+      "nextPitchID" : 85
     }, {
       "sessionId" : 432,
       "timestamp" : "2023-07-07",
@@ -97863,7 +97880,7 @@
         "wasSwungAt" : true,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 440,
       "timestamp" : "2023-07-09",
@@ -98388,7 +98405,7 @@
         "wasSwungAt" : false,
         "id" : 64
       } ],
-      "nextPitchID" : 66
+      "nextPitchID" : 67
     }, {
       "sessionId" : 438,
       "timestamp" : "2023-08-17",
@@ -98993,7 +99010,7 @@
         "wasSwungAt" : false,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 426,
       "timestamp" : "2023-09-11",
@@ -99486,7 +99503,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 439,
       "timestamp" : "2023-09-16",
@@ -100083,7 +100100,7 @@
         "wasSwungAt" : false,
         "id" : 73
       } ],
-      "nextPitchID" : 75
+      "nextPitchID" : 76
     }, {
       "sessionId" : 442,
       "timestamp" : "2023-09-23",
@@ -100216,7 +100233,7 @@
         "wasSwungAt" : true,
         "id" : 15
       } ],
-      "nextPitchID" : 17
+      "nextPitchID" : 18
     }, {
       "sessionId" : 435,
       "timestamp" : "2024-07-19",
@@ -100917,7 +100934,7 @@
         "wasSwungAt" : true,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 441,
       "timestamp" : "2024-08-01",
@@ -101274,7 +101291,7 @@
         "wasSwungAt" : false,
         "id" : 43
       } ],
-      "nextPitchID" : 45
+      "nextPitchID" : 46
     }, {
       "sessionId" : 429,
       "timestamp" : "2024-08-10",
@@ -101535,7 +101552,7 @@
         "wasSwungAt" : false,
         "id" : 31
       } ],
-      "nextPitchID" : 33
+      "nextPitchID" : 34
     }, {
       "sessionId" : 428,
       "timestamp" : "2024-09-30",
@@ -102156,7 +102173,7 @@
         "wasSwungAt" : false,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 430,
       "timestamp" : "2024-09-30",
@@ -102369,7 +102386,7 @@
         "wasSwungAt" : true,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 433,
       "timestamp" : "2025-04-14",
@@ -102526,7 +102543,7 @@
         "wasSwungAt" : true,
         "id" : 18
       } ],
-      "nextPitchID" : 20
+      "nextPitchID" : 21
     }, {
       "sessionId" : 431,
       "timestamp" : "2025-05-27",
@@ -102963,7 +102980,7 @@
         "wasSwungAt" : true,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 437,
       "timestamp" : "2025-09-11",
@@ -103512,7 +103529,7 @@
         "wasSwungAt" : false,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     } ]
   }, {
     "id" : 7,
@@ -104089,7 +104106,7 @@
         "wasSwungAt" : false,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 357,
       "timestamp" : "2021-04-21",
@@ -104518,7 +104535,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 369,
       "timestamp" : "2021-04-21",
@@ -104795,7 +104812,7 @@
         "wasSwungAt" : false,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 372,
       "timestamp" : "2021-05-08",
@@ -105328,7 +105345,7 @@
         "wasSwungAt" : false,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 400,
       "timestamp" : "2021-05-15",
@@ -105893,7 +105910,7 @@
         "wasSwungAt" : true,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 361,
       "timestamp" : "2021-05-18",
@@ -106250,7 +106267,7 @@
         "wasSwungAt" : false,
         "id" : 43
       } ],
-      "nextPitchID" : 45
+      "nextPitchID" : 46
     }, {
       "sessionId" : 360,
       "timestamp" : "2021-05-23",
@@ -106447,7 +106464,7 @@
         "wasSwungAt" : true,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 353,
       "timestamp" : "2021-06-05",
@@ -107044,7 +107061,7 @@
         "wasSwungAt" : true,
         "id" : 73
       } ],
-      "nextPitchID" : 75
+      "nextPitchID" : 76
     }, {
       "sessionId" : 381,
       "timestamp" : "2021-07-07",
@@ -107649,7 +107666,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 396,
       "timestamp" : "2021-07-18",
@@ -107830,7 +107847,7 @@
         "wasSwungAt" : false,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 387,
       "timestamp" : "2021-07-27",
@@ -108443,7 +108460,7 @@
         "wasSwungAt" : true,
         "id" : 75
       } ],
-      "nextPitchID" : 77
+      "nextPitchID" : 78
     }, {
       "sessionId" : 386,
       "timestamp" : "2021-08-19",
@@ -108864,7 +108881,7 @@
         "wasSwungAt" : true,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 376,
       "timestamp" : "2021-09-03",
@@ -109013,7 +109030,7 @@
         "wasSwungAt" : false,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 367,
       "timestamp" : "2021-09-14",
@@ -109154,7 +109171,7 @@
         "wasSwungAt" : true,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 392,
       "timestamp" : "2022-04-08",
@@ -109375,7 +109392,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 383,
       "timestamp" : "2022-04-12",
@@ -109916,7 +109933,7 @@
         "wasSwungAt" : true,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 374,
       "timestamp" : "2022-04-19",
@@ -110113,7 +110130,7 @@
         "wasSwungAt" : false,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 393,
       "timestamp" : "2022-05-16",
@@ -110758,7 +110775,7 @@
         "wasSwungAt" : false,
         "id" : 79
       } ],
-      "nextPitchID" : 81
+      "nextPitchID" : 82
     }, {
       "sessionId" : 398,
       "timestamp" : "2022-06-01",
@@ -111043,7 +111060,7 @@
         "wasSwungAt" : false,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 366,
       "timestamp" : "2022-06-15",
@@ -111496,7 +111513,7 @@
         "wasSwungAt" : true,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 375,
       "timestamp" : "2022-08-28",
@@ -112045,7 +112062,7 @@
         "wasSwungAt" : false,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     }, {
       "sessionId" : 356,
       "timestamp" : "2023-05-05",
@@ -112426,7 +112443,7 @@
         "wasSwungAt" : false,
         "id" : 46
       } ],
-      "nextPitchID" : 48
+      "nextPitchID" : 49
     }, {
       "sessionId" : 394,
       "timestamp" : "2023-05-26",
@@ -112903,7 +112920,7 @@
         "wasSwungAt" : false,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 355,
       "timestamp" : "2023-06-01",
@@ -113244,7 +113261,7 @@
         "wasSwungAt" : false,
         "id" : 41
       } ],
-      "nextPitchID" : 43
+      "nextPitchID" : 44
     }, {
       "sessionId" : 377,
       "timestamp" : "2023-06-01",
@@ -113425,7 +113442,7 @@
         "wasSwungAt" : true,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 371,
       "timestamp" : "2023-06-02",
@@ -113934,7 +113951,7 @@
         "wasSwungAt" : false,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 364,
       "timestamp" : "2023-06-25",
@@ -114587,7 +114604,7 @@
         "wasSwungAt" : false,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 401,
       "timestamp" : "2023-06-25",
@@ -115048,7 +115065,7 @@
         "wasSwungAt" : false,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 389,
       "timestamp" : "2023-08-07",
@@ -115453,7 +115470,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 385,
       "timestamp" : "2023-08-18",
@@ -116002,7 +116019,7 @@
         "wasSwungAt" : false,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     }, {
       "sessionId" : 362,
       "timestamp" : "2023-09-23",
@@ -116463,7 +116480,7 @@
         "wasSwungAt" : false,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 397,
       "timestamp" : "2024-04-03",
@@ -116812,7 +116829,7 @@
         "wasSwungAt" : false,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 402,
       "timestamp" : "2024-04-05",
@@ -117297,7 +117314,7 @@
         "wasSwungAt" : true,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 359,
       "timestamp" : "2024-05-20",
@@ -117830,7 +117847,7 @@
         "wasSwungAt" : true,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 370,
       "timestamp" : "2024-05-25",
@@ -118299,7 +118316,7 @@
         "wasSwungAt" : true,
         "id" : 57
       } ],
-      "nextPitchID" : 59
+      "nextPitchID" : 60
     }, {
       "sessionId" : 404,
       "timestamp" : "2024-05-27",
@@ -118896,7 +118913,7 @@
         "wasSwungAt" : false,
         "id" : 73
       } ],
-      "nextPitchID" : 75
+      "nextPitchID" : 76
     }, {
       "sessionId" : 378,
       "timestamp" : "2024-05-30",
@@ -119165,7 +119182,7 @@
         "wasSwungAt" : false,
         "id" : 32
       } ],
-      "nextPitchID" : 34
+      "nextPitchID" : 35
     }, {
       "sessionId" : 363,
       "timestamp" : "2024-06-09",
@@ -119874,7 +119891,7 @@
         "wasSwungAt" : false,
         "id" : 87
       } ],
-      "nextPitchID" : 89
+      "nextPitchID" : 90
     }, {
       "sessionId" : 352,
       "timestamp" : "2024-07-13",
@@ -120415,7 +120432,7 @@
         "wasSwungAt" : true,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 365,
       "timestamp" : "2024-07-23",
@@ -121052,7 +121069,7 @@
         "wasSwungAt" : false,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 395,
       "timestamp" : "2024-08-17",
@@ -121457,7 +121474,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 399,
       "timestamp" : "2024-08-18",
@@ -121630,7 +121647,7 @@
         "wasSwungAt" : true,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 388,
       "timestamp" : "2024-09-08",
@@ -122131,7 +122148,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 390,
       "timestamp" : "2024-09-17",
@@ -122328,7 +122345,7 @@
         "wasSwungAt" : true,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 403,
       "timestamp" : "2025-04-01",
@@ -122805,7 +122822,7 @@
         "wasSwungAt" : true,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 384,
       "timestamp" : "2025-04-08",
@@ -123290,7 +123307,7 @@
         "wasSwungAt" : true,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 391,
       "timestamp" : "2025-04-26",
@@ -123671,7 +123688,7 @@
         "wasSwungAt" : true,
         "id" : 46
       } ],
-      "nextPitchID" : 48
+      "nextPitchID" : 49
     }, {
       "sessionId" : 373,
       "timestamp" : "2025-05-15",
@@ -124396,7 +124413,7 @@
         "wasSwungAt" : true,
         "id" : 89
       } ],
-      "nextPitchID" : 91
+      "nextPitchID" : 92
     }, {
       "sessionId" : 380,
       "timestamp" : "2025-05-26",
@@ -124649,7 +124666,7 @@
         "wasSwungAt" : false,
         "id" : 30
       } ],
-      "nextPitchID" : 32
+      "nextPitchID" : 33
     }, {
       "sessionId" : 379,
       "timestamp" : "2025-06-05",
@@ -125286,7 +125303,7 @@
         "wasSwungAt" : false,
         "id" : 78
       } ],
-      "nextPitchID" : 80
+      "nextPitchID" : 81
     }, {
       "sessionId" : 354,
       "timestamp" : "2025-07-03",
@@ -125715,7 +125732,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 382,
       "timestamp" : "2025-08-20",
@@ -126416,7 +126433,7 @@
         "wasSwungAt" : true,
         "id" : 86
       } ],
-      "nextPitchID" : 88
+      "nextPitchID" : 89
     }, {
       "sessionId" : 358,
       "timestamp" : "2025-09-11",
@@ -126757,7 +126774,7 @@
         "wasSwungAt" : true,
         "id" : 41
       } ],
-      "nextPitchID" : 43
+      "nextPitchID" : 44
     } ]
   }, {
     "id" : 0,
@@ -127070,7 +127087,7 @@
         "wasSwungAt" : true,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 27,
       "timestamp" : "2021-05-28",
@@ -127251,7 +127268,7 @@
         "wasSwungAt" : false,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 15,
       "timestamp" : "2021-06-20",
@@ -127688,7 +127705,7 @@
         "wasSwungAt" : false,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 7,
       "timestamp" : "2021-07-07",
@@ -128197,7 +128214,7 @@
         "wasSwungAt" : false,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 14,
       "timestamp" : "2021-07-30",
@@ -128906,7 +128923,7 @@
         "wasSwungAt" : false,
         "id" : 87
       } ],
-      "nextPitchID" : 89
+      "nextPitchID" : 90
     }, {
       "sessionId" : 16,
       "timestamp" : "2021-08-01",
@@ -129223,7 +129240,7 @@
         "wasSwungAt" : false,
         "id" : 38
       } ],
-      "nextPitchID" : 40
+      "nextPitchID" : 41
     }, {
       "sessionId" : 4,
       "timestamp" : "2021-08-04",
@@ -129636,7 +129653,7 @@
         "wasSwungAt" : true,
         "id" : 50
       } ],
-      "nextPitchID" : 52
+      "nextPitchID" : 53
     }, {
       "sessionId" : 21,
       "timestamp" : "2021-08-08",
@@ -129985,7 +130002,7 @@
         "wasSwungAt" : true,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 9,
       "timestamp" : "2021-08-10",
@@ -130294,7 +130311,7 @@
         "wasSwungAt" : true,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 26,
       "timestamp" : "2021-08-18",
@@ -130643,7 +130660,7 @@
         "wasSwungAt" : true,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 23,
       "timestamp" : "2021-09-09",
@@ -130952,7 +130969,7 @@
         "wasSwungAt" : false,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 13,
       "timestamp" : "2021-09-12",
@@ -131413,7 +131430,7 @@
         "wasSwungAt" : true,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 19,
       "timestamp" : "2022-05-23",
@@ -132002,7 +132019,7 @@
         "wasSwungAt" : true,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     }, {
       "sessionId" : 5,
       "timestamp" : "2022-09-06",
@@ -132615,7 +132632,7 @@
         "wasSwungAt" : true,
         "id" : 75
       } ],
-      "nextPitchID" : 77
+      "nextPitchID" : 78
     }, {
       "sessionId" : 6,
       "timestamp" : "2023-04-02",
@@ -132940,7 +132957,7 @@
         "wasSwungAt" : true,
         "id" : 39
       } ],
-      "nextPitchID" : 41
+      "nextPitchID" : 42
     }, {
       "sessionId" : 2,
       "timestamp" : "2023-04-22",
@@ -133169,7 +133186,7 @@
         "wasSwungAt" : true,
         "id" : 27
       } ],
-      "nextPitchID" : 29
+      "nextPitchID" : 30
     }, {
       "sessionId" : 12,
       "timestamp" : "2023-06-07",
@@ -133574,7 +133591,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 22,
       "timestamp" : "2023-07-01",
@@ -133867,7 +133884,7 @@
         "wasSwungAt" : true,
         "id" : 35
       } ],
-      "nextPitchID" : 37
+      "nextPitchID" : 38
     }, {
       "sessionId" : 0,
       "timestamp" : "2023-08-21",
@@ -134200,7 +134217,7 @@
         "wasSwungAt" : false,
         "id" : 40
       } ],
-      "nextPitchID" : 42
+      "nextPitchID" : 43
     }, {
       "sessionId" : 17,
       "timestamp" : "2023-09-01",
@@ -134485,7 +134502,7 @@
         "wasSwungAt" : false,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 24,
       "timestamp" : "2024-04-19",
@@ -134818,7 +134835,7 @@
         "wasSwungAt" : true,
         "id" : 40
       } ],
-      "nextPitchID" : 42
+      "nextPitchID" : 43
     }, {
       "sessionId" : 8,
       "timestamp" : "2024-04-27",
@@ -135431,7 +135448,7 @@
         "wasSwungAt" : true,
         "id" : 75
       } ],
-      "nextPitchID" : 77
+      "nextPitchID" : 78
     }, {
       "sessionId" : 18,
       "timestamp" : "2024-06-16",
@@ -136116,7 +136133,7 @@
         "wasSwungAt" : false,
         "id" : 84
       } ],
-      "nextPitchID" : 86
+      "nextPitchID" : 87
     }, {
       "sessionId" : 3,
       "timestamp" : "2024-07-21",
@@ -136505,7 +136522,7 @@
         "wasSwungAt" : false,
         "id" : 47
       } ],
-      "nextPitchID" : 49
+      "nextPitchID" : 50
     }, {
       "sessionId" : 11,
       "timestamp" : "2025-04-23",
@@ -137126,7 +137143,7 @@
         "wasSwungAt" : true,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 28,
       "timestamp" : "2025-05-27",
@@ -137747,7 +137764,7 @@
         "wasSwungAt" : true,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 10,
       "timestamp" : "2025-07-23",
@@ -138232,7 +138249,7 @@
         "wasSwungAt" : false,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 1,
       "timestamp" : "2025-08-03",
@@ -138549,7 +138566,7 @@
         "wasSwungAt" : true,
         "id" : 38
       } ],
-      "nextPitchID" : 40
+      "nextPitchID" : 41
     }, {
       "sessionId" : 25,
       "timestamp" : "2025-08-29",
@@ -139138,7 +139155,7 @@
         "wasSwungAt" : false,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     } ]
   }, {
     "id" : 8,
@@ -139659,7 +139676,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 416,
       "timestamp" : "2022-04-20",
@@ -140280,7 +140297,7 @@
         "wasSwungAt" : false,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 414,
       "timestamp" : "2022-04-21",
@@ -140437,7 +140454,7 @@
         "wasSwungAt" : true,
         "id" : 18
       } ],
-      "nextPitchID" : 20
+      "nextPitchID" : 21
     }, {
       "sessionId" : 410,
       "timestamp" : "2022-07-19",
@@ -140834,7 +140851,7 @@
         "wasSwungAt" : false,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     }, {
       "sessionId" : 425,
       "timestamp" : "2022-08-11",
@@ -141311,7 +141328,7 @@
         "wasSwungAt" : true,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 418,
       "timestamp" : "2022-08-27",
@@ -141796,7 +141813,7 @@
         "wasSwungAt" : true,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 421,
       "timestamp" : "2023-08-17",
@@ -142145,7 +142162,7 @@
         "wasSwungAt" : true,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 420,
       "timestamp" : "2023-08-23",
@@ -142294,7 +142311,7 @@
         "wasSwungAt" : false,
         "id" : 17
       } ],
-      "nextPitchID" : 21
+      "nextPitchID" : 22
     }, {
       "sessionId" : 415,
       "timestamp" : "2023-08-28",
@@ -142683,7 +142700,7 @@
         "wasSwungAt" : true,
         "id" : 47
       } ],
-      "nextPitchID" : 49
+      "nextPitchID" : 50
     }, {
       "sessionId" : 422,
       "timestamp" : "2023-09-03",
@@ -143248,7 +143265,7 @@
         "wasSwungAt" : false,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 417,
       "timestamp" : "2023-09-26",
@@ -143725,7 +143742,7 @@
         "wasSwungAt" : false,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 424,
       "timestamp" : "2024-04-27",
@@ -144218,7 +144235,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 412,
       "timestamp" : "2024-05-04",
@@ -144663,7 +144680,7 @@
         "wasSwungAt" : false,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 409,
       "timestamp" : "2024-06-02",
@@ -145124,7 +145141,7 @@
         "wasSwungAt" : true,
         "id" : 56
       } ],
-      "nextPitchID" : 58
+      "nextPitchID" : 59
     }, {
       "sessionId" : 408,
       "timestamp" : "2025-05-15",
@@ -145769,7 +145786,7 @@
         "wasSwungAt" : true,
         "id" : 79
       } ],
-      "nextPitchID" : 81
+      "nextPitchID" : 82
     }, {
       "sessionId" : 407,
       "timestamp" : "2025-05-25",
@@ -146326,7 +146343,7 @@
         "wasSwungAt" : false,
         "id" : 68
       } ],
-      "nextPitchID" : 70
+      "nextPitchID" : 71
     }, {
       "sessionId" : 413,
       "timestamp" : "2025-06-02",
@@ -146947,7 +146964,7 @@
         "wasSwungAt" : false,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 406,
       "timestamp" : "2025-06-15",
@@ -147496,7 +147513,7 @@
         "wasSwungAt" : false,
         "id" : 67
       } ],
-      "nextPitchID" : 69
+      "nextPitchID" : 70
     }, {
       "sessionId" : 423,
       "timestamp" : "2025-06-18",
@@ -147733,7 +147750,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 419,
       "timestamp" : "2025-06-21",
@@ -148082,7 +148099,7 @@
         "wasSwungAt" : false,
         "id" : 42
       } ],
-      "nextPitchID" : 44
+      "nextPitchID" : 45
     }, {
       "sessionId" : 405,
       "timestamp" : "2025-07-25",
@@ -148215,7 +148232,7 @@
         "wasSwungAt" : false,
         "id" : 15
       } ],
-      "nextPitchID" : 17
+      "nextPitchID" : 18
     } ]
   }, {
     "id" : 5,
@@ -148888,7 +148905,7 @@
         "wasSwungAt" : false,
         "id" : 82
       } ],
-      "nextPitchID" : 84
+      "nextPitchID" : 85
     }, {
       "sessionId" : 265,
       "timestamp" : "2021-05-11",
@@ -149341,7 +149358,7 @@
         "wasSwungAt" : true,
         "id" : 55
       } ],
-      "nextPitchID" : 57
+      "nextPitchID" : 58
     }, {
       "sessionId" : 290,
       "timestamp" : "2021-06-01",
@@ -149546,7 +149563,7 @@
         "wasSwungAt" : true,
         "id" : 24
       } ],
-      "nextPitchID" : 26
+      "nextPitchID" : 27
     }, {
       "sessionId" : 261,
       "timestamp" : "2021-06-05",
@@ -150223,7 +150240,7 @@
         "wasSwungAt" : false,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 292,
       "timestamp" : "2021-06-13",
@@ -150812,7 +150829,7 @@
         "wasSwungAt" : false,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     }, {
       "sessionId" : 280,
       "timestamp" : "2021-06-14",
@@ -151465,7 +151482,7 @@
         "wasSwungAt" : false,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 327,
       "timestamp" : "2021-06-30",
@@ -152118,7 +152135,7 @@
         "wasSwungAt" : true,
         "id" : 80
       } ],
-      "nextPitchID" : 82
+      "nextPitchID" : 83
     }, {
       "sessionId" : 268,
       "timestamp" : "2021-07-01",
@@ -152515,7 +152532,7 @@
         "wasSwungAt" : true,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     }, {
       "sessionId" : 258,
       "timestamp" : "2021-07-20",
@@ -153040,7 +153057,7 @@
         "wasSwungAt" : true,
         "id" : 64
       } ],
-      "nextPitchID" : 66
+      "nextPitchID" : 67
     }, {
       "sessionId" : 306,
       "timestamp" : "2021-07-23",
@@ -153557,7 +153574,7 @@
         "wasSwungAt" : false,
         "id" : 63
       } ],
-      "nextPitchID" : 65
+      "nextPitchID" : 66
     }, {
       "sessionId" : 288,
       "timestamp" : "2021-07-31",
@@ -153834,7 +153851,7 @@
         "wasSwungAt" : false,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 281,
       "timestamp" : "2021-08-28",
@@ -154143,7 +154160,7 @@
         "wasSwungAt" : false,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     }, {
       "sessionId" : 316,
       "timestamp" : "2021-09-24",
@@ -154460,7 +154477,7 @@
         "wasSwungAt" : false,
         "id" : 38
       } ],
-      "nextPitchID" : 40
+      "nextPitchID" : 41
     }, {
       "sessionId" : 295,
       "timestamp" : "2022-04-07",
@@ -154993,7 +155010,7 @@
         "wasSwungAt" : false,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 311,
       "timestamp" : "2022-04-08",
@@ -155670,7 +155687,7 @@
         "wasSwungAt" : false,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 314,
       "timestamp" : "2022-04-21",
@@ -155939,7 +155956,7 @@
         "wasSwungAt" : false,
         "id" : 32
       } ],
-      "nextPitchID" : 34
+      "nextPitchID" : 35
     }, {
       "sessionId" : 324,
       "timestamp" : "2022-04-21",
@@ -156584,7 +156601,7 @@
         "wasSwungAt" : true,
         "id" : 79
       } ],
-      "nextPitchID" : 81
+      "nextPitchID" : 82
     }, {
       "sessionId" : 323,
       "timestamp" : "2022-05-01",
@@ -157245,7 +157262,7 @@
         "wasSwungAt" : true,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 289,
       "timestamp" : "2022-05-07",
@@ -157386,7 +157403,7 @@
         "wasSwungAt" : true,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 308,
       "timestamp" : "2022-05-28",
@@ -157655,7 +157672,7 @@
         "wasSwungAt" : true,
         "id" : 32
       } ],
-      "nextPitchID" : 34
+      "nextPitchID" : 35
     }, {
       "sessionId" : 274,
       "timestamp" : "2022-06-04",
@@ -158284,7 +158301,7 @@
         "wasSwungAt" : false,
         "id" : 77
       } ],
-      "nextPitchID" : 79
+      "nextPitchID" : 80
     }, {
       "sessionId" : 319,
       "timestamp" : "2022-06-11",
@@ -158601,7 +158618,7 @@
         "wasSwungAt" : false,
         "id" : 38
       } ],
-      "nextPitchID" : 40
+      "nextPitchID" : 41
     }, {
       "sessionId" : 300,
       "timestamp" : "2022-06-27",
@@ -158726,7 +158743,7 @@
         "wasSwungAt" : true,
         "id" : 14
       } ],
-      "nextPitchID" : 16
+      "nextPitchID" : 17
     }, {
       "sessionId" : 326,
       "timestamp" : "2022-07-10",
@@ -159107,7 +159124,7 @@
         "wasSwungAt" : true,
         "id" : 46
       } ],
-      "nextPitchID" : 48
+      "nextPitchID" : 49
     }, {
       "sessionId" : 279,
       "timestamp" : "2022-07-23",
@@ -159672,7 +159689,7 @@
         "wasSwungAt" : false,
         "id" : 69
       } ],
-      "nextPitchID" : 71
+      "nextPitchID" : 72
     }, {
       "sessionId" : 266,
       "timestamp" : "2022-09-19",
@@ -160101,7 +160118,7 @@
         "wasSwungAt" : false,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 321,
       "timestamp" : "2023-04-04",
@@ -160658,7 +160675,7 @@
         "wasSwungAt" : true,
         "id" : 68
       } ],
-      "nextPitchID" : 70
+      "nextPitchID" : 71
     }, {
       "sessionId" : 302,
       "timestamp" : "2023-04-25",
@@ -161351,7 +161368,7 @@
         "wasSwungAt" : false,
         "id" : 85
       } ],
-      "nextPitchID" : 87
+      "nextPitchID" : 88
     }, {
       "sessionId" : 260,
       "timestamp" : "2023-05-04",
@@ -161828,7 +161845,7 @@
         "wasSwungAt" : false,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 269,
       "timestamp" : "2023-06-14",
@@ -162553,7 +162570,7 @@
         "wasSwungAt" : true,
         "id" : 89
       } ],
-      "nextPitchID" : 91
+      "nextPitchID" : 92
     }, {
       "sessionId" : 294,
       "timestamp" : "2023-06-15",
@@ -162742,7 +162759,7 @@
         "wasSwungAt" : false,
         "id" : 22
       } ],
-      "nextPitchID" : 24
+      "nextPitchID" : 25
     }, {
       "sessionId" : 312,
       "timestamp" : "2023-06-17",
@@ -162883,7 +162900,7 @@
         "wasSwungAt" : false,
         "id" : 16
       } ],
-      "nextPitchID" : 18
+      "nextPitchID" : 19
     }, {
       "sessionId" : 256,
       "timestamp" : "2023-06-26",
@@ -163488,7 +163505,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 303,
       "timestamp" : "2023-08-16",
@@ -164093,7 +164110,7 @@
         "wasSwungAt" : true,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 285,
       "timestamp" : "2023-08-19",
@@ -164586,7 +164603,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 318,
       "timestamp" : "2023-08-20",
@@ -165231,7 +165248,7 @@
         "wasSwungAt" : false,
         "id" : 79
       } ],
-      "nextPitchID" : 81
+      "nextPitchID" : 82
     }, {
       "sessionId" : 267,
       "timestamp" : "2023-08-31",
@@ -165804,7 +165821,7 @@
         "wasSwungAt" : false,
         "id" : 70
       } ],
-      "nextPitchID" : 72
+      "nextPitchID" : 73
     }, {
       "sessionId" : 328,
       "timestamp" : "2023-09-14",
@@ -166249,7 +166266,7 @@
         "wasSwungAt" : true,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 287,
       "timestamp" : "2023-09-20",
@@ -166926,7 +166943,7 @@
         "wasSwungAt" : true,
         "id" : 83
       } ],
-      "nextPitchID" : 85
+      "nextPitchID" : 86
     }, {
       "sessionId" : 259,
       "timestamp" : "2023-09-22",
@@ -167363,7 +167380,7 @@
         "wasSwungAt" : false,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 320,
       "timestamp" : "2023-09-22",
@@ -168024,7 +168041,7 @@
         "wasSwungAt" : false,
         "id" : 81
       } ],
-      "nextPitchID" : 83
+      "nextPitchID" : 84
     }, {
       "sessionId" : 270,
       "timestamp" : "2024-04-07",
@@ -168389,7 +168406,7 @@
         "wasSwungAt" : false,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 298,
       "timestamp" : "2024-04-15",
@@ -169034,7 +169051,7 @@
         "wasSwungAt" : false,
         "id" : 79
       } ],
-      "nextPitchID" : 81
+      "nextPitchID" : 82
     }, {
       "sessionId" : 278,
       "timestamp" : "2024-04-18",
@@ -169271,7 +169288,7 @@
         "wasSwungAt" : true,
         "id" : 28
       } ],
-      "nextPitchID" : 30
+      "nextPitchID" : 31
     }, {
       "sessionId" : 325,
       "timestamp" : "2024-04-23",
@@ -169876,7 +169893,7 @@
         "wasSwungAt" : false,
         "id" : 74
       } ],
-      "nextPitchID" : 76
+      "nextPitchID" : 77
     }, {
       "sessionId" : 255,
       "timestamp" : "2024-04-25",
@@ -170049,7 +170066,7 @@
         "wasSwungAt" : false,
         "id" : 20
       } ],
-      "nextPitchID" : 22
+      "nextPitchID" : 23
     }, {
       "sessionId" : 299,
       "timestamp" : "2024-05-03",
@@ -170414,7 +170431,7 @@
         "wasSwungAt" : true,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 322,
       "timestamp" : "2024-05-04",
@@ -170779,7 +170796,7 @@
         "wasSwungAt" : false,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 315,
       "timestamp" : "2024-05-09",
@@ -171312,7 +171329,7 @@
         "wasSwungAt" : true,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 272,
       "timestamp" : "2024-06-01",
@@ -172037,7 +172054,7 @@
         "wasSwungAt" : false,
         "id" : 89
       } ],
-      "nextPitchID" : 91
+      "nextPitchID" : 92
     }, {
       "sessionId" : 284,
       "timestamp" : "2024-06-01",
@@ -172466,7 +172483,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 317,
       "timestamp" : "2024-06-04",
@@ -173135,7 +173152,7 @@
         "wasSwungAt" : false,
         "id" : 82
       } ],
-      "nextPitchID" : 84
+      "nextPitchID" : 85
     }, {
       "sessionId" : 305,
       "timestamp" : "2024-06-18",
@@ -173748,7 +173765,7 @@
         "wasSwungAt" : false,
         "id" : 75
       } ],
-      "nextPitchID" : 77
+      "nextPitchID" : 78
     }, {
       "sessionId" : 273,
       "timestamp" : "2024-07-08",
@@ -174073,7 +174090,7 @@
         "wasSwungAt" : true,
         "id" : 39
       } ],
-      "nextPitchID" : 41
+      "nextPitchID" : 42
     }, {
       "sessionId" : 264,
       "timestamp" : "2024-08-21",
@@ -174254,7 +174271,7 @@
         "wasSwungAt" : true,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 304,
       "timestamp" : "2024-09-01",
@@ -174675,7 +174692,7 @@
         "wasSwungAt" : false,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 283,
       "timestamp" : "2024-09-03",
@@ -174896,7 +174913,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 310,
       "timestamp" : "2024-09-22",
@@ -175197,7 +175214,7 @@
         "wasSwungAt" : false,
         "id" : 36
       } ],
-      "nextPitchID" : 38
+      "nextPitchID" : 39
     }, {
       "sessionId" : 313,
       "timestamp" : "2024-09-25",
@@ -175618,7 +175635,7 @@
         "wasSwungAt" : false,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 282,
       "timestamp" : "2025-05-16",
@@ -175799,7 +175816,7 @@
         "wasSwungAt" : false,
         "id" : 21
       } ],
-      "nextPitchID" : 23
+      "nextPitchID" : 24
     }, {
       "sessionId" : 307,
       "timestamp" : "2025-05-17",
@@ -176076,7 +176093,7 @@
         "wasSwungAt" : true,
         "id" : 33
       } ],
-      "nextPitchID" : 35
+      "nextPitchID" : 36
     }, {
       "sessionId" : 293,
       "timestamp" : "2025-05-21",
@@ -176521,7 +176538,7 @@
         "wasSwungAt" : true,
         "id" : 54
       } ],
-      "nextPitchID" : 56
+      "nextPitchID" : 57
     }, {
       "sessionId" : 309,
       "timestamp" : "2025-05-29",
@@ -176806,7 +176823,7 @@
         "wasSwungAt" : false,
         "id" : 34
       } ],
-      "nextPitchID" : 36
+      "nextPitchID" : 37
     }, {
       "sessionId" : 262,
       "timestamp" : "2025-06-11",
@@ -177347,7 +177364,7 @@
         "wasSwungAt" : true,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 296,
       "timestamp" : "2025-06-14",
@@ -177840,7 +177857,7 @@
         "wasSwungAt" : false,
         "id" : 60
       } ],
-      "nextPitchID" : 62
+      "nextPitchID" : 63
     }, {
       "sessionId" : 275,
       "timestamp" : "2025-07-03",
@@ -178429,7 +178446,7 @@
         "wasSwungAt" : false,
         "id" : 72
       } ],
-      "nextPitchID" : 74
+      "nextPitchID" : 75
     }, {
       "sessionId" : 271,
       "timestamp" : "2025-07-15",
@@ -178594,7 +178611,7 @@
         "wasSwungAt" : true,
         "id" : 19
       } ],
-      "nextPitchID" : 21
+      "nextPitchID" : 22
     }, {
       "sessionId" : 286,
       "timestamp" : "2025-07-24",
@@ -179223,7 +179240,7 @@
         "wasSwungAt" : false,
         "id" : 77
       } ],
-      "nextPitchID" : 79
+      "nextPitchID" : 80
     }, {
       "sessionId" : 257,
       "timestamp" : "2025-08-04",
@@ -179908,7 +179925,7 @@
         "wasSwungAt" : true,
         "id" : 84
       } ],
-      "nextPitchID" : 86
+      "nextPitchID" : 87
     }, {
       "sessionId" : 301,
       "timestamp" : "2025-08-04",
@@ -180345,7 +180362,7 @@
         "wasSwungAt" : true,
         "id" : 53
       } ],
-      "nextPitchID" : 55
+      "nextPitchID" : 56
     }, {
       "sessionId" : 277,
       "timestamp" : "2025-08-06",
@@ -180558,7 +180575,7 @@
         "wasSwungAt" : true,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 297,
       "timestamp" : "2025-08-20",
@@ -180771,7 +180788,7 @@
         "wasSwungAt" : true,
         "id" : 25
       } ],
-      "nextPitchID" : 27
+      "nextPitchID" : 28
     }, {
       "sessionId" : 276,
       "timestamp" : "2025-09-26",
@@ -181168,7 +181185,7 @@
         "wasSwungAt" : false,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     }, {
       "sessionId" : 263,
       "timestamp" : "2025-10-01",
@@ -181565,7 +181582,7 @@
         "wasSwungAt" : true,
         "id" : 48
       } ],
-      "nextPitchID" : 50
+      "nextPitchID" : 51
     } ]
   }, {
     "id" : 6,
@@ -181934,7 +181951,7 @@
         "wasSwungAt" : true,
         "id" : 44
       } ],
-      "nextPitchID" : 46
+      "nextPitchID" : 47
     }, {
       "sessionId" : 335,
       "timestamp" : "2021-04-29",
@@ -182435,7 +182452,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 343,
       "timestamp" : "2021-07-15",
@@ -182656,7 +182673,7 @@
         "wasSwungAt" : false,
         "id" : 26
       } ],
-      "nextPitchID" : 28
+      "nextPitchID" : 29
     }, {
       "sessionId" : 336,
       "timestamp" : "2021-08-28",
@@ -183061,7 +183078,7 @@
         "wasSwungAt" : true,
         "id" : 49
       } ],
-      "nextPitchID" : 51
+      "nextPitchID" : 52
     }, {
       "sessionId" : 346,
       "timestamp" : "2022-04-25",
@@ -183570,7 +183587,7 @@
         "wasSwungAt" : false,
         "id" : 62
       } ],
-      "nextPitchID" : 64
+      "nextPitchID" : 65
     }, {
       "sessionId" : 330,
       "timestamp" : "2022-07-19",
@@ -184103,7 +184120,7 @@
         "wasSwungAt" : true,
         "id" : 65
       } ],
-      "nextPitchID" : 67
+      "nextPitchID" : 68
     }, {
       "sessionId" : 342,
       "timestamp" : "2022-07-25",
@@ -184516,7 +184533,7 @@
         "wasSwungAt" : false,
         "id" : 50
       } ],
-      "nextPitchID" : 52
+      "nextPitchID" : 53
     }, {
       "sessionId" : 333,
       "timestamp" : "2022-08-01",
@@ -184713,7 +184730,7 @@
         "wasSwungAt" : false,
         "id" : 23
       } ],
-      "nextPitchID" : 25
+      "nextPitchID" : 26
     }, {
       "sessionId" : 329,
       "timestamp" : "2023-04-10",
@@ -184862,7 +184879,7 @@
         "wasSwungAt" : false,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 349,
       "timestamp" : "2023-06-07",
@@ -185283,7 +185300,7 @@
         "wasSwungAt" : false,
         "id" : 51
       } ],
-      "nextPitchID" : 53
+      "nextPitchID" : 54
     }, {
       "sessionId" : 340,
       "timestamp" : "2023-06-21",
@@ -185432,7 +185449,7 @@
         "wasSwungAt" : true,
         "id" : 17
       } ],
-      "nextPitchID" : 19
+      "nextPitchID" : 20
     }, {
       "sessionId" : 337,
       "timestamp" : "2023-08-09",
@@ -185917,7 +185934,7 @@
         "wasSwungAt" : true,
         "id" : 59
       } ],
-      "nextPitchID" : 61
+      "nextPitchID" : 62
     }, {
       "sessionId" : 341,
       "timestamp" : "2024-05-18",
@@ -186546,7 +186563,7 @@
         "wasSwungAt" : false,
         "id" : 77
       } ],
-      "nextPitchID" : 79
+      "nextPitchID" : 80
     }, {
       "sessionId" : 345,
       "timestamp" : "2024-05-26",
@@ -187023,7 +187040,7 @@
         "wasSwungAt" : true,
         "id" : 58
       } ],
-      "nextPitchID" : 60
+      "nextPitchID" : 61
     }, {
       "sessionId" : 334,
       "timestamp" : "2024-06-20",
@@ -187436,7 +187453,7 @@
         "wasSwungAt" : true,
         "id" : 50
       } ],
-      "nextPitchID" : 52
+      "nextPitchID" : 53
     }, {
       "sessionId" : 339,
       "timestamp" : "2024-09-17",
@@ -187937,7 +187954,7 @@
         "wasSwungAt" : true,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 350,
       "timestamp" : "2025-04-03",
@@ -188558,7 +188575,7 @@
         "wasSwungAt" : true,
         "id" : 76
       } ],
-      "nextPitchID" : 78
+      "nextPitchID" : 79
     }, {
       "sessionId" : 331,
       "timestamp" : "2025-04-18",
@@ -188987,7 +189004,7 @@
         "wasSwungAt" : true,
         "id" : 52
       } ],
-      "nextPitchID" : 54
+      "nextPitchID" : 55
     }, {
       "sessionId" : 332,
       "timestamp" : "2025-05-03",
@@ -189488,7 +189505,7 @@
         "wasSwungAt" : true,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 351,
       "timestamp" : "2025-06-03",
@@ -189989,7 +190006,7 @@
         "wasSwungAt" : false,
         "id" : 61
       } ],
-      "nextPitchID" : 63
+      "nextPitchID" : 64
     }, {
       "sessionId" : 348,
       "timestamp" : "2025-08-19",
@@ -190546,7 +190563,7 @@
         "wasSwungAt" : false,
         "id" : 68
       } ],
-      "nextPitchID" : 70
+      "nextPitchID" : 71
     }, {
       "sessionId" : 338,
       "timestamp" : "2025-08-31",
@@ -191087,7 +191104,7 @@
         "wasSwungAt" : false,
         "id" : 66
       } ],
-      "nextPitchID" : 68
+      "nextPitchID" : 69
     }, {
       "sessionId" : 347,
       "timestamp" : "2025-09-30",
@@ -191396,9 +191413,9 @@
         "wasSwungAt" : true,
         "id" : 37
       } ],
-      "nextPitchID" : 39
+      "nextPitchID" : 40
     } ]
   } ],
-  "username" : null,
-  "hashPass" : null
+  "username" : "coachcoacherson",
+  "hashPass" : "1e7c01f8e55740e6b934fb5a9fc12cc33dbc6deaaabca594dfd35bee81ea6c97"
 }

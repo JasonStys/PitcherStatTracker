@@ -20,6 +20,8 @@ public interface UserAccountDao {
 
     void save(UserAccount account);
 
+    String getFilePath();
+
     /* File-based implementation using a single JSON DTO file.
      */
     final class FileBased implements UserAccountDao {
@@ -32,6 +34,9 @@ public interface UserAccountDao {
 
         public FileBased(Path file) {
             this.file = file;
+        }
+        public String getFilePath() {
+            return file.toString();
         }
 
         @Override

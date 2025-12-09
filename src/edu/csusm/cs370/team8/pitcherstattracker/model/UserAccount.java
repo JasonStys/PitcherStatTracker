@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class UserAccount {
     private final List<Pitcher> pitchers = new ArrayList<>();
-    private final List<Integer> pitchersID = new ArrayList<>();
+    //private final List<Integer> pitchersID = new ArrayList<>();
     private String username;
     private String hashPass;
 

@@ -1,16 +1,22 @@
 package edu.csusm.cs370.team8.pitcherstattracker.view;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
+import edu.csusm.cs370.team8.pitcherstattracker.controller.StringCryptographer;
+import edu.csusm.cs370.team8.pitcherstattracker.dao.UserAccountDao;
 import edu.csusm.cs370.team8.pitcherstattracker.model.UserAccount;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class LoginPanel extends JPanel implements TitledPanel {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton loginButton;
+    private JButton registerButton;
 
     private final String TITLE = "Login";
     public String getTitle() {return TITLE;}
@@ -42,13 +48,20 @@ public class LoginPanel extends JPanel implements TitledPanel {
         passwordPanel.add(passwordField);
         passwordPanel.setPreferredSize(new Dimension(50,30));
 
+        JPanel buttonPanel = new JPanel(new  FlowLayout(FlowLayout.RIGHT));
         loginButton = new JButton("Login");
         loginButton.setActionCommand("login");
         loginButton.addActionListener(this::actionPerformed);
+        registerButton = new JButton("Register");
+        registerButton.setActionCommand("register");
+        registerButton.addActionListener(this::actionPerformed);
+        buttonPanel.add(loginButton);
+        buttonPanel.add(registerButton);
 
         centerPanel.add(usernamePanel);
         centerPanel.add(passwordPanel);
-        centerPanel.add(loginButton);
+        centerPanel.add(buttonPanel);
+
         centerPanel.setPreferredSize(new Dimension(300, 100));
         centerPanel.setMinimumSize(new Dimension(300, 100));
         centerPanel.setMaximumSize(new Dimension(300, 100));
@@ -64,16 +77,43 @@ public class LoginPanel extends JPanel implements TitledPanel {
     }
 
     private void actionPerformed(ActionEvent e) {
+        UserAccount account;
+        // Both buttons use this part of code
+        String username = usernameField.getText();
+        String filename = StringCryptographer.sanitizeFilename(username);
+        filename = filename + ".json";
+        Path dataFile = Paths.get("data",filename);
+        String hashPass = StringCryptographer.getPassHash(username,
+                new String(passwordField.getPassword()));
+
         switch (e.getActionCommand()) {
             case "login":
-                if (usernameField.getText().equals("coachcoacherson")
-                        && passwordField.getText().equals("supersecure")) {
-                    //UserAccount exampleAccount = UserAccount.generateCoach();
-                    UserAccount account = MainWindow.getUser();
-                    PitcherListPanel plistPanel = new PitcherListPanel(account);
-                    MainWindow.switchPanel(plistPanel);
-                } else {
-                    MainWindow.displayError("Login Invalid", "Username and/or Password is incorrect.");
+                if (Files.exists(dataFile)) {
+                    account = MainWindow.loadAccount(dataFile);
+                    if (account.getHashPass().equals(hashPass)) {
+                        PitcherListPanel plistPanel = new PitcherListPanel(account);
+                        MainWindow.switchPanel(plistPanel);
+                        break;
+                    }
+                }
+                MainWindow.displayError("Login Invalid", "Username and/or Password is incorrect.");
+                break;
+
+            case "register":
+                int answer = MainWindow.displayYesNoCancel("Confirm Registration",
+                        "<html>" +
+                                "Would you like to create a new account<br>" +
+                                "with this username and password?" +
+                                "</html>");
+
+                if (answer == 1) { // "Yes" is chosen.
+                    if (Files.exists(dataFile)) {
+                        MainWindow.displayError("Account already exists",
+                                "An account with this name already exists.");
+                    } else {
+                        account = new UserAccount(username, hashPass);
+                        MainWindow.loadNewAccount(dataFile, account);
+                    }
                 }
                 break;
 

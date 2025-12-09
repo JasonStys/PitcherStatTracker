@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class CreatePitcherPanel extends JPanel implements PopPanel {
+public class CreatePitcherPopup extends JPanel implements PopPanel {
     private JTextField textField;
     private JButton submitButton;
     private JButton cancelButton;
@@ -14,7 +14,7 @@ public class CreatePitcherPanel extends JPanel implements PopPanel {
 
 
 
-    public CreatePitcherPanel() {
+    public CreatePitcherPopup() {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         initComponents();
         this.revalidate();
