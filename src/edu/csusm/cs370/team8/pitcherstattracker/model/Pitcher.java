@@ -13,13 +13,16 @@ import java.util.Random;
 public class Pitcher implements Comparable<Pitcher> {
     private final List<Session> sessions = new ArrayList<>();
     private String name;
+
+    // IDs of Pitchers
     private int id;
     private static int nextID = 0;
-
     public Pitcher() {
         id = nextID++;
     }
+
     public int getID() {return id;}
+    public void setID(int id) {this.id = id;}
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 

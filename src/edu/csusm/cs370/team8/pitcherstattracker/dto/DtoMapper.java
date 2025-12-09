@@ -20,6 +20,8 @@ public final class DtoMapper {
     public static UserAccountDto toDto(UserAccount account) {
         UserAccountDto dto = new UserAccountDto();
         dto.pitchers = new ArrayList<>();
+        dto.username = account.getUsername();
+        dto.hashPass = account.getHashPass();
 
         for (Pitcher p : account.getPitchers()) {
             dto.pitchers.add(toDto(p));
@@ -28,7 +30,7 @@ public final class DtoMapper {
     }
 
     public static UserAccount fromDto(UserAccountDto dto) {
-        UserAccount account = new UserAccount();
+        UserAccount account = new UserAccount(dto.username, dto.hashPass);
         if (dto.pitchers != null) {
             for (PitcherDto pDto : dto.pitchers) {
                 account.addPitcher(fromDto(pDto));
@@ -43,6 +45,7 @@ public final class DtoMapper {
         PitcherDto dto = new PitcherDto();
         dto.name = pitcher.getName();
         dto.sessions = new ArrayList<>();
+        dto.id = pitcher.getID();
 
         for (Session s : pitcher.getSessions()) {
             dto.sessions.add(toDto(s));
@@ -53,6 +56,7 @@ public final class DtoMapper {
     public static Pitcher fromDto(PitcherDto dto) {
         Pitcher pitcher = new Pitcher();
         pitcher.setName(dto.name);
+        pitcher.setID(dto.id); // This should be the only instance of setting an id.
 
         if (dto.sessions != null) {
             for (SessionDto sDto : dto.sessions) {
@@ -67,6 +71,8 @@ public final class DtoMapper {
     public static SessionDto toDto(Session s) {
         SessionDto dto = new SessionDto();
         dto.timestamp = s.getTimestamp();
+        dto.sessionId = s.getSessionId();
+        dto.nextPitchID = s.getNextID(); // This increments it, but that's okay because we're saving the value we get.
         dto.pitches = new ArrayList<>();
 
         for (Pitch p : s.getPitches()) {
@@ -76,11 +82,11 @@ public final class DtoMapper {
     }
 
     public static Session fromDto(SessionDto dto) {
-        Session s = new Session();          // use your existing no-arg ctor
-        s.setTimestamp(dto.timestamp);
+        Session s = new Session(dto.sessionId, dto.timestamp, dto.nextPitchID); // use constructor with args
+        //s.setTimestamp(dto.timestamp);
         if (dto.pitches != null) {
             for (PitchDto pDto : dto.pitches) {
-                s.addPitch(fromDto(pDto));
+                s.addPitch(fromDto(pDto)); // This will automatically re-calc BIPs
             }
         }
         return s;
@@ -96,12 +102,15 @@ public final class DtoMapper {
         dto.inZone = p.isInZone();
         dto.speed = p.getSpeed();
         dto.wasSwungAt = p.wasSwungAt();
+        dto.id = p.getID();
         return dto;
     }
 
     public static Pitch fromDto(PitchDto dto) {
         Pitch.Type type = Pitch.Type.valueOf(dto.type);
         Pitch.Result result = Pitch.Result.valueOf(dto.result);
-        return new Pitch(type, result, dto.bases, dto.inZone, dto.speed, dto.wasSwungAt);
+        Pitch p = new Pitch(type, result, dto.bases, dto.inZone, dto.speed, dto.wasSwungAt);
+        p.setID(dto.id);
+        return p;
     }
 }

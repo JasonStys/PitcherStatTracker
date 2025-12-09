@@ -13,4 +13,5 @@ public class PitchDto implements Serializable {
     public boolean inZone;
     public double speed;
     public boolean wasSwungAt;
+    public int id;
 }

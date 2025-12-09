@@ -9,4 +9,6 @@ public class UserAccountDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public List<PitcherDto> pitchers;
+    public String username;
+    public String hashPass;
 }

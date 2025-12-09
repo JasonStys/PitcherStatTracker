@@ -12,8 +12,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Session implements Comparable<Session> {
     // Identity Metadata
     private int sessionId;
-    private String gameId;  // NULL for training
-    private String pitcherId;
+    //private String gameId;  // NULL for training
+    //private String pitcherId;
     private LocalDate timestamp;
 
     private final List<Pitch> pitches = new ArrayList<>();
@@ -24,9 +24,26 @@ public class Session implements Comparable<Session> {
     private int walks = 0;
     private int hitByPitch = 0;
     private int battersFaced = 0;
-    private int nextID = 0;
+
+    // These are for the IDs of PITCHES, not for SessionID, so it's tied to the object not static.
+    private int nextPitchID = 0;
     public int getNextID() {
-        return nextID++;
+        // Catch if it reset to zero.
+        if ((pitches.size() - 1) > nextPitchID) {
+            nextPitchID = pitches.size() - 1;
+        }
+        return nextPitchID++;
+    }
+
+    // These are static and for SessionID.
+    private static int nextSeshID = 0;
+    public static int getNextSeshID() {
+        return nextSeshID++; // Returns the ID value before incrementing it.
+    }
+    public static void setSessionID(int id) {
+        if (id > nextSeshID) {  // Given value must be larger than what we have.
+            nextSeshID = id; // Sets the value. Should ONLY be called when loading from json.
+        }
     }
 
     // Allows sessions to be compared based on their timestamp.
@@ -43,18 +60,24 @@ public class Session implements Comparable<Session> {
     public Session() {
         // Empty constructor for when we're making a new session
         timestamp = LocalDate.now();
+        sessionId = getNextSeshID();
         for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
     }
 
-    public Session(int sessionId, String gameId, String pitcherId) {
-        this.sessionId = sessionId;
-        this.gameId = gameId;
-        this.pitcherId = pitcherId;
+    public Session(int id, LocalDate date, int pitchID) {
+        this.sessionId = id;
+        setSessionID(id); // Resets the static MAX session ID if we load something larger.
+        this.timestamp = date;
+        this.nextPitchID = pitchID;
+        //this.gameId = gameId;
+        //this.pitcherId = pitcherId;
         for (BIPResult r : BIPResult.values()) bipCounts.put(r, 0);
     }
+    /*
     public Session(int sessionId, String pitcherId) {
         this(sessionId, null, pitcherId);
     }
+     */
 
     public void addPitch(Pitch p) {
         // Give each added pitch an incremental ID. These may differ from the ID's used in SessionEditPanel, but will still be unique.
@@ -131,8 +154,8 @@ public class Session implements Comparable<Session> {
     }
 
     public void cloneMetaData(Session old) {
-        this.gameId = old.gameId;
-        this.pitcherId = old.pitcherId;
+        //this.gameId = old.gameId;
+        //this.pitcherId = old.pitcherId;
         this.timestamp = old.timestamp;
         this.sessionId = old.sessionId;
     }
@@ -141,6 +164,7 @@ public class Session implements Comparable<Session> {
     public List<Pitch> getPitches() {return pitches;}
     public LocalDate getTimestamp() {return timestamp;}
     public void setTimestamp(LocalDate date) {this.timestamp = date;}
+    public int getSessionId() {return sessionId;}
 
     public int singles() { return bipCounts.get(BIPResult.SINGLE); }
     public int doubles() { return bipCounts.get(BIPResult.DOUBLE); }
@@ -210,7 +234,9 @@ public class Session implements Comparable<Session> {
         return sb.toString();
     }
 
+    /*
     public String getPitcherId() {
         return pitcherId;
     }
+     */
 }

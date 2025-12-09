@@ -9,6 +9,8 @@ import java.util.List;
 public class SessionDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    public int sessionId;
     public LocalDate timestamp;
     public List<PitchDto> pitches;
+    public int nextPitchID = 0;
 }

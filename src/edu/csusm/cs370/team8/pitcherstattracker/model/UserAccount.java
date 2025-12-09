@@ -11,11 +11,18 @@ import java.util.Random;
  */
 public class UserAccount {
     private final List<Pitcher> pitchers = new ArrayList<>();
+    private final List<Integer> pitchersID = new ArrayList<>();
+    private String username;
+    private String hashPass;
 
-    // Constructor
-    public UserAccount() {
-
+    // Constructor for Jackson
+    public UserAccount() {}
+    public UserAccount(String user, String pass) {
+        this.username = user;
+        this.hashPass = pass;
     }
+    public String getUsername() {return username;}
+    public String getHashPass() {return hashPass;}
 
     public List<Pitcher> getPitchers() {
         return pitchers;

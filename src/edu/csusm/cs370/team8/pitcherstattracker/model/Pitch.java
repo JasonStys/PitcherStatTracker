@@ -102,7 +102,10 @@ public class Pitch implements Comparable<Pitch>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(id + ": " + speed + " MPH, " + type + ", " + result + ", ");
+        sb.append("ID " + id + ": ");
+        sb.append(speed + " MPH, ");
+        sb.append(type + ", ");
+        sb.append(result + ", ");
         if (inZone) {sb.append("inZone, ");}
         else {sb.append("outZone, ");}
         if (wasSwungAt) {sb.append("SwungAt, ");}
