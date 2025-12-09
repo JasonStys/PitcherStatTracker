@@ -146,8 +146,12 @@ public class PitcherListPanel extends JPanel implements HostPanel, TitledPanel {
             case "showall":
                 // This gets the pitchers, sorts them by WHIP, then gives them to the panel for tabling
                 List<Pitcher> allPitchers = account.getPitchers();
-                allPitchers.sort(Pitcher.WhipComparator); // Sorts by WHIP stat
-                MainWindow.switchPanel(new AllPitcherDisplayPanel(allPitchers));
+                if (!allPitchers.isEmpty()) {
+                    allPitchers.sort(Pitcher.WhipComparator); // Sorts by WHIP stat
+                    MainWindow.switchPanel(new AllPitcherDisplayPanel(allPitchers));
+                } else {
+                    MainWindow.displayError("No Pitchers", "You need to create pitchers first.");
+                }
                 break;
 
             case "logout":
