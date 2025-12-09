@@ -1,6 +1,7 @@
 package edu.csusm.cs370.team8.pitcherstattracker.dao;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
+import edu.csusm.cs370.team8.pitcherstattracker.controller.RandomDataCreator;
 import edu.csusm.cs370.team8.pitcherstattracker.dto.DtoMapper;
 import edu.csusm.cs370.team8.pitcherstattracker.dto.UserAccountDto;
 import edu.csusm.cs370.team8.pitcherstattracker.model.UserAccount;
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 /* DAO for loading and saving the coach's UserAccount.
+ * Written by Aidan. Slightly adjusted by Devon.
  */
 public interface UserAccountDao {
 
@@ -56,7 +58,7 @@ public interface UserAccountDao {
 
             // Fallback: generate demo data using your existing method
             MainWindow.displayError("Account not found in files", "Account JSON file not found, generating a new random one.");
-            UserAccount account = UserAccount.generateCoach();
+            UserAccount account = RandomDataCreator.generateCoach();
             save(account);
             return account;
         }

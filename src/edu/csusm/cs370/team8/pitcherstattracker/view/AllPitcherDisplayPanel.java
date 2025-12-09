@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
+// This panel shows a table of a collection of Pitchers by their career stats
 public class AllPitcherDisplayPanel extends JPanel implements TitledPanel {
     private JButton backButton;
     private final List<Pitcher> ourPitchers;
@@ -16,6 +17,7 @@ public class AllPitcherDisplayPanel extends JPanel implements TitledPanel {
     private final String TITLE = "Coach Overview";
     public String getTitle() {return TITLE;}
 
+    // Constructor: This panel needs a list of Pitchers to function.
     public AllPitcherDisplayPanel(List<Pitcher> ourPitchers) {
         this.ourPitchers = ourPitchers;
         this.setLayout(new BorderLayout());
@@ -25,51 +27,25 @@ public class AllPitcherDisplayPanel extends JPanel implements TitledPanel {
     }
 
     private void initComponents() {
+        // Center table
         ourPitchers.sort(Pitcher.WhipComparator); // Sorts all pitchers based on their WHIP
         PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitchers);
         TableWidget table = statsTableController.buildMultiTable();
         table.setPreferredSize(new Dimension(700, 200));
         this.add(table, BorderLayout.CENTER);
 
-        JPanel labelPanel = new JPanel();
-        labelPanel.setBorder(BorderFactory.createTitledBorder("Glossary:"));
+        // Glossary on the top.
+        this.add(WidgetGetter.Glossary(), BorderLayout.SOUTH);
 
-        StringBuilder sbLeft = new StringBuilder();
-        sbLeft.append("<html>");
-        sbLeft.append("IP = Innings Pitched").append("<br>");
-        sbLeft.append("BF = Batters Faced").append("<br>");
-        sbLeft.append("P = Pitches").append("<br>");
-        sbLeft.append("H = Hits").append("<br>");
-        sbLeft.append("BB = Walks (Base on Balls)");
-        sbLeft.append("</html>");
-        JLabel labelsLeft = new JLabel(sbLeft.toString());
-        labelsLeft.setHorizontalAlignment(SwingConstants.LEFT);
-
-        StringBuilder sbRight = new StringBuilder();
-        sbRight.append("<html>");
-        sbRight.append("K = Strikeouts").append("<br>");
-        sbRight.append("AVG = Batting Average Against").append("<br>");
-        sbRight.append("OBP = On Base Percentage Against").append("<br>");
-        sbRight.append("SLG = Slugging Against").append("<br>");
-        sbRight.append("WHIP = Walks + Hits / Innings Pitched");
-        sbRight.append("</html>");
-        JLabel labelsRight = new JLabel(sbRight.toString());
-        labelsRight.setHorizontalAlignment(SwingConstants.LEFT);
-
-        labelPanel.setLayout(new GridLayout(1,2));
-        labelPanel.add(labelsLeft);
-        labelPanel.add(labelsRight);
-        this.add(labelPanel, BorderLayout.SOUTH);
-
-        // North Header of button
+        // North Header with Back button
         JPanel header = new JPanel();
-        //header.setLayout(new GridLayout(1, 4));
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
         backButton = new JButton("Back", IconGetter.BACK);
         backButton.setActionCommand("back");
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
 
+        // Add text to the top next to Back button
         JPanel topLabelPanel =  new JPanel();
         StringBuilder sbTop = new StringBuilder();
         sbTop.append("<html>");
@@ -80,13 +56,14 @@ public class AllPitcherDisplayPanel extends JPanel implements TitledPanel {
         topLabelPanel.add(labelTop);
         header.add(topLabelPanel);
 
+        // Add the header.
         this.add(header, BorderLayout.NORTH);
     }
 
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "back":
-                MainWindow.prevPanel();
+                MainWindow.prevPanel(); // Return to previous screen
                 break;
 
             default:

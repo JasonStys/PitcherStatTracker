@@ -5,10 +5,11 @@ import edu.csusm.cs370.team8.pitcherstattracker.controller.PitcherStatsTable;
 import edu.csusm.cs370.team8.pitcherstattracker.model.Pitcher;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+// This displays a table for a specific pitcher, showing yearly stats.
+// If we had more time, would have more complex stuff here, such as monthly stats and graphical info.
 public class PitcherProfilePanel extends JPanel implements TitledPanel {
     private JButton backButton;
     private Pitcher ourPitcher;
@@ -16,6 +17,7 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
     private final String TITLE = "Pitcher Profile: ";
     public String getTitle() {return TITLE + ourPitcher.getName();}
 
+    // Constructor: Panels needs a pitcher to work with
     public PitcherProfilePanel(Pitcher p) {
         this.ourPitcher = p;
         this.setLayout(new BorderLayout());
@@ -25,50 +27,24 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
     }
 
     private void initComponents() {
+        // Center table.
         PitcherStatsTable statsTableController = new PitcherStatsTable(ourPitcher);
         TableWidget table = statsTableController.buildDefaultTable();
         table.setPreferredSize(new Dimension(500, 150));
         this.add(table, BorderLayout.CENTER);
 
-        JPanel labelPanel = new JPanel();
-        labelPanel.setBorder(BorderFactory.createTitledBorder("Glossary:"));
+        // Add glossary to bottom
+        this.add(WidgetGetter.Glossary(), BorderLayout.SOUTH);
 
-        StringBuilder sbLeft = new StringBuilder();
-        sbLeft.append("<html>");
-        sbLeft.append("IP = Innings Pitched").append("<br>");
-        sbLeft.append("BF = Batters Faced").append("<br>");
-        sbLeft.append("P = Pitches").append("<br>");
-        sbLeft.append("H = Hits").append("<br>");
-        sbLeft.append("BB = Walks (Base on Balls)").append("<br>");
-        sbLeft.append("</html>");
-        JLabel labelsLeft = new JLabel(sbLeft.toString());
-        labelsLeft.setHorizontalAlignment(SwingConstants.LEFT);
-
-        StringBuilder sbRight = new StringBuilder();
-        sbRight.append("<html>");
-        sbRight.append("K = Strikeouts").append("<br>");
-        sbRight.append("AVG = Batting Average Against").append("<br>");
-        sbRight.append("OBP = On Base Percentage Against").append("<br>");
-        sbRight.append("SLG = Slugging Against").append("<br>");
-        sbRight.append("WHIP = Walks + Hits / Innings Pitched");
-        sbRight.append("</html>");
-        JLabel labelsRight = new JLabel(sbRight.toString());
-        labelsRight.setHorizontalAlignment(SwingConstants.LEFT);
-
-        labelPanel.setLayout(new GridLayout(1,2));
-        labelPanel.add(labelsLeft);
-        labelPanel.add(labelsRight);
-        this.add(labelPanel, BorderLayout.SOUTH);
-
-        // North Header of button
+        // North Header of button and name
         JPanel header = new JPanel();
-        //header.setLayout(new GridLayout(1, 4));
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
+        // Back Button
         backButton = new JButton("Back", IconGetter.BACK);
         backButton.setActionCommand("back");
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
-
+        // Name of the Pitcher
         JPanel namePane = new JPanel();
         namePane.setBorder(BorderFactory.createTitledBorder(
                 "Name:"));
@@ -76,7 +52,7 @@ public class PitcherProfilePanel extends JPanel implements TitledPanel {
         namePane.add(nameLabel);
         header.add(namePane);
 
-        this.add(header, BorderLayout.NORTH);
+        this.add(header, BorderLayout.NORTH); // Add the header to the top
     }
 
     public void actionPerformed(ActionEvent e) {

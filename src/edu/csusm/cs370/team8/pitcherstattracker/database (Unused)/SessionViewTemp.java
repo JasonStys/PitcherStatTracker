@@ -7,6 +7,7 @@ import edu.csusm.cs370.team8.pitcherstattracker.model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+// This class is unused. Tyler wrote this when testing Jackson and saving sessions as .json files.
 public class SessionViewTemp {
 
     private final ObjectMapper objectMapper;

@@ -2,8 +2,6 @@ package edu.csusm.cs370.team8.pitcherstattracker.view;
 
 import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
 import edu.csusm.cs370.team8.pitcherstattracker.model.*;
-//import edu.csusm.cs370.team8.pitcherstattracker.database.*;
-import edu.csusm.cs370.team8.pitcherstattracker.view.SessionViewTemp;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,14 +9,13 @@ import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
-import java.io.File;
-import java.io.IOException;
-
+// This panel is for editing a session. It lists pitches and also spinners for the timestamp.
 public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
 
     private final String TITLE = "Session Editor";
     public String getTitle() {return TITLE;}
 
+    // Fields declare, mainly for managing timestamps
     private final Session ourSession;
     private LocalDate timestamp;
     private JSpinner monthSpinner;
@@ -35,7 +32,7 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
     private JButton cancelButton;
     private JButton backButton;
 
-    // Empty constructor, we are creating a new Session
+    // Empty constructor, we are creating a new Session (timestamp defaults to current date here)
     public SessionEditPanel() {
         this.ourSession = new Session();
         setupSessionPanel();
@@ -47,9 +44,10 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         setupSessionPanel();
     }
 
+    // Initialize our timestamp.
     private void setupSessionPanel() {
         timestamp = ourSession.getTimestamp();
-        ym = YearMonth.from(timestamp);
+        ym = YearMonth.from(timestamp); // Will be used for validation.
         
         this.setLayout(new BorderLayout(2, 2));
         initComponents();
@@ -80,7 +78,7 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
                 }
             } // End id matching
         } // End obj instanceof Pitch
-        this.revalidate();
+        this.revalidate(); // Make sure JComponents are current
     }
 
     private void initComponents() {
@@ -89,8 +87,8 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         pitchScroller.setBorder(BorderFactory.createTitledBorder("Pitches:"));
         pitchListModel.addAll(ourSession.getPitches());
         pitchList = new JList<>(pitchListModel);
-        pitchList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        pitchList.setSelectedIndex(0);
+        pitchList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Select one at a time.
+        pitchList.setSelectedIndex(0); // Starts with first pitch selected
         pitchList.setLayoutOrientation(JList.VERTICAL);
         pitchList.setVisibleRowCount(-1);
         pitchScroller.setViewportView(pitchList);
@@ -101,24 +99,16 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         JPanel buttonSidebar = new JPanel();
         buttonSidebar.setLayout(new GridLayout(3, 1));
 
-        newButton = new JButton("Add A New Pitch", IconGetter.ADD);
-        newButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        newButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
-        newButton.setActionCommand("new");
+        newButton = WidgetGetter.makeButton("Add A New Pitch", "new", IconGetter.ADD);
         newButton.addActionListener(this::actionPerformed);
 
-        editButton = new JButton("Edit This Pitch", IconGetter.EDIT);
-        editButton.setActionCommand("edit");
+        editButton = WidgetGetter.makeButton("Edit This Pitch", "edit", IconGetter.EDIT);
         editButton.addActionListener(this::actionPerformed);
-        editButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        editButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
 
-        deleteButton = new JButton("Delete This Pitch", IconGetter.CUT);
-        deleteButton.setActionCommand("delete");
+        deleteButton = WidgetGetter.makeButton("Delete This Pitch", "delete", IconGetter.CUT);
         deleteButton.addActionListener(this::actionPerformed);
-        deleteButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        deleteButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
 
+        // Add buttons in this order
         buttonSidebar.add(newButton);
         buttonSidebar.add(editButton);
         buttonSidebar.add(deleteButton);
@@ -135,7 +125,6 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         cancelButton.addActionListener(this::actionPerformed);
         buttonFooter.add(saveButton);
         buttonFooter.add(cancelButton);
-        //buttonFooter.setSize(new Dimension(50, 500));
         this.add(buttonFooter, BorderLayout.SOUTH);
 
         // North Header of button and spinners
@@ -147,6 +136,8 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
 
+        // Month Spinner.
+        // This should be a dropdown, which would require editing validation methods.
         JPanel monthPane = new JPanel();
         monthPane.setBorder(BorderFactory.createTitledBorder(
                 "Month:"));
@@ -163,6 +154,7 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         monthPane.setPreferredSize(new Dimension(100, 50));
         header.add(monthPane);
 
+        // Day Spinner
         JPanel dayPane = new JPanel();
         dayPane.setBorder(BorderFactory.createTitledBorder(
                 "Day:"));
@@ -177,6 +169,7 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         dayPane.setPreferredSize(new Dimension(100, 50));
         header.add(dayPane);
 
+        // Year Spinner
         JPanel yearPane = new JPanel();
         yearPane.setBorder(BorderFactory.createTitledBorder(
                 "Year:"));
@@ -198,13 +191,14 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
         this.add(header, BorderLayout.NORTH);
     }
 
+    // Updates the day spinner for validation.
     private void updateDaySpinner() {
         int month = (Integer) monthSpinner.getValue();
         int year = (Integer) yearSpinner.getValue();
         int day = (Integer) daySpinner.getValue();
         ym = YearMonth.of(year, month);
 
-        // If the current day is beyond the length of the month (i.e. Feburary 31st), set to max.
+        // If the current day is beyond the length of the month (i.e. Feburary 31st), set to max of that month.
         if (day > ym.lengthOfMonth()) {day = ym.lengthOfMonth();}
 
         SpinnerModel dayModel =
@@ -213,7 +207,7 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
                         ym.lengthOfMonth(), //max
                         1); // steps, integers are 1 step apart
 
-        daySpinner.setModel(dayModel);
+        daySpinner.setModel(dayModel); // Change the model of the spinner
         this.revalidate();
     }
 
@@ -221,13 +215,13 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "new":
-                MainWindow.popupPanel(new PitchInputPanel(), "New Pitch");
+                MainWindow.popupPanel(new PitchInputPopup(), "New Pitch");
                 break;
 
             case "edit":
                 Pitch editedPitch = pitchList.getSelectedValue();
                 if (editedPitch != null) {
-                    MainWindow.popupPanel(new PitchInputPanel(editedPitch), "Edit Pitch");
+                    MainWindow.popupPanel(new PitchInputPopup(editedPitch), "Edit Pitch");
                 } else {
                     MainWindow.displayError("No Selection", "Please first select a Pitch to edit");
                 }
@@ -241,23 +235,22 @@ public class SessionEditPanel extends JPanel implements HostPanel, TitledPanel {
                     }
                 } else {
                     MainWindow.displayError("No Selection", "Please first select a Pitch to delete");
-                    // Testing displayTestNoCancel
-                    //System.out.println(MainWindow.displayYesNoCancel("Title", "Message"));
                 }
                 break;
 
             case "save":
-                Session newSession = new Session();
+                Session newSession = new Session(); // Create a new session to save back into the Pitcher
                 newSession.cloneMetaData(ourSession); // Clones all metadata from the session we were given, may be null.
                 for  (int i = 0; i < pitchListModel.getSize(); i++) {
-                    newSession.addPitch(pitchListModel.getElementAt(i)); // Add all pitches
+                    newSession.addPitch(pitchListModel.getElementAt(i)); // Add all pitches from model to the session
                 }
                 int month = (Integer) monthSpinner.getValue();
                 int year = (Integer) yearSpinner.getValue();
                 int day = (Integer) daySpinner.getValue();
                 timestamp = LocalDate.of(year, month, day);
                 newSession.setTimestamp(timestamp); // Set the timestamp of the session
-                /*
+
+                /* Tyler's code for when he was testing saving sessions as .json
                 try {
                     SessionDatabase.save(newSession);
                     System.out.println("Saved!");

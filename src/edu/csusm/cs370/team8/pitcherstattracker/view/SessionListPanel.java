@@ -6,17 +6,17 @@ import edu.csusm.cs370.team8.pitcherstattracker.model.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
+// This panel takes a pitcher and displays the sessions for editing, and also to rename the pitcher
 public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
     private final Pitcher ourPitcher;
 
     private final String TITLE = "Pitcher Editor";
     public String getTitle() {return TITLE;}
 
+    // Components declare
     private JList<Session> sessionList;
     DefaultListModel<Session> sesListModel = new DefaultListModel<>();
     private JButton editButton;
@@ -30,6 +30,7 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
 
     private boolean isEditingMode = false; // True when we are editing a session, false when adding a new one.
 
+    // Constructor: Takes a pitcher to list its sessions and name
     public SessionListPanel(Pitcher p) {
         this.ourPitcher = p;
         this.setLayout(new BorderLayout(2, 2));
@@ -43,12 +44,13 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
     public void receiveObject(Object obj) {
         if (obj instanceof Session sesObj) { // If we actually received a session; if it's null or invalid then nothing happens
             if ((sessionList.getSelectedIndex() == -1) || !isEditingMode) {
-                // Add a new session
+                // Add a new session if no sessions is selected and we are not in editing mode
                 sesListModel.addElement(sesObj);
             } else {
-                // Replace the edited session at selection
+                // Replace the edited session at selection.
+                // Will error with nothing is selected but haven't had an instance of that ever happening.
                 sesListModel.setElementAt(sesObj, sessionList.getSelectedIndex());
-                isEditingMode = false;
+                isEditingMode = false; // Set editing mode back to false, the default.
             }
         } // End obj instanceof Pitch
         this.revalidate();
@@ -58,10 +60,10 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
         // Scrollable list of sessions
         JScrollPane sessionScroller = new JScrollPane();
         sessionScroller.setBorder(BorderFactory.createTitledBorder("Sessions:"));
-        sesListModel.addAll(ourPitcher.getSessions());
+        sesListModel.addAll(ourPitcher.getSessions()); // By default, sessions are sorted by timestamp.
         sessionList = new JList<>(sesListModel);
         sessionList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        sessionList.setSelectedIndex(sesListModel.size() - 1);
+        sessionList.setSelectedIndex(sesListModel.size() - 1); // Start with last session being selected
         sessionList.setLayoutOrientation(JList.VERTICAL);
         sessionList.setVisibleRowCount(-1);
         sessionScroller.setViewportView(sessionList);
@@ -72,24 +74,16 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
         JPanel buttonSidebar = new JPanel();
         buttonSidebar.setLayout(new GridLayout(3, 1));
 
-        newButton = new JButton("Record A New Session", IconGetter.ADD);
-        newButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        newButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
-        newButton.setActionCommand("new");
+        newButton = WidgetGetter.makeButton("Record A New Session", "new", IconGetter.ADD);
         newButton.addActionListener(this::actionPerformed);
 
-        editButton = new JButton("Edit This Session", IconGetter.EDIT);
-        editButton.setActionCommand("edit");
+        editButton = WidgetGetter.makeButton("Edit This Session", "edit", IconGetter.EDIT);
         editButton.addActionListener(this::actionPerformed);
-        editButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        editButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
 
-        deleteButton = new JButton("Delete This Session", IconGetter.CUT);
-        deleteButton.setActionCommand("delete");
+        deleteButton = WidgetGetter.makeButton("Delete This Session", "delete", IconGetter.CUT);
         deleteButton.addActionListener(this::actionPerformed);
-        deleteButton.setVerticalTextPosition(AbstractButton.BOTTOM);
-        deleteButton.setHorizontalTextPosition(AbstractButton.CENTER); // Sets text to be below icon
 
+        // Add the buttons in this order.
         buttonSidebar.add(newButton);
         buttonSidebar.add(editButton);
         buttonSidebar.add(deleteButton);
@@ -106,10 +100,9 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
         cancelButton.addActionListener(this::actionPerformed);
         buttonFooter.add(saveButton);
         buttonFooter.add(cancelButton);
-        //buttonFooter.setSize(new Dimension(50, 500));
         this.add(buttonFooter, BorderLayout.SOUTH);
 
-        // North Header of button and spinners
+        // North Header of button and name input
         JPanel header = new JPanel();
         //header.setLayout(new GridLayout(1, 4));
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
@@ -118,6 +111,7 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
         backButton.addActionListener(this::actionPerformed);
         header.add(backButton);
 
+        // Input or the name of the pitcher
         JPanel namePane = new JPanel();
         namePane.setBorder(BorderFactory.createTitledBorder(
                 "Name:"));
@@ -133,14 +127,15 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "new":
+                isEditingMode = false; // Defaults to false but just in case.
                 sessionList.setSelectedIndex(-1); // Turn off the selection.
                 MainWindow.switchPanel(new SessionEditPanel());
                 break;
 
             case "edit":
                 Session editedSession = sessionList.getSelectedValue();
-                if (editedSession != null) {
-                    isEditingMode = true;
+                if (editedSession != null) { // Check if we have a selected session
+                    isEditingMode = true; // Note we are coming back with an edited session after this panel is opened.
                     MainWindow.switchPanel(new SessionEditPanel(editedSession));
                 } else {
                     MainWindow.displayError("No Selection", "Please first select a Session to edit");
@@ -159,15 +154,19 @@ public class SessionListPanel extends JPanel implements HostPanel, TitledPanel {
                 break;
 
             case "save":
-                //MainWindow.displayError("PROGRAM ERROR","This button is not assigned to any code!");
-                ourPitcher.setName(textField.getText());
+                if (textField.getText().isEmpty()) { // Make sure we aren't setting the name to be an empty string.
+                    MainWindow.displayError("No Name Given","You can't save this pitcher without a name!");
+                    return;
+                } else {
+                    ourPitcher.setName(textField.getText());
+                }
 
                 // Turn the current graphical list into a Session list that can be set to the Pitcher.
                 ArrayList<Session> sessions;
                 sessions = Collections.list(sesListModel.elements());
-                ourPitcher.setSessions(sessions);
+                ourPitcher.setSessions(sessions); // Set the sessions of our pitcher to our final graphical list.
 
-                MainWindow.prevPanel(ourPitcher);
+                MainWindow.prevPanel(ourPitcher); // Return the Pitcher back to the previous panel.
                 break;
 
             case "cancel":

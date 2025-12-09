@@ -1,5 +1,104 @@
 {
   "pitchers" : [ {
+    "id" : 31,
+    "name" : "* Santa Claus Jr *",
+    "sessions" : [ {
+      "sessionId" : 444,
+      "timestamp" : "2003-12-25",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 67.067,
+        "wasSwungAt" : true,
+        "id" : 0
+      }, {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 1
+      } ],
+      "nextPitchID" : 3
+    }, {
+      "sessionId" : 445,
+      "timestamp" : "2025-12-25",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 0
+      }, {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 1
+      }, {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 2
+      }, {
+        "type" : "Curveball",
+        "result" : "Hit",
+        "bases" : 4,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 3
+      }, {
+        "type" : "Curveball",
+        "result" : "BallInPlayOut",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 4
+      }, {
+        "type" : "Curveball",
+        "result" : "Ball",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 5
+      } ],
+      "nextPitchID" : 9
+    }, {
+      "sessionId" : 445,
+      "timestamp" : "9999-12-25",
+      "pitches" : [ {
+        "type" : "Curveball",
+        "result" : "Strike",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 0
+      }, {
+        "type" : "Curveball",
+        "result" : "Strikeout",
+        "bases" : 0,
+        "inZone" : true,
+        "speed" : 60.0,
+        "wasSwungAt" : true,
+        "id" : 1
+      } ],
+      "nextPitchID" : 2
+    } ]
+  }, {
     "id" : 1,
     "name" : "Average Alison",
     "sessions" : [ {
@@ -95256,23 +95355,6 @@
         "id" : 51
       } ],
       "nextPitchID" : 54
-    } ]
-  }, {
-    "id" : 31,
-    "name" : "FNAF 23",
-    "sessions" : [ {
-      "sessionId" : 444,
-      "timestamp" : "2003-01-02",
-      "pitches" : [ {
-        "type" : "Curveball",
-        "result" : "Ball",
-        "bases" : 0,
-        "inZone" : true,
-        "speed" : 67.067,
-        "wasSwungAt" : true,
-        "id" : 0
-      } ],
-      "nextPitchID" : 1
     } ]
   }, {
     "id" : 9,

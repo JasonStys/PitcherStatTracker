@@ -7,7 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class PitchInputPanel extends JPanel implements PopPanel {
+// This is the form for inputting a new Pitch.
+public class PitchInputPopup extends JPanel implements PopPanel {
     private JComboBox<Pitch.Type> typeList;
     private JComboBox<Pitch.Result> resultList;
     private JSpinner basesSpinner;
@@ -20,19 +21,21 @@ public class PitchInputPanel extends JPanel implements PopPanel {
     private int PitchID = -1; // Defaults to negative 1 unless assigned
     private boolean isEditing = false;
 
-    public PitchInputPanel() {
+    // Empty constructor, Creating a new pitch
+    public PitchInputPopup() {
         setupInputPanel(null);
     }
 
-    public PitchInputPanel(Pitch editedPitch) {
+    // Constructor when given a Pitch, setting editing mode
+    public PitchInputPopup(Pitch editedPitch) {
         isEditing = true;
         setupInputPanel(editedPitch);
     }
 
     private void setupInputPanel(Pitch editedPitch) {
-        //this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setLayout(new GridLayout(4, 2));
-        initComponents();
+        initComponents(); // Create the components.
+        // Swap all the defaults for values from the Pitch if we're editing.
         if (editedPitch != null) {
             PitchID = editedPitch.getID();
             typeList.setSelectedItem(editedPitch.getType());
@@ -42,28 +45,31 @@ public class PitchInputPanel extends JPanel implements PopPanel {
             wasSwungAtCheckbox.setSelected(editedPitch.wasSwungAt());
             inZoneCheckbox.setSelected(editedPitch.isInZone());
         }
-        this.validate();
+        this.validate(); // Validate all components are current
         this.setVisible(true);
     }
 
+    // send an Object (in this case a Pitch) back to the previous screen when requested.
     @Override
     public Object sendObject() {
         return pitchObj;
     }
+
     public Boolean warnOnClose() {return true;}
+    // Title of popup when we're canceling
     public String getCancelTitle() {
         if (isEditing) {return "Discard this edit?";}
         else {return "Discard this pitch?";}
     }
+    // Message of popup when we're canceling
     public String getCancelMsg() {
         if (isEditing) {return "Would you like to discard this edit?";}
         else {return "Would you like to discard this pitch?";}
     }
 
-    //@SuppressWarnings("unchecked")
     private void initComponents() {
+        // Dropdown for the Type
         JPanel typePane = new JPanel();
-        //typePane.setPreferredSize(new Dimension(300, 310));
         typePane.setBorder(BorderFactory.createTitledBorder(
                 "Pitch Type:"));
         typeList = new JComboBox<>(Pitch.Type.values());
@@ -71,6 +77,7 @@ public class PitchInputPanel extends JPanel implements PopPanel {
         typePane.add(typeList);
         this.add(typePane);
 
+        // Dropdown for the result
         JPanel resultPane = new JPanel();
         resultPane.setBorder(BorderFactory.createTitledBorder(
                 "Result of this pitch:"));
@@ -79,26 +86,29 @@ public class PitchInputPanel extends JPanel implements PopPanel {
         resultPane.add(resultList);
         this.add(resultPane);
 
+        // Spinner for the bases
         JPanel basesPane = new JPanel();
         basesPane.setBorder(BorderFactory.createTitledBorder(
                 "Number of bases scored:"));
         SpinnerModel baseModel =
                 new SpinnerNumberModel(0, //initial value
-                        0, //min
-                        4, //max
+                        Pitch.MIN_BASES, //min
+                        Pitch.MAX_BASES, //max
                         1); // steps, integers are 1 step apart
         basesSpinner = new JSpinner(baseModel);
         basesSpinner.setPreferredSize(new Dimension(100, 20));
         basesPane.add(basesSpinner);
         this.add(basesPane);
 
+        // Spinner for the speed. Could maybe be abstracted but not a lot of consistent instances of it.
+        // Also for validation we would need to keep some stuff in this class.
         JPanel speedPane = new JPanel();
         speedPane.setBorder(BorderFactory.createTitledBorder(
                 "Speed of the pitch (MPH):"));
         SpinnerModel speedModel =
-                new SpinnerNumberModel(67.067, //initial value
-                        0.0, //min
-                        130.00, //max
+                new SpinnerNumberModel(60.000, //initial value
+                        Pitch.MIN_SPEED, //min
+                        Pitch.MAX_SPEED, //max
                         1); // steps, integers are 1 step apart
         speedSpinner = new JSpinner(speedModel);
         speedSpinner.setPreferredSize(new Dimension(100, 20));
@@ -106,29 +116,23 @@ public class PitchInputPanel extends JPanel implements PopPanel {
         speedPane.setPreferredSize(new Dimension(100, 50));
         this.add(speedPane);
 
-        //JPanel checkboxPane = new JPanel();
-        //checkboxPane.setLayout(new BoxLayout(checkboxPane, BoxLayout.Y_AXIS));
-        //checkboxPane.setLayout(new GridLayout(2, 1));
-        //checkboxPane.setBorder(BorderFactory.createTitledBorder("Checkboxes"));
+        // Checkboxes.
         wasSwungAtCheckbox = new JCheckBox("Did the batter swing at this?");
         wasSwungAtCheckbox.setSelected(true);
         wasSwungAtCheckbox.setHorizontalAlignment(JCheckBox.LEFT);
-        //wasSwungAtCheckbox.setToolTipText("baby");
         inZoneCheckbox = new JCheckBox("Was the ball in the zone?");
         inZoneCheckbox.setSelected(true);
         inZoneCheckbox.setHorizontalAlignment(JCheckBox.LEFT);
-        //checkboxPane.add(wasSwungAtCheckbox);
-        //checkboxPane.add(inZoneCheckbox);
-        //checkboxPane.setPreferredSize(new Dimension(150, 50));
-        //this.add(checkboxPane);
         this.add(wasSwungAtCheckbox);
         this.add(inZoneCheckbox);
 
+        // Submit button
         submitButton = new JButton("Submit");
         submitButton.setActionCommand("submit");
         submitButton.addActionListener(this::actionPerformed);
         this.add(submitButton);
 
+        // Cancel button
         cancelButton = new JButton("Cancel");
         cancelButton.setActionCommand("cancel");
         cancelButton.addActionListener(this::actionPerformed);
@@ -137,7 +141,7 @@ public class PitchInputPanel extends JPanel implements PopPanel {
 
     public void actionPerformed(ActionEvent e) {
         if ("submit".equals(e.getActionCommand())) {
-            //submitButton.setEnabled(false);
+            // Get the values from our input JComponents
             Pitch.Type type = Pitch.Type.fromInt(typeList.getSelectedIndex());
             Pitch.Result result = Pitch.Result.fromInt(resultList.getSelectedIndex());
             int bases = (Integer) basesSpinner.getValue();
@@ -145,24 +149,28 @@ public class PitchInputPanel extends JPanel implements PopPanel {
             double speed = (Double) speedSpinner.getValue();
             boolean wasSwungAt = wasSwungAtCheckbox.isSelected();
 
+            // Get an error string if there is a validation error
             String error = validateInput(result, bases);
 
             if (error != null)
             {
+                // Print the error message and cancel the saving.
                 MainWindow.displayError("Invalid Input", error);
                 return;
             }
 
+            // Create the Pitch
             Pitch example = new Pitch(type, result, bases, inZone, speed, wasSwungAt);
             example.setID(PitchID); // Will either be -1 (new) or whatever the ID of the given Pitch in the constructor was.
-            pitchObj = example;
+            pitchObj = example; // Set this to the object we'll send back to the previous panel
             MainWindow.closePopupPanel();
             //System.out.println(example.toString());
         } else if ("cancel".equals(e.getActionCommand())) {
-            MainWindow.cancelPopupPanel();
+            MainWindow.cancelPopupPanel(); // Cancel with a null pitchObj, so nothing is done.
         }
     }
 
+    // This could be expanded or made into a controller class.
     private String validateInput(Pitch.Result result, int bases) {
         // Non-contact results → bases must be 0
         switch (result) {
@@ -187,7 +195,7 @@ public class PitchInputPanel extends JPanel implements PopPanel {
                 break;
         }
 
-        return null; // valid
+        return null; // valid input, so no string is produced.
     }
 }
 

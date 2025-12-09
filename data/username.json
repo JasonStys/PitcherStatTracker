@@ -1,7 +1,7 @@
 {
   "pitchers" : [ {
     "id" : 11,
-    "name" : "Santa",
+    "name" : "Test Pitcher",
     "sessions" : [ {
       "sessionId" : 444,
       "timestamp" : "2025-12-25",
@@ -14,7 +14,7 @@
         "wasSwungAt" : true,
         "id" : 0
       } ],
-      "nextPitchID" : 0
+      "nextPitchID" : 2
     } ]
   } ],
   "username" : "username",

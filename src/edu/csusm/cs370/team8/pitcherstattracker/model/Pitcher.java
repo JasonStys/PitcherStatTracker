@@ -1,16 +1,15 @@
 package edu.csusm.cs370.team8.pitcherstattracker.model;
 
-import edu.csusm.cs370.team8.pitcherstattracker.model.Session;
 import edu.csusm.cs370.team8.pitcherstattracker.controller.StatCalculator;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 
 /* Refers to a pitcher with which there are sessions of stats for. NOT a user that logs in.
- *
+ * It is composed of Sessions.
  */
 public class Pitcher implements Comparable<Pitcher> {
+    // Fields
     private final List<Session> sessions = new ArrayList<>();
     private String name;
 
@@ -21,6 +20,7 @@ public class Pitcher implements Comparable<Pitcher> {
         id = nextID++;
     }
 
+    // Getters and Setters
     public int getID() {return id;}
     public void setID(int id) {this.id = id;}
     public String getName() {return name;}
@@ -28,14 +28,15 @@ public class Pitcher implements Comparable<Pitcher> {
 
     //A list of all their sessions so far. A copy so will need to be updated.
     public List<Session> getSessions() {return List.copyOf(sessions);}
+    // Erases and sets the session list of a Pitcher
     public void setSessions(List<Session> s) {
         this.sessions.clear();
         this.sessions.addAll(s);
-        sessions.sort(null);
+        sessions.sort(null); // Sorts by Timestamp
     }
     public void addSession(Session session) {
         sessions.add(session);
-        sessions.sort(null);
+        sessions.sort(null); // Sorts by timestamp
     }
 
     // Default sort on a list of pitchers is by name.
@@ -64,41 +65,7 @@ public class Pitcher implements Comparable<Pitcher> {
         }
     }
 
-    public static Pitcher createRandomPitcher(int numSessions) {
-        Random random =  new Random();
-        int numPitches;
-        Pitcher pitcher = new Pitcher();
-        for (int i = 0; i < numSessions; i++) {
-            numPitches = random.nextInt(15, 91);
-            pitcher.addSession(Session.createRandomSessionData(numPitches));
-        }
-        pitcher.setName(getRandomName());
-        return pitcher;
-    }
-
-    // For random generation
-    private static final List<String> exampleNames = List.of(new String[]{
-            "Unfathomable Ulysses",
-            "Standout Savanna",
-            "Exceptional Elliot",
-            "Suitable Sally",
-            "Decent Darren",
-            "Average Alison",
-            "Okay O'reilly",
-            "Sketchy Steven",
-            "Terrible Tony",
-            "Blind Bartholomew",
-            "Placeholder Platon"});
-
-    public static String getRandomName() {
-        Random random = new Random();
-        return exampleNames.get(random.nextInt(exampleNames.size()));
-    }
-
-    public static String getNextName(int i) {
-        return exampleNames.get(i);
-    }
-
+    // toString() is what JList prints in the panels.
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

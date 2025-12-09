@@ -12,5 +12,5 @@ public class SessionDto implements Serializable {
     public int sessionId;
     public LocalDate timestamp;
     public List<PitchDto> pitches;
-    public int nextPitchID = 0;
+    public int nextPitchID;
 }

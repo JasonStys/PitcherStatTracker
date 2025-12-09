@@ -2,14 +2,17 @@ package edu.csusm.cs370.team8.pitcherstattracker.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Random; // Used for static method to create a random pitch for testing.
 
+/* A Pitch is a specific, singular throw from the Pitcher and its Result
+ * (such as if it was a hit with N number of bases gained by the opposing team).
+ */
 public class Pitch implements Comparable<Pitch>{
     public static final int MAX_BASES = 4;
     public static final int MIN_BASES = 0;
     public static final double MAX_SPEED = 130.000;
     public static final double MIN_SPEED = 0.000;
 
+    // Enum for the type of throw that was thrown
     public enum Type {
         Fastball(0), Curveball(1), Slider(2), Changeup(3), Knuckleball(4), Slurve(5);
         private final int value;
@@ -19,13 +22,19 @@ public class Pitch implements Comparable<Pitch>{
         public int toInt() { return value; }
 
         public static Type fromInt(int input) {
-            for (Type t : Type.values()) {
-                if (t.value == input) { return t; }
-            }
-            throw new IllegalArgumentException("No Type enum constant with code " + input);
+            return switch (input) {
+                case 0 -> Fastball;
+                case 1 -> Curveball;
+                case 2 -> Slider;
+                case 3 -> Changeup;
+                case 4 -> Knuckleball;
+                case 5 -> Slurve;
+                default -> throw new IllegalArgumentException("No Type enum constant with code " + input);
+            };
         }
     }
 
+    // Enum for the ultimate called result from this pitch
     public enum Result {
         //Non-terminal
         Strike(0), Ball(1), Foul(2),
@@ -38,22 +47,31 @@ public class Pitch implements Comparable<Pitch>{
         public int toInt() { return value; }
 
         public static Result fromInt(int input) {
-            for (Result r : Result.values()) {
-                if (r.value == input) { return r; }
-            }
-            throw new IllegalArgumentException("No Result enum constant with code " + input);
+            return switch (input) {
+                case 0 -> Strike;
+                case 1 -> Ball;
+                case 2 -> Foul;
+                case 3 -> Hit;
+                case 4 -> BallInPlayOut;
+                case 5 -> ReachOnError;
+                case 6 -> Walk;
+                case 7 -> Strikeout;
+                case 8 -> HitByPitch;
+                default -> throw new IllegalArgumentException("No Result enum constant with code " + input);
+            };
         }
     }
 
+    // Fields
     private Result result;
     private Type type;
-
     private int bases;
-    private boolean inZone;
     private int id = -1; // Negative 1 means it hasn't been assigned an ID yet
     private double speed;
     private boolean wasSwungAt;
+    private boolean inZone;
 
+    // Constructor: Needs all fields as argument except ID.
     public Pitch(Type ballType,
                  Result pitchResult,
                  int bases,
@@ -65,19 +83,19 @@ public class Pitch implements Comparable<Pitch>{
         this.result = pitchResult;
         this.bases = bases;
         this.inZone = inZone;
+        this.wasSwungAt = wasSwungAt;
         // Rounds speed to 3 decimal places
         BigDecimal bd = new BigDecimal(speed).setScale(3, RoundingMode.HALF_EVEN);
         this.speed = bd.doubleValue();
-        this.wasSwungAt = wasSwungAt;
     }
 
-    // Allows pitches to be compared to each other based on ID
+    // Allows pitches to be compared to each other based on ID, for sorting
     @Override
     public int compareTo(Pitch o) {
         return Integer.compare(id, o.id);
     }
 
-    // Basic Getters and Setters
+    // Basic Getters and Setters. Most of these Setters are not used.
     public Result getResult() { return result; }
     public void setResult(Result result) { this.result = result; }
 
@@ -99,6 +117,7 @@ public class Pitch implements Comparable<Pitch>{
     public boolean wasSwungAt() { return wasSwungAt; }
     public void setWasSwungAt(boolean wasSwungAt) { this.wasSwungAt = wasSwungAt; }
 
+    // toString() is what JList prints in the panels.
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,77 +132,6 @@ public class Pitch implements Comparable<Pitch>{
         sb.append(bases + " bases");
 
         return sb.toString();
-    }
-
-    // Returns a randomly generated pitch, used for testing only.
-    public static Pitch randomPitch() {
-        Random random = new Random();
-
-        // 1) Pitch type (uniform among defined types should be adjusted later)
-        Pitch.Type type = Pitch.Type.fromInt(random.nextInt(Pitch.Type.values().length));
-
-        // 2) Speed band by type
-        double minSpeed;
-        double maxSpeed;
-        switch (type) {
-            case Fastball -> { minSpeed = 88.0; maxSpeed = 100.0; }
-            case Slider   -> { minSpeed = 80.0; maxSpeed = 90.0; }
-            case Curveball-> { minSpeed = 72.0; maxSpeed = 82.0; }
-            case Changeup -> { minSpeed = 75.0; maxSpeed = 86.0; }
-            case Knuckleball -> { minSpeed = 60.0; maxSpeed = 75.0; }
-            case Slurve -> { minSpeed = 76.0; maxSpeed = 88.0; }
-            default       -> { minSpeed = MIN_SPEED; maxSpeed = MAX_SPEED; }
-        }
-
-        double speed = minSpeed + random.nextDouble() * (maxSpeed - minSpeed);
-        // make sure in global bounds just in case
-        if (speed < MIN_SPEED) speed = MIN_SPEED;
-        if (speed > MAX_SPEED) speed = MAX_SPEED;
-
-        // Round to 3 decimal places
-        BigDecimal bd = new BigDecimal(speed).setScale(3, RoundingMode.HALF_EVEN);
-        speed = bd.doubleValue();
-
-        // 3) Is it in the zone?
-        boolean inZone = random.nextDouble() < 0.55;
-
-        // 4) Does the batter swing? More likely on strikes.
-        boolean wasSwungAt = random.nextDouble() < (inZone ? 0.6 : 0.25);
-
-        Pitch.Result result;
-        int bases = 0; // default: no bases unless it's a hit
-
-        if (!wasSwungAt) {
-            // Batter takes: it's either a called strike or a ball
-            result = inZone ? Pitch.Result.Strike : Pitch.Result.Ball;
-            // 2% chance a ball is a walk.
-            if (result == Pitch.Result.Ball && random.nextDouble() < 0.02) {
-                result  = Pitch.Result.Walk;
-            }
-        } else {
-            // Batter swings: simple probability breakdown
-            double r = random.nextDouble();
-
-            if (r < 0.40) {
-                result = Pitch.Result.Foul;              // ~40% of swings
-            } else if (r < 0.70) {
-                result = Pitch.Result.BallInPlayOut;     // ~30%
-            } else if (r < 0.85) {
-                result = Pitch.Result.Hit;               // ~15%
-                // Bases for hits: mostly singles
-                double h = random.nextDouble();
-                if (h < 0.75)       bases = 1; // single
-                else if (h < 0.93)  bases = 2; // double
-                else if (h < 0.95)  bases = 3; // triple
-                else                bases = 4; // HR
-            } else if (r < 0.90) {
-                result = Pitch.Result.ReachOnError;      // ~5%
-            } else {
-                result = Pitch.Result.Strikeout;         // ~10% (swing-and-miss K)
-            }
-        }
-
-        return new Pitch(type, result, bases, inZone, speed, wasSwungAt);
     }
 
     public Pitch() {

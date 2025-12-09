@@ -4,26 +4,34 @@ import edu.csusm.cs370.team8.pitcherstattracker.MainWindow;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /* Refers to a user that logs in, like a coach that has multiple pitchers they manage
- *
+ * An aggregation of Pitchers
  */
 public class UserAccount {
+    // Fields
     private final List<Pitcher> pitchers = new ArrayList<>();
-    //private final List<Integer> pitchersID = new ArrayList<>();
     private String username;
     private String hashPass;
 
-    // Constructor for Jackson
-    public UserAccount() {}
+    // Ideally this should be a list of ID so Pitchers are nested inside UserAccounts
+    // But instead linked in a many-to-many connection, but not viable under time.
+    //private final List<Integer> pitchersID = new ArrayList<>();
+
+
+    public UserAccount() {
+        // Empty Constructor for Jackson
+    }
+    // Constructor that should actually be used. An account with null fields will cause save error messages
     public UserAccount(String user, String pass) {
         this.username = user;
         this.hashPass = pass;
     }
+    // Getters. Setters not needed as we can't change these in this implementation.
     public String getUsername() {return username;}
     public String getHashPass() {return hashPass;}
 
+    // Get list of pitchers
     public List<Pitcher> getPitchers() {
         return pitchers;
     }
@@ -32,6 +40,7 @@ public class UserAccount {
         pitchers.add(pitcher);
     }
 
+    // Search for a specific Pitcher by ID
     public Pitcher getPitcher(int id) {
         for (Pitcher p : pitchers) {
             if (p.getID() == id) {
@@ -42,6 +51,7 @@ public class UserAccount {
         return null;
     }
 
+    // Save a specific pitcher by ID
     public boolean savePitcher(Pitcher newPitcher) {
         for (int i = 0; i < pitchers.size(); i++) {
             if (pitchers.get(i).getID() == newPitcher.getID()) {
@@ -51,32 +61,5 @@ public class UserAccount {
         }
         MainWindow.displayError("PROGRAM ERROR", "This UserAccount can't find that Pitcher!");
         return false;
-    }
-
-    public static UserAccount generateCoach() {
-        UserAccount account = new UserAccount();
-        Random random = new Random();
-        // Get 10 random pitchers, unnamed, in a temporary list
-        List<Pitcher> exPitchers = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            int numSessions = random.nextInt(15, 91);
-            Pitcher examplePitcher = Pitcher.createRandomPitcher(numSessions);
-            exPitchers.add(examplePitcher);
-        }
-        // Sort them compared to their WHIP stat (roughly, the lower it is the better pitcher they are)
-        exPitchers.sort(Pitcher.WhipComparator);
-        for (int i = 0; i < exPitchers.size(); i++) {
-            Pitcher examplePitcher = exPitchers.get(i);
-            // Pitcher.getNextName() will output string names in order of best to worst
-            examplePitcher.setName(Pitcher.getNextName(i));
-            account.addPitcher(examplePitcher); // Add them to the account we are going to return
-        }
-
-        /* Create an empty pitcher at the end.
-        Pitcher emptyPitcher = new Pitcher();
-        emptyPitcher.setName("Empty Eriksson");
-        account.addPitcher(emptyPitcher);
-         */
-        return account;
     }
 }

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.File;
 import java.io.IOException;
 
+// This class is unused. Tyler wrote this when he was figuring our Jackson and testing saving sessions to .json files.
 public class SessionDatabase {
     // Root "sessions" Directory
     private static final File SESSION_DIR = new File("sessions");

@@ -10,6 +10,7 @@ import java.util.List;
 
 /* Utility methods for converting between domain objects and DTOs.
  * Does not modify any existing model classes.
+ * First written by Aidan, modified by Devon
  */
 public final class DtoMapper {
 

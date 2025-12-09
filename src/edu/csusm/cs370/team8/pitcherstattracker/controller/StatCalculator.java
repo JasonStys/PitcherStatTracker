@@ -7,7 +7,7 @@ import java.time.*;
 import java.util.*;
 
 /*
-Core pitching stats engine.
+Core pitching stats engine. This was 90% written by Aidan. Devon added ability to calc multiple Pitchers
 
 - Aggregates raw stats from Sessions.
 - Produces PitchingStats objects with both raw counts and derived metrics.

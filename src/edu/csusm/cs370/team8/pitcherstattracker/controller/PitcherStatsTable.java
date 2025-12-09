@@ -5,7 +5,8 @@ import edu.csusm.cs370.team8.pitcherstattracker.view.TableWidget;
 
 import java.util.*;
 
-/*
+/* Written by Aidan except for "buildMultiTable()" by Devon.
+ *
  Controller that turns StatCalculator results into a TableWidget.
   - Depends on StatCalculator (stats engine).
   - Depends on TableWidget (view helper).

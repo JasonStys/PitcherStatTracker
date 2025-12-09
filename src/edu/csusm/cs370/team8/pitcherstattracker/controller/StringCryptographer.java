@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+// This class handles encryption handling and filename sanitization
 public class StringCryptographer {
 
     // Private function that gets a hashed string from a plaintext string.
@@ -45,7 +46,7 @@ public class StringCryptographer {
         return stringHash(fullHash.toString()); // hash the interleaved result, which is our response.
     }
 
-    // From https://stackoverflow.com/a/34710967
+    // From https://stackoverflow.com/a/34710967 . Sanitizes a string to be used as a filename.
     public static String sanitizeFilename(String input) {
         return input.replaceAll("[^a-zA-Z0-9-_\\.]", "_");
     }

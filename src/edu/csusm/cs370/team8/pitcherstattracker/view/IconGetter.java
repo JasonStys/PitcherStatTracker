@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 import java.net.URL;
 import java.util.Objects;
 
+// This class just defines a bunch of Images.
+// Some of these icons aren't used.
 public class IconGetter {
     private static final String path = "/toolbarButtonGraphics/";
 
@@ -40,6 +42,7 @@ public class IconGetter {
     public static final ImageIcon STOP = new ImageIcon(
             IconGetter.class.getResource(path + "general/Stop24.gif"));
 
+    // Below is for the sticky note
     private static final ClassLoader loader = IconGetter.class.getClassLoader();
     private static final URL url = loader.getResource("edu/csusm/cs370/team8/pitcherstattracker/img/sticky.png");
     public static final ImageIcon STICKY;
@@ -49,7 +52,7 @@ public class IconGetter {
         if (url != null) {
             STICKY = new ImageIcon(url); // set static ImageIcon if resource exists
         } else {
-            STICKY = null; // Display error message if it wasn't found.
+            STICKY = null; // Display error message if it wasn't found. Safely still executes.
             MainWindow.displayError("Image not found",
                     "<html>" +
                             "pitcherstattracker/img/sticky.png was not found,<br>" +
