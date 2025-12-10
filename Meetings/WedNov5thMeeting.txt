@@ -1,9 +1,0 @@
-Wednesday 11/5/25 meeting notes
-
-worked on inputting data into JSON files
-
-worked on putting pitches into a session arraylist to hold
-the pitches thrown. Was able to create a new pitch and add it
-to a List. Then outputting stuff in main
-
-Talked about the GUI
